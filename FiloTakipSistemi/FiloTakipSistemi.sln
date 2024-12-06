@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiloTakipSistemi", "FiloTakipSistemi\FiloTakipSistemi.csproj", "{CAE71197-E3DA-4869-899F-A7E4DE376176}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAE71197-E3DA-4869-899F-A7E4DE376176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAE71197-E3DA-4869-899F-A7E4DE376176}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAE71197-E3DA-4869-899F-A7E4DE376176}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAE71197-E3DA-4869-899F-A7E4DE376176}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4512983E-78F0-4DF3-8C12-4E41F7D5EC23}
+	EndGlobalSection
+EndGlobal

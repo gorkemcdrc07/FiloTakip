@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FiloTakipModelStoreContainer" CdmEntityContainer="FiloTakipEntities6">
+    <EntitySetMapping Name="TblAraclar">
+      <EntityTypeMapping TypeName="FiloTakipModel.TblAraclar">
+        <MappingFragment StoreEntitySet="TblAraclar">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CekiciDorse" ColumnName="CekiciDorse" />
+          <ScalarProperty Name="SurucuIsim" ColumnName="SurucuIsim" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Tc" ColumnName="Tc" />
+          <ScalarProperty Name="SurucuDogumYil" ColumnName="SurucuDogumYil" />
+          <ScalarProperty Name="IkametAdresi" ColumnName="IkametAdresi" />
+          <ScalarProperty Name="CekiciRuhsatNo" ColumnName="CekiciRuhsatNo" />
+          <ScalarProperty Name="TedarikciIsim" ColumnName="TedarikciIsim" />
+          <ScalarProperty Name="AracMarka" ColumnName="AracMarka" />
+          <ScalarProperty Name="AracModel" ColumnName="AracModel" />
+          <ScalarProperty Name="CekiciMuayene" ColumnName="CekiciMuayene" />
+          <ScalarProperty Name="DorseMuayene" ColumnName="DorseMuayene" />
+          <ScalarProperty Name="TrafikSigorta" ColumnName="TrafikSigorta" />
+          <ScalarProperty Name="AracYil" ColumnName="AracYil" />
+          <ScalarProperty Name="DorseYil" ColumnName="DorseYil" />
+          <ScalarProperty Name="IsBasiKm" ColumnName="IsBasiKm" />
+          <ScalarProperty Name="Bolge" ColumnName="Bolge" />
+          <ScalarProperty Name="IsBasiTarih" ColumnName="IsBasiTarih" />
+          <ScalarProperty Name="DorseTip" ColumnName="DorseTip" />
+          <ScalarProperty Name="Liftmaster" ColumnName="Liftmaster" />
+          <ScalarProperty Name="SozlesmeDurumu" ColumnName="SozlesmeDurumu" />
+          <ScalarProperty Name="Dingil" ColumnName="Dingil" />
+          <ScalarProperty Name="GpsDurum" ColumnName="GpsDurum" />
+          <ScalarProperty Name="HgsDurum" ColumnName="HgsDurum" />
+          <ScalarProperty Name="TedarikciOzmalAracSigortaDurumu" ColumnName="TedarikciOzmalAracSigortaDurumu" />
+          <ScalarProperty Name="OdakK1" ColumnName="OdakK1" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblAracStatu">
+      <EntityTypeMapping TypeName="FiloTakipModel.TblAracStatu">
+        <MappingFragment StoreEntitySet="TblAracStatu">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Statu" ColumnName="Statu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblBolgeler">
+      <EntityTypeMapping TypeName="FiloTakipModel.TblBolgeler">
+        <MappingFragment StoreEntitySet="TblBolgeler">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="İl" ColumnName="İl" />
+          <ScalarProperty Name="Bolge" ColumnName="Bolge" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblGiris">
+      <EntityTypeMapping TypeName="FiloTakipModel.TblGiris">
+        <MappingFragment StoreEntitySet="TblGiris">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblMesafe">
+      <EntityTypeMapping TypeName="FiloTakipModel.TblMesafe">
+        <MappingFragment StoreEntitySet="TblMesafe">
+          <ScalarProperty Name="YuklemeIl" ColumnName="YuklemeIl" />
+          <ScalarProperty Name="YuklemeIlce" ColumnName="YuklemeIlce" />
+          <ScalarProperty Name="TahliyeIl" ColumnName="TahliyeIl" />
+          <ScalarProperty Name="TahliyeIlce" ColumnName="TahliyeIlce" />
+          <ScalarProperty Name="ToplamMesafe" ColumnName="ToplamMesafe" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblPlakaAtandi">
+      <EntityTypeMapping TypeName="FiloTakipModel.TblPlakaAtandi">
+        <MappingFragment StoreEntitySet="TblPlakaAtandi">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PlakaDurumu" ColumnName="PlakaDurumu" />
+          <ScalarProperty Name="SeferTarihi" ColumnName="SeferTarihi" />
+          <ScalarProperty Name="Plaka" ColumnName="Plaka" />
+          <ScalarProperty Name="SurucuAdSoyad" ColumnName="SurucuAdSoyad" />
+          <ScalarProperty Name="SurucuTelefon" ColumnName="SurucuTelefon" />
+          <ScalarProperty Name="SurucuTC" ColumnName="SurucuTC" />
+          <ScalarProperty Name="MusteriAdi" ColumnName="MusteriAdi" />
+          <ScalarProperty Name="YuklemeNoktasi" ColumnName="YuklemeNoktasi" />
+          <ScalarProperty Name="YuklemeIl" ColumnName="YuklemeIl" />
+          <ScalarProperty Name="YuklemeIlcesi" ColumnName="YuklemeIlcesi" />
+          <ScalarProperty Name="Tonaj" ColumnName="Tonaj" />
+          <ScalarProperty Name="TeslimNoktasi" ColumnName="TeslimNoktasi" />
+          <ScalarProperty Name="TeslimIli" ColumnName="TeslimIli" />
+          <ScalarProperty Name="TeslimIlcesi" ColumnName="TeslimIlcesi" />
+          <ScalarProperty Name="NavlunTutar" ColumnName="NavlunTutar" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="SonNokta" ColumnName="SonNokta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblPlakaDurumları">
+      <EntityTypeMapping TypeName="FiloTakipModel.TblPlakaDurumları">
+        <MappingFragment StoreEntitySet="TblPlakaDurumları">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Plaka" ColumnName="Plaka" />
+          <ScalarProperty Name="SurucuAdı" ColumnName="SurucuAdı" />
+          <ScalarProperty Name="SurucuTelefon" ColumnName="SurucuTelefon" />
+          <ScalarProperty Name="SurucuTC" ColumnName="SurucuTC" />
+          <ScalarProperty Name="SeferTarihi" ColumnName="SeferTarihi" />
+          <ScalarProperty Name="YuklemeNoktası" ColumnName="YuklemeNoktası" />
+          <ScalarProperty Name="TeslimNoktası" ColumnName="TeslimNoktası" />
+          <ScalarProperty Name="SonIl" ColumnName="SonIl" />
+          <ScalarProperty Name="SonIlce" ColumnName="SonIlce" />
+          <ScalarProperty Name="SonNokta" ColumnName="SonNokta" />
+          <ScalarProperty Name="TahminiVarisZamani" ColumnName="TahminiVarisZamani" />
+          <ScalarProperty Name="YuklemeYeriArasındaKm" ColumnName="YuklemeYeriArasındaKm" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+          <ScalarProperty Name="BaslangıcTarihi" ColumnName="BaslangıcTarihi" />
+          <ScalarProperty Name="BitisTarihi" ColumnName="BitisTarihi" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="Sebep" ColumnName="Sebep" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblSebepler">
+      <EntityTypeMapping TypeName="FiloTakipModel.TblSebepler">
+        <MappingFragment StoreEntitySet="TblSebepler">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Sebep" ColumnName="Sebep" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblSiparisListesi">
+      <EntityTypeMapping TypeName="FiloTakipModel.TblSiparisListesi">
+        <MappingFragment StoreEntitySet="TblSiparisListesi">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Plaka" ColumnName="Plaka" />
+          <ScalarProperty Name="MusteriAdi" ColumnName="MusteriAdi" />
+          <ScalarProperty Name="HizmetTipi" ColumnName="HizmetTipi" />
+          <ScalarProperty Name="ProjeAdi" ColumnName="ProjeAdi" />
+          <ScalarProperty Name="AracTipi" ColumnName="AracTipi" />
+          <ScalarProperty Name="SiparisTarihi" ColumnName="SiparisTarihi" />
+          <ScalarProperty Name="SiparisNo" ColumnName="SiparisNo" />
+          <ScalarProperty Name="YuklemeTarihi" ColumnName="YuklemeTarihi" />
+          <ScalarProperty Name="NoktaSayisi" ColumnName="NoktaSayisi" />
+          <ScalarProperty Name="YuklemeNoktasi" ColumnName="YuklemeNoktasi" />
+          <ScalarProperty Name="YuklemeIl" ColumnName="YuklemeIl" />
+          <ScalarProperty Name="YuklemeIlce" ColumnName="YuklemeIlce" />
+          <ScalarProperty Name="TeslimNoktasi" ColumnName="TeslimNoktasi" />
+          <ScalarProperty Name="TeslimIl" ColumnName="TeslimIl" />
+          <ScalarProperty Name="TeslimIlce" ColumnName="TeslimIlce" />
+          <ScalarProperty Name="PozisyonNo" ColumnName="PozisyonNo" />
+          <ScalarProperty Name="TahminiKm" ColumnName="TahminiKm" />
+          <ScalarProperty Name="TahminiVarisSaatTarih" ColumnName="TahminiVarisSaatTarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
