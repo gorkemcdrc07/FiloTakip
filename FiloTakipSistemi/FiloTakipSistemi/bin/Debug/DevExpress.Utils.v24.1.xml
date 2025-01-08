@@ -11639,7 +11639,7 @@ The <see cref="F:DevExpress.Utils.DefaultBoolean.Default">DefaultBoolean.Default
     </member>
     <member name="T:DevExpress.Utils.ToolTipController">
       <summary>
-        <para>Provides <see href="https://docs.devexpress.com/WindowsForms/2398/common-features/tooltips">tooltip</see> management for individual controls.</para>
+        <para>A <see href="https://docs.devexpress.com/WindowsForms/2398/common-features/tooltips">tooltip</see> controller for individual UI controls.</para>
       </summary>
     </member>
     <member name="M:DevExpress.Utils.ToolTipController.#ctor">

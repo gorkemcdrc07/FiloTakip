@@ -1,0 +1,1002 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FiloTakipModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TblAraclar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CekiciDorse" Type="nvarchar" MaxLength="300" />
+          <Property Name="SurucuIsim" Type="nvarchar" MaxLength="300" />
+          <Property Name="Telefon" Type="float" />
+          <Property Name="Tc" Type="float" />
+          <Property Name="SurucuDogumYil" Type="float" />
+          <Property Name="IkametAdresi" Type="nvarchar" MaxLength="300" />
+          <Property Name="CekiciRuhsatNo" Type="nvarchar" MaxLength="300" />
+          <Property Name="TedarikciIsim" Type="nvarchar" MaxLength="300" />
+          <Property Name="AracMarka" Type="nvarchar" MaxLength="300" />
+          <Property Name="AracModel" Type="nvarchar" MaxLength="300" />
+          <Property Name="CekiciMuayene" Type="datetime" />
+          <Property Name="DorseMuayene" Type="datetime" />
+          <Property Name="TrafikSigorta" Type="datetime" />
+          <Property Name="AracYil" Type="float" />
+          <Property Name="DorseYil" Type="float" />
+          <Property Name="IsBasiKm" Type="nvarchar" MaxLength="300" />
+          <Property Name="Bolge" Type="nvarchar" MaxLength="300" />
+          <Property Name="IsBasiTarih" Type="datetime" />
+          <Property Name="DorseTip" Type="nvarchar" MaxLength="300" />
+          <Property Name="Liftmaster" Type="nvarchar" MaxLength="300" />
+          <Property Name="SozlesmeDurumu" Type="nvarchar" MaxLength="300" />
+          <Property Name="Dingil" Type="nvarchar" MaxLength="300" />
+          <Property Name="GpsDurum" Type="nvarchar" MaxLength="300" />
+          <Property Name="HgsDurum" Type="nvarchar" MaxLength="300" />
+          <Property Name="TedarikciOzmalAracSigortaDurumu" Type="nvarchar" MaxLength="300" />
+          <Property Name="OdakK1" Type="nvarchar" MaxLength="300" />
+          <Property Name="Status" Type="nvarchar" MaxLength="300" />
+          <Property Name="DorseRuhsatNo" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="TblAracStatu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Statu" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TblBolgeler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="İl" Type="nvarchar" MaxLength="300" />
+          <Property Name="Bolge" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="TblDetay">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Plaka" Type="nvarchar" MaxLength="500" />
+          <Property Name="ReferansNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="TMSOrderID" Type="nvarchar" MaxLength="500" />
+          <Property Name="Firma" Type="nvarchar" MaxLength="500" />
+          <Property Name="Proje" Type="nvarchar" MaxLength="500" />
+          <Property Name="HizmetTipi" Type="nvarchar" MaxLength="500" />
+          <Property Name="IstenilenAracTipi" Type="nvarchar" MaxLength="500" />
+          <Property Name="SiparisNumarasi" Type="nvarchar" MaxLength="500" />
+          <Property Name="SiparisTarihi" Type="date" />
+          <Property Name="YuklemeTarihi" Type="date" />
+          <Property Name="TeslimTarihi" Type="date" />
+          <Property Name="NoktaSayisi" Type="nvarchar" MaxLength="500" />
+          <Property Name="YuklemeNoktasi" Type="nvarchar" MaxLength="500" />
+          <Property Name="YuklemeIli" Type="nvarchar" MaxLength="500" />
+          <Property Name="YuklemeIlcesi" Type="nvarchar" MaxLength="500" />
+          <Property Name="SiparisDurumu" Type="nvarchar" MaxLength="500" />
+          <Property Name="TeslimNoktasi" Type="nvarchar" MaxLength="500" />
+          <Property Name="TeslimIli" Type="nvarchar" MaxLength="500" />
+          <Property Name="TeslimIlcesi" Type="nvarchar" MaxLength="500" />
+          <Property Name="MusteriSiparisNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="MusteriReferansNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="500" />
+          <Property Name="SiparisAcan" Type="nvarchar" MaxLength="500" />
+          <Property Name="SiparisAcilisZamani" Type="date" />
+          <Property Name="PozisyonNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="ToplamKg" Type="nvarchar" MaxLength="500" />
+          <Property Name="TahminiVaris" Type="datetime" />
+          <Property Name="TahminiKm" Type="nvarchar" MaxLength="500" />
+          <Property Name="Gerceklesen" Type="datetime" />
+          <Property Name="YuklemeNoktasiVarısTarihi" Type="datetime" />
+          <Property Name="YuklemeNoktasiCikisTarihi" Type="datetime" />
+          <Property Name="TeslimNoktasiCikisTarihi" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TblGiris">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KullaniciAdi" Type="nvarchar" MaxLength="300" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="300" />
+          <Property Name="Rol" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TblMesafe">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="YuklemeIl" Type="nvarchar" MaxLength="400" />
+          <Property Name="YuklemeIlce" Type="nvarchar" MaxLength="400" />
+          <Property Name="TahliyeIl" Type="nvarchar" MaxLength="400" />
+          <Property Name="TahliyeIlce" Type="nvarchar" MaxLength="400" />
+          <Property Name="ToplamMesafe" Type="nvarchar" MaxLength="400" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblPlakaAtandi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlakaDurumu" Type="nvarchar" MaxLength="300" />
+          <Property Name="SeferTarihi" Type="datetime" />
+          <Property Name="Plaka" Type="nvarchar" MaxLength="500" />
+          <Property Name="SurucuAdSoyad" Type="nvarchar" MaxLength="300" />
+          <Property Name="SurucuTelefon" Type="nvarchar" MaxLength="300" />
+          <Property Name="SurucuTC" Type="nvarchar" MaxLength="11" />
+          <Property Name="MusteriAdi" Type="nvarchar" MaxLength="500" />
+          <Property Name="YuklemeNoktasi" Type="nvarchar" MaxLength="500" />
+          <Property Name="YuklemeIl" Type="nvarchar" MaxLength="500" />
+          <Property Name="YuklemeIlcesi" Type="nvarchar" MaxLength="500" />
+          <Property Name="Tonaj" Type="nvarchar" MaxLength="500" />
+          <Property Name="TeslimNoktasi" Type="nvarchar" MaxLength="500" />
+          <Property Name="TeslimIli" Type="nvarchar" MaxLength="500" />
+          <Property Name="TeslimIlcesi" Type="nvarchar" MaxLength="500" />
+          <Property Name="NavlunTutar" Type="nvarchar" MaxLength="500" />
+          <Property Name="Aciklama" Type="nvarchar(max)" />
+          <Property Name="SonNokta" Type="nvarchar" MaxLength="300" />
+          <Property Name="TahminiVaris" Type="datetime" />
+          <Property Name="Gerceklesen" Type="datetime" />
+          <Property Name="YuklemeNoktasiVarısTarihi" Type="datetime" />
+          <Property Name="YuklemeNoktasiCikisTarihi" Type="datetime" />
+          <Property Name="TeslimNoktasiCikisTarihi" Type="datetime" />
+          <Property Name="TMSOrderID" Type="nvarchar" MaxLength="500" />
+          <Property Name="PozisyonNo" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TblPlakaDurumları">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Plaka" Type="nvarchar" MaxLength="500" />
+          <Property Name="SurucuAdı" Type="nvarchar" MaxLength="500" />
+          <Property Name="SurucuTelefon" Type="nvarchar" MaxLength="200" />
+          <Property Name="SurucuTC" Type="nvarchar" MaxLength="11" />
+          <Property Name="SeferTarihi" Type="datetime" />
+          <Property Name="YuklemeNoktası" Type="nvarchar" MaxLength="500" />
+          <Property Name="TeslimNoktası" Type="nvarchar" MaxLength="500" />
+          <Property Name="SonIl" Type="nvarchar" MaxLength="500" />
+          <Property Name="SonIlce" Type="nvarchar" MaxLength="500" />
+          <Property Name="SonNokta" Type="nvarchar" MaxLength="500" />
+          <Property Name="TahminiVarisZamani" Type="datetime" />
+          <Property Name="YuklemeYeriArasındaKm" Type="nvarchar" MaxLength="200" />
+          <Property Name="Durum" Type="nvarchar" MaxLength="500" />
+          <Property Name="BaslangıcTarihi" Type="datetime" />
+          <Property Name="BitisTarihi" Type="datetime" />
+          <Property Name="Aciklama" Type="nvarchar(max)" />
+          <Property Name="Sebep" Type="varchar" MaxLength="255" />
+          <Property Name="Tarih" Type="date" />
+        </EntityType>
+        <EntityType Name="TblRezerve">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlakaDurumu" Type="nvarchar" MaxLength="300" />
+          <Property Name="SeferTarihi" Type="datetime" />
+          <Property Name="Plaka" Type="nvarchar" MaxLength="500" />
+          <Property Name="SurucuAdSoyad" Type="nvarchar" MaxLength="300" />
+          <Property Name="SurucuTelefon" Type="nvarchar" MaxLength="300" />
+          <Property Name="SurucuTC" Type="nvarchar" MaxLength="11" />
+          <Property Name="MusteriAdi" Type="nvarchar" MaxLength="300" />
+          <Property Name="YuklemeNoktasi" Type="nvarchar" MaxLength="500" />
+          <Property Name="YuklemeIl" Type="nvarchar" MaxLength="500" />
+          <Property Name="YuklemeIlcesi" Type="nvarchar" MaxLength="500" />
+          <Property Name="Tonaj" Type="nvarchar" MaxLength="500" />
+          <Property Name="TeslimNoktasi" Type="nvarchar" MaxLength="500" />
+          <Property Name="TeslimIli" Type="nvarchar" MaxLength="500" />
+          <Property Name="TeslimIlcesi" Type="nvarchar" MaxLength="500" />
+          <Property Name="NavlunTutar" Type="nvarchar" MaxLength="500" />
+          <Property Name="Aciklama" Type="nvarchar(max)" />
+          <Property Name="SonNokta" Type="nvarchar" MaxLength="300" />
+          <Property Name="RezervasyonTarihi" Type="datetime" />
+          <Property Name="TahminiVaris" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TblSebepler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sebep" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="TblSebeplerListesi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Plaka" Type="nvarchar" MaxLength="500" />
+          <Property Name="SurucuAdı" Type="nvarchar" MaxLength="500" />
+          <Property Name="SurucuTelefon" Type="nvarchar" MaxLength="500" />
+          <Property Name="SurucuTC" Type="nvarchar" MaxLength="500" />
+          <Property Name="SonIl" Type="nvarchar" MaxLength="500" />
+          <Property Name="SonIlce" Type="nvarchar" MaxLength="500" />
+          <Property Name="Sebep" Type="nvarchar" MaxLength="500" />
+          <Property Name="BaslangıcTarihi" Type="datetime" />
+          <Property Name="BitisTarihi" Type="datetime" />
+          <Property Name="Aciklama" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TblSiparisListesi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Plaka" Type="nvarchar" MaxLength="500" />
+          <Property Name="ReferansNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="TMSOrderID" Type="nvarchar" MaxLength="500" />
+          <Property Name="Firma" Type="nvarchar" MaxLength="500" />
+          <Property Name="Proje" Type="nvarchar" MaxLength="500" />
+          <Property Name="HizmetTipi" Type="nvarchar" MaxLength="500" />
+          <Property Name="IstenilenAracTipi" Type="nvarchar" MaxLength="500" />
+          <Property Name="SiparisNumarasi" Type="nvarchar" MaxLength="500" />
+          <Property Name="SiparisTarihi" Type="date" />
+          <Property Name="YuklemeTarihi" Type="date" />
+          <Property Name="TeslimTarihi" Type="date" />
+          <Property Name="NoktaSayisi" Type="nvarchar" MaxLength="500" />
+          <Property Name="YuklemeNoktasi" Type="nvarchar" MaxLength="500" />
+          <Property Name="YuklemeIli" Type="nvarchar" MaxLength="500" />
+          <Property Name="YuklemeIlcesi" Type="nvarchar" MaxLength="500" />
+          <Property Name="SiparisDurumu" Type="nvarchar" MaxLength="500" />
+          <Property Name="TeslimNoktasi" Type="nvarchar" MaxLength="500" />
+          <Property Name="TeslimIli" Type="nvarchar" MaxLength="500" />
+          <Property Name="TeslimIlcesi" Type="nvarchar" MaxLength="500" />
+          <Property Name="MusteriSiparisNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="MusteriReferansNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="500" />
+          <Property Name="SiparisAcan" Type="nvarchar" MaxLength="500" />
+          <Property Name="SiparisAcilisZamani" Type="date" />
+          <Property Name="PozisyonNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="ToplamKg" Type="nvarchar" MaxLength="500" />
+          <Property Name="TahminiVaris" Type="datetime" />
+          <Property Name="TahminiKm" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TblSiparisListesiYedek">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Plaka" Type="nvarchar" MaxLength="500" />
+          <Property Name="ReferansNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="TMSOrderID" Type="nvarchar" MaxLength="500" />
+          <Property Name="Firma" Type="nvarchar" MaxLength="500" />
+          <Property Name="Proje" Type="nvarchar" MaxLength="500" />
+          <Property Name="HizmetTipi" Type="nvarchar" MaxLength="500" />
+          <Property Name="IstenilenAracTipi" Type="nvarchar" MaxLength="500" />
+          <Property Name="SiparisNumarasi" Type="nvarchar" MaxLength="500" />
+          <Property Name="SiparisTarihi" Type="date" />
+          <Property Name="YuklemeTarihi" Type="date" />
+          <Property Name="TeslimTarihi" Type="date" />
+          <Property Name="NoktaSayisi" Type="nvarchar" MaxLength="500" />
+          <Property Name="YuklemeNoktasi" Type="nvarchar" MaxLength="500" />
+          <Property Name="YuklemeIli" Type="nvarchar" MaxLength="500" />
+          <Property Name="YuklemeIlcesi" Type="nvarchar" MaxLength="500" />
+          <Property Name="SiparisDurumu" Type="nvarchar" MaxLength="500" />
+          <Property Name="TeslimNoktasi" Type="nvarchar" MaxLength="500" />
+          <Property Name="TeslimIli" Type="nvarchar" MaxLength="500" />
+          <Property Name="TeslimIlcesi" Type="nvarchar" MaxLength="500" />
+          <Property Name="MusteriSiparisNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="MusteriReferansNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="500" />
+          <Property Name="SiparisAcan" Type="nvarchar" MaxLength="500" />
+          <Property Name="SiparisAcilisZamani" Type="date" />
+          <Property Name="PozisyonNo" Type="nvarchar" MaxLength="500" />
+          <Property Name="ToplamKg" Type="nvarchar" MaxLength="500" />
+          <Property Name="TahminiVaris" Type="datetime" />
+          <Property Name="TahminiKm" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TblTamamlananSeferler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlakaDurumu" Type="nvarchar" MaxLength="300" />
+          <Property Name="SeferTarihi" Type="datetime" />
+          <Property Name="Plaka" Type="nvarchar" MaxLength="500" />
+          <Property Name="SurucuAdSoyad" Type="nvarchar" MaxLength="500" />
+          <Property Name="SurucuTelefon" Type="nvarchar" MaxLength="500" />
+          <Property Name="SurucuTC" Type="nvarchar" MaxLength="11" />
+          <Property Name="MusteriAdi" Type="nvarchar" MaxLength="500" />
+          <Property Name="YuklemeNoktasi" Type="nvarchar" MaxLength="500" />
+          <Property Name="YuklemeIl" Type="nvarchar" MaxLength="500" />
+          <Property Name="YuklemeIlcesi" Type="nvarchar" MaxLength="500" />
+          <Property Name="Tonaj" Type="nvarchar" MaxLength="500" />
+          <Property Name="TeslimNoktasi" Type="nvarchar" MaxLength="500" />
+          <Property Name="TeslimIli" Type="nvarchar" MaxLength="500" />
+          <Property Name="TeslimIlcesi" Type="nvarchar" MaxLength="500" />
+          <Property Name="NavlunTutar" Type="nvarchar" MaxLength="500" />
+          <Property Name="Aciklama" Type="nvarchar(max)" />
+          <Property Name="SonNokta" Type="nvarchar" MaxLength="500" />
+          <Property Name="TahminiVaris" Type="datetime" />
+          <Property Name="Gerceklesen" Type="datetime" />
+          <Property Name="YuklemeNoktasiVarısTarihi" Type="datetime" />
+          <Property Name="YuklemeNoktasiCikisTarihi" Type="datetime" />
+          <Property Name="TeslimNoktasiCikisTarihi" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="FiloTakipModelStoreContainer">
+          <EntitySet Name="TblAraclar" EntityType="Self.TblAraclar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblAracStatu" EntityType="Self.TblAracStatu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblBolgeler" EntityType="Self.TblBolgeler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblDetay" EntityType="Self.TblDetay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblGiris" EntityType="Self.TblGiris" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblMesafe" EntityType="Self.TblMesafe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblPlakaAtandi" EntityType="Self.TblPlakaAtandi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblPlakaDurumları" EntityType="Self.TblPlakaDurumları" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblRezerve" EntityType="Self.TblRezerve" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblSebepler" EntityType="Self.TblSebepler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblSebeplerListesi" EntityType="Self.TblSebeplerListesi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblSiparisListesi" EntityType="Self.TblSiparisListesi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblSiparisListesiYedek" EntityType="Self.TblSiparisListesiYedek" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblTamamlananSeferler" EntityType="Self.TblTamamlananSeferler" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FiloTakipModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TblAraclar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CekiciDorse" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="SurucuIsim" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Telefon" Type="Double" />
+          <Property Name="Tc" Type="Double" />
+          <Property Name="SurucuDogumYil" Type="Double" />
+          <Property Name="IkametAdresi" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="CekiciRuhsatNo" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="TedarikciIsim" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="AracMarka" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="AracModel" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="CekiciMuayene" Type="DateTime" Precision="3" />
+          <Property Name="DorseMuayene" Type="DateTime" Precision="3" />
+          <Property Name="TrafikSigorta" Type="DateTime" Precision="3" />
+          <Property Name="AracYil" Type="Double" />
+          <Property Name="DorseYil" Type="Double" />
+          <Property Name="IsBasiKm" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Bolge" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="IsBasiTarih" Type="DateTime" Precision="3" />
+          <Property Name="DorseTip" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Liftmaster" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="SozlesmeDurumu" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Dingil" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="GpsDurum" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="HgsDurum" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="TedarikciOzmalAracSigortaDurumu" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="OdakK1" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="DorseRuhsatNo" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblAracStatu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Statu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblBolgeler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="İl" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Bolge" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblMesafe">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="YuklemeIl" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="YuklemeIlce" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="TahliyeIl" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="TahliyeIlce" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="ToplamMesafe" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="TblPlakaDurumları">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Plaka" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SurucuAdı" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SurucuTelefon" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SurucuTC" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="SeferTarihi" Type="DateTime" Precision="3" />
+          <Property Name="YuklemeNoktası" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TeslimNoktası" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SonIl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SonIlce" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SonNokta" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TahminiVarisZamani" Type="DateTime" Precision="3" />
+          <Property Name="YuklemeYeriArasındaKm" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Durum" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="BaslangıcTarihi" Type="DateTime" Precision="3" />
+          <Property Name="BitisTarihi" Type="DateTime" Precision="3" />
+          <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Sebep" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Tarih" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="TblSebepler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sebep" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblSiparisListesi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Plaka" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ReferansNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TMSOrderID" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Firma" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Proje" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HizmetTipi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IstenilenAracTipi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SiparisNumarasi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SiparisTarihi" Type="DateTime" Precision="0" />
+          <Property Name="YuklemeTarihi" Type="DateTime" Precision="0" />
+          <Property Name="TeslimTarihi" Type="DateTime" Precision="0" />
+          <Property Name="NoktaSayisi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="YuklemeNoktasi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="YuklemeIli" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="YuklemeIlcesi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SiparisDurumu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TeslimNoktasi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TeslimIli" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TeslimIlcesi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MusteriSiparisNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MusteriReferansNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Aciklama" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SiparisAcan" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SiparisAcilisZamani" Type="DateTime" Precision="0" />
+          <Property Name="PozisyonNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ToplamKg" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TahminiVaris" Type="DateTime" Precision="3" />
+          <Property Name="TahminiKm" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="FiloTakipEntities9" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TblAraclar" EntityType="Self.TblAraclar" />
+          <EntitySet Name="TblAracStatu" EntityType="Self.TblAracStatu" />
+          <EntitySet Name="TblBolgeler" EntityType="Self.TblBolgeler" />
+          <EntitySet Name="TblMesafe" EntityType="Self.TblMesafe" />
+          <EntitySet Name="TblPlakaDurumları" EntityType="Self.TblPlakaDurumları" />
+          <EntitySet Name="TblSebepler" EntityType="Self.TblSebepler" />
+          <EntitySet Name="TblSiparisListesi" EntityType="Self.TblSiparisListesi" />
+          <EntitySet Name="TblRezerve" EntityType="FiloTakipModel.TblRezerve" />
+          <EntitySet Name="TblTamamlananSeferler" EntityType="FiloTakipModel.TblTamamlananSeferler" />
+          <EntitySet Name="TblSebeplerListesi" EntityType="FiloTakipModel.TblSebeplerListesi" />
+          <EntitySet Name="TblPlakaAtandi" EntityType="FiloTakipModel.TblPlakaAtandi" />
+          <EntitySet Name="TblSiparisListesiYedek" EntityType="FiloTakipModel.TblSiparisListesiYedek" />
+          <EntitySet Name="TblDetay" EntityType="FiloTakipModel.TblDetay" />
+          <EntitySet Name="TblGiris" EntityType="FiloTakipModel.TblGiris" />
+        </EntityContainer>
+        <EntityType Name="TblRezerve">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlakaDurumu" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="SeferTarihi" Type="DateTime" Precision="3" />
+          <Property Name="Plaka" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SurucuAdSoyad" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="SurucuTelefon" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="SurucuTC" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="MusteriAdi" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="YuklemeNoktasi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="YuklemeIl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="YuklemeIlcesi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Tonaj" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TeslimNoktasi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TeslimIli" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TeslimIlcesi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NavlunTutar" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SonNokta" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="RezervasyonTarihi" Type="DateTime" Precision="3" />
+          <Property Name="TahminiVaris" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TblTamamlananSeferler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlakaDurumu" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="SeferTarihi" Type="DateTime" Precision="3" />
+          <Property Name="Plaka" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SurucuAdSoyad" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SurucuTelefon" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SurucuTC" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="MusteriAdi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="YuklemeNoktasi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="YuklemeIl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="YuklemeIlcesi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Tonaj" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TeslimNoktasi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TeslimIli" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TeslimIlcesi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NavlunTutar" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SonNokta" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TahminiVaris" Type="DateTime" Precision="3" />
+          <Property Name="Gerceklesen" Type="DateTime" Precision="3" />
+          <Property Name="YuklemeNoktasiVarısTarihi" Type="DateTime" Precision="3" />
+          <Property Name="YuklemeNoktasiCikisTarihi" Type="DateTime" Precision="3" />
+          <Property Name="TeslimNoktasiCikisTarihi" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TblSebeplerListesi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Plaka" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SurucuAdı" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SurucuTelefon" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SurucuTC" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SonIl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SonIlce" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Sebep" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="BaslangıcTarihi" Type="DateTime" Precision="3" />
+          <Property Name="BitisTarihi" Type="DateTime" Precision="3" />
+          <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblPlakaAtandi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlakaDurumu" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="SeferTarihi" Type="DateTime" Precision="3" />
+          <Property Name="Plaka" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SurucuAdSoyad" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="SurucuTelefon" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="SurucuTC" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="MusteriAdi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="YuklemeNoktasi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="YuklemeIl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="YuklemeIlcesi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Tonaj" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TeslimNoktasi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TeslimIli" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TeslimIlcesi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NavlunTutar" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SonNokta" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="TahminiVaris" Type="DateTime" Precision="3" />
+          <Property Name="Gerceklesen" Type="DateTime" Precision="3" />
+          <Property Name="YuklemeNoktasiVarısTarihi" Type="DateTime" Precision="3" />
+          <Property Name="YuklemeNoktasiCikisTarihi" Type="DateTime" Precision="3" />
+          <Property Name="TeslimNoktasiCikisTarihi" Type="DateTime" Precision="3" />
+          <Property Name="TMSOrderID" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PozisyonNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblSiparisListesiYedek">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Plaka" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ReferansNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TMSOrderID" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Firma" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Proje" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HizmetTipi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IstenilenAracTipi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SiparisNumarasi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SiparisTarihi" Type="DateTime" Precision="0" />
+          <Property Name="YuklemeTarihi" Type="DateTime" Precision="0" />
+          <Property Name="TeslimTarihi" Type="DateTime" Precision="0" />
+          <Property Name="NoktaSayisi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="YuklemeNoktasi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="YuklemeIli" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="YuklemeIlcesi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SiparisDurumu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TeslimNoktasi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TeslimIli" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TeslimIlcesi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MusteriSiparisNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MusteriReferansNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Aciklama" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SiparisAcan" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SiparisAcilisZamani" Type="DateTime" Precision="0" />
+          <Property Name="PozisyonNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ToplamKg" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TahminiVaris" Type="DateTime" Precision="3" />
+          <Property Name="TahminiKm" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblDetay">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Plaka" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ReferansNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TMSOrderID" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Firma" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Proje" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HizmetTipi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IstenilenAracTipi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SiparisNumarasi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SiparisTarihi" Type="DateTime" Precision="0" />
+          <Property Name="YuklemeTarihi" Type="DateTime" Precision="0" />
+          <Property Name="TeslimTarihi" Type="DateTime" Precision="0" />
+          <Property Name="NoktaSayisi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="YuklemeNoktasi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="YuklemeIli" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="YuklemeIlcesi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SiparisDurumu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TeslimNoktasi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TeslimIli" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TeslimIlcesi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MusteriSiparisNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MusteriReferansNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Aciklama" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SiparisAcan" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SiparisAcilisZamani" Type="DateTime" Precision="0" />
+          <Property Name="PozisyonNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ToplamKg" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TahminiVaris" Type="DateTime" Precision="3" />
+          <Property Name="TahminiKm" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Gerceklesen" Type="DateTime" Precision="3" />
+          <Property Name="YuklemeNoktasiVarısTarihi" Type="DateTime" Precision="3" />
+          <Property Name="YuklemeNoktasiCikisTarihi" Type="DateTime" Precision="3" />
+          <Property Name="TeslimNoktasiCikisTarihi" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TblGiris">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KullaniciAdi" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Sifre" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Rol" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FiloTakipModelStoreContainer" CdmEntityContainer="FiloTakipEntities9">
+          <EntitySetMapping Name="TblAraclar">
+            <EntityTypeMapping TypeName="FiloTakipModel.TblAraclar">
+              <MappingFragment StoreEntitySet="TblAraclar">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CekiciDorse" ColumnName="CekiciDorse" />
+                <ScalarProperty Name="SurucuIsim" ColumnName="SurucuIsim" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Tc" ColumnName="Tc" />
+                <ScalarProperty Name="SurucuDogumYil" ColumnName="SurucuDogumYil" />
+                <ScalarProperty Name="IkametAdresi" ColumnName="IkametAdresi" />
+                <ScalarProperty Name="CekiciRuhsatNo" ColumnName="CekiciRuhsatNo" />
+                <ScalarProperty Name="TedarikciIsim" ColumnName="TedarikciIsim" />
+                <ScalarProperty Name="AracMarka" ColumnName="AracMarka" />
+                <ScalarProperty Name="AracModel" ColumnName="AracModel" />
+                <ScalarProperty Name="CekiciMuayene" ColumnName="CekiciMuayene" />
+                <ScalarProperty Name="DorseMuayene" ColumnName="DorseMuayene" />
+                <ScalarProperty Name="TrafikSigorta" ColumnName="TrafikSigorta" />
+                <ScalarProperty Name="AracYil" ColumnName="AracYil" />
+                <ScalarProperty Name="DorseYil" ColumnName="DorseYil" />
+                <ScalarProperty Name="IsBasiKm" ColumnName="IsBasiKm" />
+                <ScalarProperty Name="Bolge" ColumnName="Bolge" />
+                <ScalarProperty Name="IsBasiTarih" ColumnName="IsBasiTarih" />
+                <ScalarProperty Name="DorseTip" ColumnName="DorseTip" />
+                <ScalarProperty Name="Liftmaster" ColumnName="Liftmaster" />
+                <ScalarProperty Name="SozlesmeDurumu" ColumnName="SozlesmeDurumu" />
+                <ScalarProperty Name="Dingil" ColumnName="Dingil" />
+                <ScalarProperty Name="GpsDurum" ColumnName="GpsDurum" />
+                <ScalarProperty Name="HgsDurum" ColumnName="HgsDurum" />
+                <ScalarProperty Name="TedarikciOzmalAracSigortaDurumu" ColumnName="TedarikciOzmalAracSigortaDurumu" />
+                <ScalarProperty Name="OdakK1" ColumnName="OdakK1" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="DorseRuhsatNo" ColumnName="DorseRuhsatNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAracStatu">
+            <EntityTypeMapping TypeName="FiloTakipModel.TblAracStatu">
+              <MappingFragment StoreEntitySet="TblAracStatu">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Statu" ColumnName="Statu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblBolgeler">
+            <EntityTypeMapping TypeName="FiloTakipModel.TblBolgeler">
+              <MappingFragment StoreEntitySet="TblBolgeler">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="İl" ColumnName="İl" />
+                <ScalarProperty Name="Bolge" ColumnName="Bolge" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblMesafe">
+            <EntityTypeMapping TypeName="FiloTakipModel.TblMesafe">
+              <MappingFragment StoreEntitySet="TblMesafe">
+                <ScalarProperty Name="YuklemeIl" ColumnName="YuklemeIl" />
+                <ScalarProperty Name="YuklemeIlce" ColumnName="YuklemeIlce" />
+                <ScalarProperty Name="TahliyeIl" ColumnName="TahliyeIl" />
+                <ScalarProperty Name="TahliyeIlce" ColumnName="TahliyeIlce" />
+                <ScalarProperty Name="ToplamMesafe" ColumnName="ToplamMesafe" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblPlakaDurumları">
+            <EntityTypeMapping TypeName="FiloTakipModel.TblPlakaDurumları">
+              <MappingFragment StoreEntitySet="TblPlakaDurumları">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Plaka" ColumnName="Plaka" />
+                <ScalarProperty Name="SurucuAdı" ColumnName="SurucuAdı" />
+                <ScalarProperty Name="SurucuTelefon" ColumnName="SurucuTelefon" />
+                <ScalarProperty Name="SurucuTC" ColumnName="SurucuTC" />
+                <ScalarProperty Name="SeferTarihi" ColumnName="SeferTarihi" />
+                <ScalarProperty Name="YuklemeNoktası" ColumnName="YuklemeNoktası" />
+                <ScalarProperty Name="TeslimNoktası" ColumnName="TeslimNoktası" />
+                <ScalarProperty Name="SonIl" ColumnName="SonIl" />
+                <ScalarProperty Name="SonIlce" ColumnName="SonIlce" />
+                <ScalarProperty Name="SonNokta" ColumnName="SonNokta" />
+                <ScalarProperty Name="TahminiVarisZamani" ColumnName="TahminiVarisZamani" />
+                <ScalarProperty Name="YuklemeYeriArasındaKm" ColumnName="YuklemeYeriArasındaKm" />
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
+                <ScalarProperty Name="BaslangıcTarihi" ColumnName="BaslangıcTarihi" />
+                <ScalarProperty Name="BitisTarihi" ColumnName="BitisTarihi" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Sebep" ColumnName="Sebep" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblSebepler">
+            <EntityTypeMapping TypeName="FiloTakipModel.TblSebepler">
+              <MappingFragment StoreEntitySet="TblSebepler">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Sebep" ColumnName="Sebep" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblSiparisListesi">
+            <EntityTypeMapping TypeName="FiloTakipModel.TblSiparisListesi">
+              <MappingFragment StoreEntitySet="TblSiparisListesi">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Plaka" ColumnName="Plaka" />
+                <ScalarProperty Name="ReferansNo" ColumnName="ReferansNo" />
+                <ScalarProperty Name="TMSOrderID" ColumnName="TMSOrderID" />
+                <ScalarProperty Name="Firma" ColumnName="Firma" />
+                <ScalarProperty Name="Proje" ColumnName="Proje" />
+                <ScalarProperty Name="HizmetTipi" ColumnName="HizmetTipi" />
+                <ScalarProperty Name="IstenilenAracTipi" ColumnName="IstenilenAracTipi" />
+                <ScalarProperty Name="SiparisNumarasi" ColumnName="SiparisNumarasi" />
+                <ScalarProperty Name="SiparisTarihi" ColumnName="SiparisTarihi" />
+                <ScalarProperty Name="YuklemeTarihi" ColumnName="YuklemeTarihi" />
+                <ScalarProperty Name="TeslimTarihi" ColumnName="TeslimTarihi" />
+                <ScalarProperty Name="NoktaSayisi" ColumnName="NoktaSayisi" />
+                <ScalarProperty Name="YuklemeNoktasi" ColumnName="YuklemeNoktasi" />
+                <ScalarProperty Name="YuklemeIli" ColumnName="YuklemeIli" />
+                <ScalarProperty Name="YuklemeIlcesi" ColumnName="YuklemeIlcesi" />
+                <ScalarProperty Name="SiparisDurumu" ColumnName="SiparisDurumu" />
+                <ScalarProperty Name="TeslimNoktasi" ColumnName="TeslimNoktasi" />
+                <ScalarProperty Name="TeslimIli" ColumnName="TeslimIli" />
+                <ScalarProperty Name="TeslimIlcesi" ColumnName="TeslimIlcesi" />
+                <ScalarProperty Name="MusteriSiparisNo" ColumnName="MusteriSiparisNo" />
+                <ScalarProperty Name="MusteriReferansNo" ColumnName="MusteriReferansNo" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="SiparisAcan" ColumnName="SiparisAcan" />
+                <ScalarProperty Name="SiparisAcilisZamani" ColumnName="SiparisAcilisZamani" />
+                <ScalarProperty Name="PozisyonNo" ColumnName="PozisyonNo" />
+                <ScalarProperty Name="ToplamKg" ColumnName="ToplamKg" />
+                <ScalarProperty Name="TahminiVaris" ColumnName="TahminiVaris" />
+                <ScalarProperty Name="TahminiKm" ColumnName="TahminiKm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblRezerve">
+            <EntityTypeMapping TypeName="FiloTakipModel.TblRezerve">
+              <MappingFragment StoreEntitySet="TblRezerve">
+                <ScalarProperty Name="TahminiVaris" ColumnName="TahminiVaris" />
+                <ScalarProperty Name="RezervasyonTarihi" ColumnName="RezervasyonTarihi" />
+                <ScalarProperty Name="SonNokta" ColumnName="SonNokta" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="NavlunTutar" ColumnName="NavlunTutar" />
+                <ScalarProperty Name="TeslimIlcesi" ColumnName="TeslimIlcesi" />
+                <ScalarProperty Name="TeslimIli" ColumnName="TeslimIli" />
+                <ScalarProperty Name="TeslimNoktasi" ColumnName="TeslimNoktasi" />
+                <ScalarProperty Name="Tonaj" ColumnName="Tonaj" />
+                <ScalarProperty Name="YuklemeIlcesi" ColumnName="YuklemeIlcesi" />
+                <ScalarProperty Name="YuklemeIl" ColumnName="YuklemeIl" />
+                <ScalarProperty Name="YuklemeNoktasi" ColumnName="YuklemeNoktasi" />
+                <ScalarProperty Name="MusteriAdi" ColumnName="MusteriAdi" />
+                <ScalarProperty Name="SurucuTC" ColumnName="SurucuTC" />
+                <ScalarProperty Name="SurucuTelefon" ColumnName="SurucuTelefon" />
+                <ScalarProperty Name="SurucuAdSoyad" ColumnName="SurucuAdSoyad" />
+                <ScalarProperty Name="Plaka" ColumnName="Plaka" />
+                <ScalarProperty Name="SeferTarihi" ColumnName="SeferTarihi" />
+                <ScalarProperty Name="PlakaDurumu" ColumnName="PlakaDurumu" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblTamamlananSeferler">
+            <EntityTypeMapping TypeName="FiloTakipModel.TblTamamlananSeferler">
+              <MappingFragment StoreEntitySet="TblTamamlananSeferler">
+                <ScalarProperty Name="TeslimNoktasiCikisTarihi" ColumnName="TeslimNoktasiCikisTarihi" />
+                <ScalarProperty Name="YuklemeNoktasiCikisTarihi" ColumnName="YuklemeNoktasiCikisTarihi" />
+                <ScalarProperty Name="YuklemeNoktasiVarısTarihi" ColumnName="YuklemeNoktasiVarısTarihi" />
+                <ScalarProperty Name="Gerceklesen" ColumnName="Gerceklesen" />
+                <ScalarProperty Name="TahminiVaris" ColumnName="TahminiVaris" />
+                <ScalarProperty Name="SonNokta" ColumnName="SonNokta" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="NavlunTutar" ColumnName="NavlunTutar" />
+                <ScalarProperty Name="TeslimIlcesi" ColumnName="TeslimIlcesi" />
+                <ScalarProperty Name="TeslimIli" ColumnName="TeslimIli" />
+                <ScalarProperty Name="TeslimNoktasi" ColumnName="TeslimNoktasi" />
+                <ScalarProperty Name="Tonaj" ColumnName="Tonaj" />
+                <ScalarProperty Name="YuklemeIlcesi" ColumnName="YuklemeIlcesi" />
+                <ScalarProperty Name="YuklemeIl" ColumnName="YuklemeIl" />
+                <ScalarProperty Name="YuklemeNoktasi" ColumnName="YuklemeNoktasi" />
+                <ScalarProperty Name="MusteriAdi" ColumnName="MusteriAdi" />
+                <ScalarProperty Name="SurucuTC" ColumnName="SurucuTC" />
+                <ScalarProperty Name="SurucuTelefon" ColumnName="SurucuTelefon" />
+                <ScalarProperty Name="SurucuAdSoyad" ColumnName="SurucuAdSoyad" />
+                <ScalarProperty Name="Plaka" ColumnName="Plaka" />
+                <ScalarProperty Name="SeferTarihi" ColumnName="SeferTarihi" />
+                <ScalarProperty Name="PlakaDurumu" ColumnName="PlakaDurumu" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblSebeplerListesi">
+            <EntityTypeMapping TypeName="FiloTakipModel.TblSebeplerListesi">
+              <MappingFragment StoreEntitySet="TblSebeplerListesi">
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="BitisTarihi" ColumnName="BitisTarihi" />
+                <ScalarProperty Name="BaslangıcTarihi" ColumnName="BaslangıcTarihi" />
+                <ScalarProperty Name="Sebep" ColumnName="Sebep" />
+                <ScalarProperty Name="SonIlce" ColumnName="SonIlce" />
+                <ScalarProperty Name="SonIl" ColumnName="SonIl" />
+                <ScalarProperty Name="SurucuTC" ColumnName="SurucuTC" />
+                <ScalarProperty Name="SurucuTelefon" ColumnName="SurucuTelefon" />
+                <ScalarProperty Name="SurucuAdı" ColumnName="SurucuAdı" />
+                <ScalarProperty Name="Plaka" ColumnName="Plaka" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblPlakaAtandi">
+            <EntityTypeMapping TypeName="FiloTakipModel.TblPlakaAtandi">
+              <MappingFragment StoreEntitySet="TblPlakaAtandi">
+                <ScalarProperty Name="PozisyonNo" ColumnName="PozisyonNo" />
+                <ScalarProperty Name="TMSOrderID" ColumnName="TMSOrderID" />
+                <ScalarProperty Name="TeslimNoktasiCikisTarihi" ColumnName="TeslimNoktasiCikisTarihi" />
+                <ScalarProperty Name="YuklemeNoktasiCikisTarihi" ColumnName="YuklemeNoktasiCikisTarihi" />
+                <ScalarProperty Name="YuklemeNoktasiVarısTarihi" ColumnName="YuklemeNoktasiVarısTarihi" />
+                <ScalarProperty Name="Gerceklesen" ColumnName="Gerceklesen" />
+                <ScalarProperty Name="TahminiVaris" ColumnName="TahminiVaris" />
+                <ScalarProperty Name="SonNokta" ColumnName="SonNokta" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="NavlunTutar" ColumnName="NavlunTutar" />
+                <ScalarProperty Name="TeslimIlcesi" ColumnName="TeslimIlcesi" />
+                <ScalarProperty Name="TeslimIli" ColumnName="TeslimIli" />
+                <ScalarProperty Name="TeslimNoktasi" ColumnName="TeslimNoktasi" />
+                <ScalarProperty Name="Tonaj" ColumnName="Tonaj" />
+                <ScalarProperty Name="YuklemeIlcesi" ColumnName="YuklemeIlcesi" />
+                <ScalarProperty Name="YuklemeIl" ColumnName="YuklemeIl" />
+                <ScalarProperty Name="YuklemeNoktasi" ColumnName="YuklemeNoktasi" />
+                <ScalarProperty Name="MusteriAdi" ColumnName="MusteriAdi" />
+                <ScalarProperty Name="SurucuTC" ColumnName="SurucuTC" />
+                <ScalarProperty Name="SurucuTelefon" ColumnName="SurucuTelefon" />
+                <ScalarProperty Name="SurucuAdSoyad" ColumnName="SurucuAdSoyad" />
+                <ScalarProperty Name="Plaka" ColumnName="Plaka" />
+                <ScalarProperty Name="SeferTarihi" ColumnName="SeferTarihi" />
+                <ScalarProperty Name="PlakaDurumu" ColumnName="PlakaDurumu" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblSiparisListesiYedek">
+            <EntityTypeMapping TypeName="FiloTakipModel.TblSiparisListesiYedek">
+              <MappingFragment StoreEntitySet="TblSiparisListesiYedek">
+                <ScalarProperty Name="TahminiKm" ColumnName="TahminiKm" />
+                <ScalarProperty Name="TahminiVaris" ColumnName="TahminiVaris" />
+                <ScalarProperty Name="ToplamKg" ColumnName="ToplamKg" />
+                <ScalarProperty Name="PozisyonNo" ColumnName="PozisyonNo" />
+                <ScalarProperty Name="SiparisAcilisZamani" ColumnName="SiparisAcilisZamani" />
+                <ScalarProperty Name="SiparisAcan" ColumnName="SiparisAcan" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="MusteriReferansNo" ColumnName="MusteriReferansNo" />
+                <ScalarProperty Name="MusteriSiparisNo" ColumnName="MusteriSiparisNo" />
+                <ScalarProperty Name="TeslimIlcesi" ColumnName="TeslimIlcesi" />
+                <ScalarProperty Name="TeslimIli" ColumnName="TeslimIli" />
+                <ScalarProperty Name="TeslimNoktasi" ColumnName="TeslimNoktasi" />
+                <ScalarProperty Name="SiparisDurumu" ColumnName="SiparisDurumu" />
+                <ScalarProperty Name="YuklemeIlcesi" ColumnName="YuklemeIlcesi" />
+                <ScalarProperty Name="YuklemeIli" ColumnName="YuklemeIli" />
+                <ScalarProperty Name="YuklemeNoktasi" ColumnName="YuklemeNoktasi" />
+                <ScalarProperty Name="NoktaSayisi" ColumnName="NoktaSayisi" />
+                <ScalarProperty Name="TeslimTarihi" ColumnName="TeslimTarihi" />
+                <ScalarProperty Name="YuklemeTarihi" ColumnName="YuklemeTarihi" />
+                <ScalarProperty Name="SiparisTarihi" ColumnName="SiparisTarihi" />
+                <ScalarProperty Name="SiparisNumarasi" ColumnName="SiparisNumarasi" />
+                <ScalarProperty Name="IstenilenAracTipi" ColumnName="IstenilenAracTipi" />
+                <ScalarProperty Name="HizmetTipi" ColumnName="HizmetTipi" />
+                <ScalarProperty Name="Proje" ColumnName="Proje" />
+                <ScalarProperty Name="Firma" ColumnName="Firma" />
+                <ScalarProperty Name="TMSOrderID" ColumnName="TMSOrderID" />
+                <ScalarProperty Name="ReferansNo" ColumnName="ReferansNo" />
+                <ScalarProperty Name="Plaka" ColumnName="Plaka" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblDetay">
+            <EntityTypeMapping TypeName="FiloTakipModel.TblDetay">
+              <MappingFragment StoreEntitySet="TblDetay">
+                <ScalarProperty Name="TeslimNoktasiCikisTarihi" ColumnName="TeslimNoktasiCikisTarihi" />
+                <ScalarProperty Name="YuklemeNoktasiCikisTarihi" ColumnName="YuklemeNoktasiCikisTarihi" />
+                <ScalarProperty Name="YuklemeNoktasiVarısTarihi" ColumnName="YuklemeNoktasiVarısTarihi" />
+                <ScalarProperty Name="Gerceklesen" ColumnName="Gerceklesen" />
+                <ScalarProperty Name="TahminiKm" ColumnName="TahminiKm" />
+                <ScalarProperty Name="TahminiVaris" ColumnName="TahminiVaris" />
+                <ScalarProperty Name="ToplamKg" ColumnName="ToplamKg" />
+                <ScalarProperty Name="PozisyonNo" ColumnName="PozisyonNo" />
+                <ScalarProperty Name="SiparisAcilisZamani" ColumnName="SiparisAcilisZamani" />
+                <ScalarProperty Name="SiparisAcan" ColumnName="SiparisAcan" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="MusteriReferansNo" ColumnName="MusteriReferansNo" />
+                <ScalarProperty Name="MusteriSiparisNo" ColumnName="MusteriSiparisNo" />
+                <ScalarProperty Name="TeslimIlcesi" ColumnName="TeslimIlcesi" />
+                <ScalarProperty Name="TeslimIli" ColumnName="TeslimIli" />
+                <ScalarProperty Name="TeslimNoktasi" ColumnName="TeslimNoktasi" />
+                <ScalarProperty Name="SiparisDurumu" ColumnName="SiparisDurumu" />
+                <ScalarProperty Name="YuklemeIlcesi" ColumnName="YuklemeIlcesi" />
+                <ScalarProperty Name="YuklemeIli" ColumnName="YuklemeIli" />
+                <ScalarProperty Name="YuklemeNoktasi" ColumnName="YuklemeNoktasi" />
+                <ScalarProperty Name="NoktaSayisi" ColumnName="NoktaSayisi" />
+                <ScalarProperty Name="TeslimTarihi" ColumnName="TeslimTarihi" />
+                <ScalarProperty Name="YuklemeTarihi" ColumnName="YuklemeTarihi" />
+                <ScalarProperty Name="SiparisTarihi" ColumnName="SiparisTarihi" />
+                <ScalarProperty Name="SiparisNumarasi" ColumnName="SiparisNumarasi" />
+                <ScalarProperty Name="IstenilenAracTipi" ColumnName="IstenilenAracTipi" />
+                <ScalarProperty Name="HizmetTipi" ColumnName="HizmetTipi" />
+                <ScalarProperty Name="Proje" ColumnName="Proje" />
+                <ScalarProperty Name="Firma" ColumnName="Firma" />
+                <ScalarProperty Name="TMSOrderID" ColumnName="TMSOrderID" />
+                <ScalarProperty Name="ReferansNo" ColumnName="ReferansNo" />
+                <ScalarProperty Name="Plaka" ColumnName="Plaka" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblGiris">
+            <EntityTypeMapping TypeName="FiloTakipModel.TblGiris">
+              <MappingFragment StoreEntitySet="TblGiris">
+                <ScalarProperty Name="Rol" ColumnName="Rol" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

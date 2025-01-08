@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraGrid.Views.Grid;
-using FiloTakipSistemi.Entity2;
+using FiloTakipSistemi.Entity7;
 
 namespace FiloTakipSistemi
 {
@@ -37,7 +37,7 @@ namespace FiloTakipSistemi
 
         public void Listele()
         {
-            using (FiloTakipEntities7 db = new FiloTakipEntities7())
+            using (FiloTakipEntities9 db = new FiloTakipEntities9())
             {
                 // TblAraclar_New tablosundan veriyi al ve Status sütununda sadece AKTİF olanları seç
                 var aracMuayeneListesi = db.TblAraclar

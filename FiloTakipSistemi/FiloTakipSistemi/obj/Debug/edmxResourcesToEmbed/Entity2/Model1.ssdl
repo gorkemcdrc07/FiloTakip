@@ -158,24 +158,34 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Plaka" Type="nvarchar" MaxLength="300" />
-    <Property Name="MusteriAdi" Type="nvarchar" MaxLength="300" />
-    <Property Name="HizmetTipi" Type="nvarchar" MaxLength="300" />
-    <Property Name="ProjeAdi" Type="nvarchar" MaxLength="300" />
-    <Property Name="AracTipi" Type="nvarchar" MaxLength="300" />
-    <Property Name="SiparisTarihi" Type="datetime" />
-    <Property Name="SiparisNo" Type="nvarchar" MaxLength="300" />
-    <Property Name="YuklemeTarihi" Type="datetime" />
-    <Property Name="NoktaSayisi" Type="nvarchar" MaxLength="300" />
-    <Property Name="YuklemeNoktasi" Type="nvarchar" MaxLength="300" />
-    <Property Name="YuklemeIl" Type="nvarchar" MaxLength="300" />
-    <Property Name="YuklemeIlce" Type="nvarchar" MaxLength="300" />
-    <Property Name="TeslimNoktasi" Type="nvarchar" MaxLength="300" />
-    <Property Name="TeslimIl" Type="nvarchar" MaxLength="300" />
-    <Property Name="TeslimIlce" Type="nvarchar" MaxLength="300" />
-    <Property Name="PozisyonNo" Type="nvarchar" MaxLength="300" />
-    <Property Name="TahminiKm" Type="nvarchar" MaxLength="300" />
-    <Property Name="TahminiVarisSaatTarih" Type="nvarchar" MaxLength="300" />
+    <Property Name="Plaka" Type="nvarchar" MaxLength="500" />
+    <Property Name="ReferansNo" Type="nvarchar" MaxLength="500" />
+    <Property Name="TMSOrderID" Type="nvarchar" MaxLength="500" />
+    <Property Name="Firma" Type="nvarchar" MaxLength="500" />
+    <Property Name="Proje" Type="nvarchar" MaxLength="500" />
+    <Property Name="HizmetTipi" Type="nvarchar" MaxLength="500" />
+    <Property Name="IstenilenAracTipi" Type="nvarchar" MaxLength="500" />
+    <Property Name="SiparisNumarasi" Type="nvarchar" MaxLength="500" />
+    <Property Name="SiparisTarihi" Type="date" />
+    <Property Name="YuklemeTarihi" Type="date" />
+    <Property Name="TeslimTarihi" Type="date" />
+    <Property Name="NoktaSayisi" Type="nvarchar" MaxLength="500" />
+    <Property Name="YuklemeNoktasi" Type="nvarchar" MaxLength="500" />
+    <Property Name="YuklemeIli" Type="nvarchar" MaxLength="500" />
+    <Property Name="YuklemeIlcesi" Type="nvarchar" MaxLength="500" />
+    <Property Name="SiparisDurumu" Type="nvarchar" MaxLength="500" />
+    <Property Name="TeslimNoktasi" Type="nvarchar" MaxLength="500" />
+    <Property Name="TeslimIli" Type="nvarchar" MaxLength="500" />
+    <Property Name="TeslimIlcesi" Type="nvarchar" MaxLength="500" />
+    <Property Name="MusteriSiparisNo" Type="nvarchar" MaxLength="500" />
+    <Property Name="MusteriReferansNo" Type="nvarchar" MaxLength="500" />
+    <Property Name="Aciklama" Type="nvarchar" MaxLength="500" />
+    <Property Name="SiparisAcan" Type="nvarchar" MaxLength="500" />
+    <Property Name="SiparisAcilisZamani" Type="date" />
+    <Property Name="PozisyonNo" Type="nvarchar" MaxLength="500" />
+    <Property Name="ToplamKg" Type="nvarchar" MaxLength="500" />
+    <Property Name="TahminiVaris" Type="datetime" />
+    <Property Name="TahminiKm" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <EntityContainer Name="FiloTakipModelStoreContainer">
     <EntitySet Name="TblAraclar" EntityType="Self.TblAraclar" Schema="dbo" store:Type="Tables" />

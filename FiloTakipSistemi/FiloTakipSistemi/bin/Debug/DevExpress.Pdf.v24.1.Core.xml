@@ -10182,6 +10182,23 @@
         <para>No graphic is used on the left side of the signature.</para>
       </summary>
     </member>
+    <member name="T:DevExpress.Pdf.PdfSignatureBase">
+      <summary>
+        <para>Contains information about signatures and methods used to verify them.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfSignatureBase.GetSignatureCertificate">
+      <summary>
+        <para>Gets the signature certificate.</para>
+      </summary>
+      <returns>The X.509 certificate.</returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfSignatureBase.GetSignatureCertificateChain">
+      <summary>
+        <para>Gets the certificate chain of the signature.</para>
+      </summary>
+      <returns>A collection of X.509 certificates.</returns>
+    </member>
     <member name="T:DevExpress.Pdf.PdfSignatureBuilder">
       <summary>
         <para>Allows you to build a signature.</para>

@@ -21944,7 +21944,7 @@
     </member>
     <member name="P:DevExpress.XtraPrinting.PdfExportOptions.ConvertImagesToJpeg">
       <summary>
-        <para>Specifies whether to convert the images contained in the document to JPEG format during the <see href="https://docs.devexpress.com/WindowsForms/7315/controls-and-libraries/printing-exporting/concepts/exporting/export-to-pdf">export to PDF</see>.</para>
+        <para>Specifies whether to convert the bitmap and meta file images contained in the document to JPEG format during the <see href="https://docs.devexpress.com/WindowsForms/7315/controls-and-libraries/printing-exporting/concepts/exporting/export-to-pdf">export to PDF</see>.</para>
       </summary>
       <value>true, to convert images to JPEG; otherwise, false.</value>
     </member>

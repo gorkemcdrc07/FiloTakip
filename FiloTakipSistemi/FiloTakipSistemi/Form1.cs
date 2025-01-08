@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
 using System.Runtime.InteropServices;
-using FiloTakipSistemi.Entity2;
+using FiloTakipSistemi.Entity7;
 using System.Linq;
 using System.Data.Entity.Infrastructure;
 using System.Collections.Generic;
@@ -21,6 +21,8 @@ using System.Diagnostics;
 using DevExpress.XtraBars;
 using ExcelDataReader;
 using System.Text;
+using static FiloTakipSistemi.FrmGiris;
+using System.Drawing;
 
 
 
@@ -40,14 +42,14 @@ namespace FiloTakipSistemi
         private FrmAracDurumBelirleme aracDurumBelirlemeForm; // Değişkeni tanımla
         public Form1()
         {
-            
+
             InitializeComponent();
             IsMdiContainer = true; // Form1'i MDI container olarak ayarlıyoruz
             // ProgressBar ve Label'ı başlangıçta gizle
             progressBar1.Visible = false;
             labelStatus.Visible = false;
 
-            
+
 
 
             // Kontrolleri merkezde konumlandır
@@ -75,20 +77,29 @@ namespace FiloTakipSistemi
                 // Seçilen dosyanın yolu
                 string filePath = openFileDialog.FileName;
 
-                // Excel dosyasını oku ve gridControlGoster'a ata
-                DataTable dataTable = LoadExcelData(filePath);
+                // Excel dosyasını oku ve çıkarılan satır sayısını al
+                int removedRowCount = 0;
+                DataTable dataTable = LoadExcelData(filePath, out removedRowCount);
 
-                // VeriGoster formunu MDI child olarak aç
+                // Çıkarılan satır sayısını göster
+                MessageBox.Show(
+                    $"{removedRowCount} satır çıkarıldı.",
+                    "Bilgilendirme",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                // Verileri göster
                 FrmVeriGöster veriGosterForm = new FrmVeriGöster();
                 veriGosterForm.gridControlGoster.DataSource = dataTable;
-                veriGosterForm.MdiParent = this;  // Set Form1 as MDI parent
+                veriGosterForm.MdiParent = this; // Set Form1 as MDI parent
                 veriGosterForm.Show();
-
             }
         }
 
-        private DataTable LoadExcelData(string filePath)
+        private DataTable LoadExcelData(string filePath, out int removedRowCount)
         {
+            removedRowCount = 0; // Başlangıçta çıkarılan satır sayısı sıfır
+
             // Excel dosyasını okuyabilmek için gerekli kütüphaneyi kullanıyoruz
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
@@ -117,10 +128,36 @@ namespace FiloTakipSistemi
 
                         if (column14Value != "Filo Araç Planlamada")
                         {
-                            // Uyarı ver
-                            MessageBox.Show($"Satır atlandı. Sipariş Durumu sütunda geçerli değer bulunmadı: {column14Value}", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            // Çıkarılan satır sayısını artır
+                            removedRowCount++;
 
                             // Satırı sil
+                            dataTable.Rows.RemoveAt(i);
+                        }
+                    }
+
+                    // Veriyi kaydediyoruz (silinen satırlar DataTable'dan kaldırıldı)
+                    dataTable.AcceptChanges();
+
+                    // 1. sütun (TMSOrderId) değerlerini alıyoruz
+                    HashSet<string> tmsOrderIds = new HashSet<string>();
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        tmsOrderIds.Add(row[0].ToString()); // 1. sütun (TMSOrderId) değerini al
+                    }
+
+                    // TblDetay'daki TMSOrderID değerlerini al
+                    var existingTmsOrderIds = GetExistingTmsOrderIds();
+
+                    // Excel'deki satırları kontrol ediyoruz
+                    for (int i = dataTable.Rows.Count - 1; i >= 0; i--)
+                    {
+                        string tmsOrderId = dataTable.Rows[i][0].ToString(); // 1. sütundaki TMSOrderId değerini al
+
+                        // Eğer TblDetay'da bu TMSOrderId varsa satırı kaldırıyoruz
+                        if (existingTmsOrderIds.Contains(tmsOrderId))
+                        {
+                            removedRowCount++; // Satır çıkarıldı
                             dataTable.Rows.RemoveAt(i);
                         }
                     }
@@ -149,6 +186,24 @@ namespace FiloTakipSistemi
                 }
             }
         }
+
+        private HashSet<string> GetExistingTmsOrderIds()
+        {
+            // TblDetay'dan TMSOrderID değerlerini alacak bir metod. 
+            // Bu metodun içeriği, veritabanı sorgusu ile TMSOrderID'leri çekmeli.
+
+            HashSet<string> tmsOrderIds = new HashSet<string>();
+
+            // Veritabanı bağlantısını kurarak TblDetay tablosundan TMSOrderID değerlerini çekeceğiz
+            using (var context = new FiloTakipEntities9())
+            {
+                tmsOrderIds = new HashSet<string>(context.TblDetay.Select(d => d.TMSOrderID.ToString()));
+            }
+
+            return tmsOrderIds;
+        }
+
+
 
 
 
@@ -272,6 +327,10 @@ namespace FiloTakipSistemi
 
         private void BtnAtananPlakalar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            // Kullanıcı rolünü mesaj kutusunda göster
+            MessageBox.Show($"Kullanıcı Rolü: {FrmGiris.GlobalUser.KullaniciRol}",
+                "Kullanıcı Rolü", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             // Açık MDI Child formlarını kontrol et
             foreach (Form childForm in this.MdiChildren)
             {
@@ -290,15 +349,12 @@ namespace FiloTakipSistemi
                 MdiParent = this // Form1 burada MDI Parent olarak atanıyor
             };
 
-            // Listele metodunu çağırarak formdaki GridControl'e veri yüklenmesini sağlar
-            plakaForm.Listele();
-
             // Formu MDI Child olarak göster
             plakaForm.Show();
+
+            // Listele metodunu çağırarak formdaki GridControl'e veri yüklenmesini sağlar
+            plakaForm.Listele();
         }
-
-
-
 
         private void BtnPlakaDurumları_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -326,11 +382,16 @@ namespace FiloTakipSistemi
 
         private void BtnAracDurumlarıDuzenle_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            // FrmAracDurumBelirleme formunu aç ve tam ekran yap
-            FrmAracDurumBelirleme form = new FrmAracDurumBelirleme();
-            form.WindowState = FormWindowState.Maximized; // Formu tam ekran yap
-            form.Show(); // Modal olarak aç
+            // Yeni bir form örneği oluşturuluyor
+            FrmAracDurumBelirleme aracDurumlarıForm = new FrmAracDurumBelirleme();
+
+            // Bu formu MDI parent olarak Form1'e ayarlıyoruz
+            aracDurumlarıForm.MdiParent = this; // 'this', Form1'dir.
+
+            // Formu gösteriyoruz
+            aracDurumlarıForm.Show();
         }
+
 
         private void BtnSiparisListesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -359,5 +420,64 @@ namespace FiloTakipSistemi
             frmVeriEklemeEkranıNew.Show();
 
         }
+
+        private void BtnRezerve_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            // FrmRezervePlakalar formunu oluştur
+            FrmRezervePlakalar frmRezerve = new FrmRezervePlakalar();
+
+            // Form1'i MDI Parent olarak ayarla
+            frmRezerve.MdiParent = this;
+
+            // Formu göster
+            frmRezerve.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // Kullanıcı rolünü kontrol et
+            if (GlobalUser.KullaniciRol == "duzenleme")
+            {
+                // Eğer kullanıcı "Düzenleme" rolündeyse, RibbonPageGroup'leri gizle
+                ribbonPageGroup1.Visible = false;
+                ribbonPageGroup2.Visible = false;
+                ribbonPage3.Visible = false;
+                ribbonPage4.Visible = false;
+            }
+            else
+            {
+                // Diğer roller için RibbonPageGroup'leri göster
+                ribbonPageGroup1.Visible = true;
+                ribbonPageGroup2.Visible = true;
+            }
+
+            // Kullanıcı adı kontrolü
+            if (GlobalUser.KullaniciAdi == "Ferhat.Karisli" || GlobalUser.KullaniciRol == "yonetici")
+            {
+                // Sadece Ferhat.Karisli ve admin için butonları görünür yap
+                ribbonPageGroup1.Visible = true;
+            }
+            else
+            {
+                // Diğer kullanıcılar için butonları gizle
+                ribbonPageGroup1.Visible = false;
+            }
+        }
+
+
+        private void BtnMobiliz_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmMobiliz frm = new FrmMobiliz { MdiParent = this };
+            frm.Show();
+        }
+
     }
 }
+
+
+
+
+
+
+        
+    

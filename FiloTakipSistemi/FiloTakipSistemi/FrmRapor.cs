@@ -1,117 +1,78 @@
-﻿using FiloTakipSistemi.Entity2;
-using System;
+﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Windows.Forms;
+using FiloTakipSistemi.Entity7;
 
 namespace FiloTakipSistemi
 {
     public partial class FrmRapor : Form
     {
-        private Timer timer;
-
         public FrmRapor()
         {
             InitializeComponent();
-            InitializeTimer();
-        }
-
-        private void InitializeTimer()
-        {
-            timer = new Timer();
-            timer.Interval = 60000; // 60 saniye (60000 milisaniye)
-            timer.Tick += Timer_Tick;
-            timer.Start();
-        }
-
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            var currentTime = DateTime.Now;
-
-            // Eğer saat 00:00 ise
-            if (currentTime.Hour == 0 && currentTime.Minute == 0)
-            {
-                using (var db = new FiloTakipEntities7())
-                {
-                    // Önceki günün tarihini belirle
-                    DateTime previousDate = currentTime.AddDays(-1);
-                    DateTime newDate = currentTime; // Yeni tarih
-
-                    // Önceki günün kayıtlarını al
-                    var records = db.TblPlakaDurumları
-                        .Where(r => r.Tarih.HasValue && r.Tarih.Value.Date == previousDate.Date)
-                        .ToList();
-
-                    // Yeni kayıtları eklemek için sırayla işle
-                    foreach (var record in records)
-                    {
-                        // Yeni kayıt oluştur
-                        var newRecord = new TblPlakaDurumları
-                        {
-                            Plaka = record.Plaka,
-                            SurucuAdı = record.SurucuAdı,
-                            SurucuTelefon = record.SurucuTelefon,
-                            SurucuTC = record.SurucuTC,
-                            SeferTarihi = record.SeferTarihi,
-                            YuklemeNoktası = record.YuklemeNoktası,
-                            TeslimNoktası = record.TeslimNoktası,
-                            SonIl = record.SonIl,
-                            SonIlce = record.SonIlce,
-                            SonNokta = record.SonNokta,
-                            TahminiVarisZamani = record.TahminiVarisZamani,
-                            YuklemeYeriArasındaKm = record.YuklemeYeriArasındaKm,
-                            Durum = record.Durum,
-                            BaslangıcTarihi = record.BaslangıcTarihi,
-                            BitisTarihi = record.BitisTarihi,
-                            Aciklama = record.Aciklama,
-                            Sebep = record.Sebep,
-                            // Tarih alanını güncelle
-                            Tarih = newDate
-                        };
-
-                        // Yeni kaydı veritabanına ekle
-                        db.TblPlakaDurumları.Add(newRecord);
-
-                        // Kopyalanan kaydın alttaki satıra eklenmesi
-                        // Bu durumda aynı işlemi bir kez daha yaparak kaydın kopyasını ekleriz
-                        var newRecordForNextRow = new TblPlakaDurumları
-                        {
-                            Plaka = record.Plaka,
-                            SurucuAdı = record.SurucuAdı,
-                            SurucuTelefon = record.SurucuTelefon,
-                            SurucuTC = record.SurucuTC,
-                            SeferTarihi = record.SeferTarihi,
-                            YuklemeNoktası = record.YuklemeNoktası,
-                            TeslimNoktası = record.TeslimNoktası,
-                            SonIl = record.SonIl,
-                            SonIlce = record.SonIlce,
-                            SonNokta = record.SonNokta,
-                            TahminiVarisZamani = record.TahminiVarisZamani,
-                            YuklemeYeriArasındaKm = record.YuklemeYeriArasındaKm,
-                            Durum = record.Durum,
-                            BaslangıcTarihi = record.BaslangıcTarihi,
-                            BitisTarihi = record.BitisTarihi,
-                            Aciklama = record.Aciklama,
-                            Sebep = record.Sebep,
-                            // Tarih alanını aynı şekilde güncellemeye devam et
-                            Tarih = newDate
-                        };
-
-                        // Alttaki kaydı da veritabanına ekle
-                        db.TblPlakaDurumları.Add(newRecordForNextRow);
-                    }
-
-                    // Değişiklikleri kaydet
-                    db.SaveChanges();
-                }
-            }
         }
 
         private void FrmRapor_Load(object sender, EventArgs e)
         {
-            // TODO: Bu kod satırı 'filoTakipDataSet21.TblPlakaDurumları' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
-            this.tblPlakaDurumlarıTableAdapter1.Fill(this.filoTakipDataSet21.TblPlakaDurumları);
-            // İlk verileri yükle
-            this.tblPlakaDurumlarıTableAdapter.Fill(this.filoTakipDataSet5.TblPlakaDurumları);
+            using (var db = new FiloTakipEntities9())
+            {
+                // Gecikme yapanları sorgula (GridControl1)
+                var gecikenData = db.TblTamamlananSeferler
+                    .Where(x => x.TahminiVaris < DateTime.Now && x.Gerceklesen != null)
+                    .Select(x => new
+                    {
+                        x.Plaka,
+                        TahminiVaris = x.TahminiVaris,  // DateTime? türünde veritabanından al
+                        Gerceklesen = x.Gerceklesen,    // DateTime? türünde veritabanından al
+                        GecikmeSaat = DbFunctions.DiffHours(x.TahminiVaris, x.Gerceklesen), // Gecikme saat olarak hesapla
+                        GecikmeDakika = DbFunctions.DiffMinutes(x.TahminiVaris, x.Gerceklesen) % 60 // Gecikme dakika olarak hesapla
+                    })
+                    .Where(x => x.GecikmeSaat > 0 || x.GecikmeDakika > 0)  // Sadece gecikme süresi olanları seç
+                    .ToList();
+
+                // Erken varış yapanları sorgula (GridControl2)
+                var erkenVaranData = db.TblTamamlananSeferler
+                    .Where(x => x.TahminiVaris < DateTime.Now && x.Gerceklesen != null)
+                    .Select(x => new
+                    {
+                        x.Plaka,
+                        TahminiVaris = x.TahminiVaris,  // DateTime? türünde veritabanından al
+                        Gerceklesen = x.Gerceklesen,    // DateTime? türünde veritabanından al
+                        ErkenVarisSaat = DbFunctions.DiffHours(x.Gerceklesen, x.TahminiVaris), // Erken varış saat olarak hesapla
+                        ErkenVarisDakika = DbFunctions.DiffMinutes(x.Gerceklesen, x.TahminiVaris) % 60 // Erken varış dakika olarak hesapla
+                    })
+                    .Where(x => x.ErkenVarisSaat > 0 || x.ErkenVarisDakika > 0)  // Sadece erken varış yapanları seç
+                    .ToList();
+
+                // Gecikme verisini formatla (GridControl1)
+                var formattedGecikenData = gecikenData.Select(x => new
+                {
+                    x.Plaka,
+                    TahminiVaris = x.TahminiVaris.HasValue ? x.TahminiVaris.Value.ToString("dd.MM.yyyy HH:mm") : string.Empty,
+                    Gerceklesen = x.Gerceklesen.HasValue ? x.Gerceklesen.Value.ToString("dd.MM.yyyy HH:mm") : string.Empty,
+                    Gecikme = $"{x.GecikmeSaat} saat {x.GecikmeDakika} dakika"
+                }).ToList();
+
+                // Erken varış verisini formatla (GridControl2)
+                var formattedErkenVaranData = erkenVaranData.Select(x => new
+                {
+                    x.Plaka,
+                    TahminiVaris = x.TahminiVaris.HasValue ? x.TahminiVaris.Value.ToString("dd.MM.yyyy HH:mm") : string.Empty,
+                    Gerceklesen = x.Gerceklesen.HasValue ? x.Gerceklesen.Value.ToString("dd.MM.yyyy HH:mm") : string.Empty,
+                    ErkenVaris = $"-{x.ErkenVarisSaat} saat {x.ErkenVarisDakika} dakika" // Erken varış için negatif işareti ekle
+                }).ToList();
+
+                // Geciken verileri gridControl1'e bağla
+                gridControl1.DataSource = formattedGecikenData;
+
+                // Erken varış yapan verileri gridControl2'ye bağla
+                gridControl2.DataSource = formattedErkenVaranData;
+
+                // Verilerin doğru şekilde güncellendiğinden emin olun
+                gridControl1.RefreshDataSource();
+                gridControl2.RefreshDataSource();
+            }
         }
     }
 }

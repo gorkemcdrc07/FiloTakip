@@ -29681,7 +29681,7 @@ The default value is <see cref="F:DevExpress.Utils.DefaultBoolean.Default">Defau
     </member>
     <member name="E:DevExpress.XtraEditors.Repository.RepositoryItemTokenEdit.ValidateToken">
       <summary>
-        <para>Allows you to perform the custom validation on text currently entered in this <see cref="T:DevExpress.XtraEditors.TokenEdit"/> control.</para>
+        <para>Allows you to manually validate text entered by the user.</para>
       </summary>
     </member>
     <member name="P:DevExpress.XtraEditors.Repository.RepositoryItemTokenEdit.ValidationRules">
@@ -34633,6 +34633,11 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
         <para>When the <see cref="P:DevExpress.XtraEditors.Repository.RepositoryItemTokenEdit.DropDownShowMode">RepositoryItemTokenEdit.DropDownShowMode</see> property is set to Outlook, the drop-down menu width is calculated according to the widest token available. The PopupAutoWidthCalculationLimit property allows the Token Edit to check only first N tokens when it calculates the required menu width. This limitation speeds up the calculation process and improves the control performance.</para>
       </summary>
       <value>The number of tokens whose widths the editor should check before it chooses the required drop-down menu width.</value>
+    </member>
+    <member name="E:DevExpress.XtraEditors.TokenEdit.ProcessNewValue">
+      <summary>
+        <para>Fires when a user enters a new value into a Token Edit that is connected to a data source. Allows you to validate entered values and call data source API to save valid records.</para>
+      </summary>
     </member>
     <member name="P:DevExpress.XtraEditors.TokenEdit.Properties">
       <summary>

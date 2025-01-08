@@ -47,19 +47,27 @@
             this.BtnAracDurumlarıDuzenle = new DevExpress.XtraBars.BarButtonItem();
             this.BtnAracDurumBelirlemeKaydet = new DevExpress.XtraBars.BarButtonItem();
             this.BtnSiparisListesi = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.galleryDropDown1 = new DevExpress.XtraBars.Ribbon.GalleryDropDown(this.components);
+            this.BtnRezerve = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnMobiliz = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.labelStatus = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,12 +91,16 @@
             this.BtnRapor,
             this.BtnAracDurumlarıDuzenle,
             this.BtnAracDurumBelirlemeKaydet,
-            this.BtnSiparisListesi});
+            this.BtnSiparisListesi,
+            this.barButtonItem2,
+            this.BtnRezerve,
+            this.BtnMobiliz});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 18;
+            this.ribbonControl1.MaxItemId = 21;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
+            this.ribbonPage5,
             this.ribbonPage2,
             this.ribbonPage3,
             this.ribbonPage4});
@@ -210,26 +222,64 @@
             this.BtnSiparisListesi.Name = "BtnSiparisListesi";
             this.BtnSiparisListesi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnSiparisListesi_ItemClick);
             // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.ActAsDropDown = true;
+            this.barButtonItem2.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.barButtonItem2.Caption = "Rezerve Plakalar";
+            this.barButtonItem2.DropDownControl = this.galleryDropDown1;
+            this.barButtonItem2.Id = 18;
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // galleryDropDown1
+            // 
+            this.galleryDropDown1.Name = "galleryDropDown1";
+            this.galleryDropDown1.Ribbon = this.ribbonControl1;
+            // 
+            // BtnRezerve
+            // 
+            this.BtnRezerve.Caption = "Rezerve Plakalar";
+            this.BtnRezerve.Id = 19;
+            this.BtnRezerve.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnRezerve.ImageOptions.LargeImage")));
+            this.BtnRezerve.Name = "BtnRezerve";
+            this.BtnRezerve.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnRezerve_ItemClick);
+            // 
+            // BtnMobiliz
+            // 
+            this.BtnMobiliz.Caption = "MOBİLİZ";
+            this.BtnMobiliz.Id = 20;
+            this.BtnMobiliz.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("BtnMobiliz.ImageOptions.SvgImage")));
+            this.BtnMobiliz.Name = "BtnMobiliz";
+            this.BtnMobiliz.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnMobiliz_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
-            this.ribbonPageGroup2});
+            this.ribbonPageGroup2,
+            this.ribbonPageGroup3});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Ana Sayfa";
             // 
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnVeriEkle);
+            this.ribbonPageGroup1.ItemLinks.Add(this.BtnSiparisListesi);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // ribbonPageGroup2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.BtnSiparisListesi);
             this.ribbonPageGroup2.ItemLinks.Add(this.BtnPlanlamaEkrani);
-            this.ribbonPageGroup2.ItemLinks.Add(this.BtnAtananPlakalar);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "EKRANLAR";
+            this.ribbonPageGroup2.Text = "PLANLAMA";
+            // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.BtnAtananPlakalar);
+            this.ribbonPageGroup3.ItemLinks.Add(this.BtnRezerve);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "TAKİP";
             // 
             // ribbonPage2
             // 
@@ -270,6 +320,18 @@
             this.ribbonPageGroup6.ItemLinks.Add(this.BtnRapor);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             // 
+            // ribbonPage5
+            // 
+            this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup7});
+            this.ribbonPage5.Name = "ribbonPage5";
+            this.ribbonPage5.Text = "Mobiliz";
+            // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.BtnMobiliz);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            // 
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
@@ -300,14 +362,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1230, 947);
+            this.ClientSize = new System.Drawing.Size(1230, 853);
             this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -345,6 +409,13 @@
         private System.Windows.Forms.Label labelStatus;
         private System.Windows.Forms.ProgressBar progressBar1;
         private DevExpress.XtraBars.BarButtonItem BtnSiparisListesi;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraBars.Ribbon.GalleryDropDown galleryDropDown1;
+        private DevExpress.XtraBars.BarButtonItem BtnRezerve;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
+        private DevExpress.XtraBars.BarButtonItem BtnMobiliz;
     }
 }
 

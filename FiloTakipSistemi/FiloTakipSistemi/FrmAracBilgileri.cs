@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FiloTakipSistemi.Entity2; // Entity sınıfının bulunduğu namespace
+using FiloTakipSistemi.Entity7; // Entity sınıfının bulunduğu namespace
 
 namespace FiloTakipSistemi
 {
@@ -28,7 +28,7 @@ namespace FiloTakipSistemi
         // Verileri listeleme metodu
         public void Listele()
         {
-            using (FiloTakipEntities7 db = new FiloTakipEntities7())
+            using (FiloTakipEntities9 db = new FiloTakipEntities9())
             {
                 // TblAraclar_New tablosundan verileri al
                 var araclarListesi = db.TblAraclar.ToList();

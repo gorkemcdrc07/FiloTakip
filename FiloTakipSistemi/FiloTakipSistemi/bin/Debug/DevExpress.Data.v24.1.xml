@@ -6818,6 +6818,35 @@
       </summary>
       <value>An integer value that specifies the node’s position among visible nodes. -1 if the node is hidden.</value>
     </member>
+    <member name="T:DevExpress.Data.UnboundColumnDataEventArgs">
+      <summary>
+        <para>A base class for CustomDataEventArgs and CustomColumnDataEventArgs that supplies data for CustomUnboundData-related events.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.Data.UnboundColumnDataEventArgs.IsGetData">
+      <summary>
+        <para>Gets whether the column/row needs to be populated with cell values.</para>
+      </summary>
+      <value>true if the cell is about to be populated; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Data.UnboundColumnDataEventArgs.IsSetData">
+      <summary>
+        <para>Gets whether a cell value changed and data needs to be posted to a data source.</para>
+      </summary>
+      <value>true if a user modified the cell value; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.Data.UnboundColumnDataEventArgs.Value">
+      <summary>
+        <para>Gets or sets a cell value in an unbound column.</para>
+      </summary>
+      <value>A cell value in an unbound column.</value>
+    </member>
+    <member name="P:DevExpress.Data.UnboundColumnDataEventArgs.ValueType">
+      <summary>
+        <para>Gets the type of the cell value.</para>
+      </summary>
+      <value>The type of the cell value.</value>
+    </member>
     <member name="T:DevExpress.Data.UnboundColumnType">
       <summary>
         <para>Contains values that specify the data type and binding mode of columns.</para>

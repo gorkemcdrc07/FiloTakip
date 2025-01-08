@@ -4,7 +4,8 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraGrid.Views.Grid;
-using FiloTakipSistemi.Entity2;
+using FiloTakipSistemi.Entity7;
+using System.Drawing;
 
 
 namespace FiloTakipSistemi
@@ -12,7 +13,7 @@ namespace FiloTakipSistemi
     public partial class FrmVeriEklemeEkranı : Form
     {
         private DataTable hedefDataTable;
-        private FiloTakipEntities7 context; // Declare the context
+        private FiloTakipEntities9 context; // Declare the context
         private DataTable sortedData; // Sıralanmış veriler
         private DataTable allData;    // Tüm verile
 
@@ -104,8 +105,7 @@ namespace FiloTakipSistemi
 
         private void FrmVeriEklemeEkranı_Load(object sender, EventArgs e)
         {
-            // TODO: Bu kod satırı 'filoTakipDataSet26.TblDta' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
-            this.tblDtaTableAdapter.Fill(this.filoTakipDataSet26.TblDta);
+
         }
 
 
@@ -116,7 +116,7 @@ namespace FiloTakipSistemi
             // Initialize context if it's not already initialized
             if (context == null)
             {
-                context = new FiloTakipEntities7();
+                context = new FiloTakipEntities9();
             }
 
             // İlk işlev: Verileri kaydet
@@ -136,127 +136,519 @@ namespace FiloTakipSistemi
 
             if (gridView != null)
             {
-                List<string> newTmsOrderIDs = new List<string>(); // Yeni TMSOrderID'leri takip etmek için
-                List<string> duplicateTmsOrderIDs = new List<string>(); // TMSOrderID çakışmalarını toplamak için
+                // Teslim noktalarını ve diğer verileri gruplamak için dictionary'ler
+                Dictionary<string, List<string>> tmsOrderIDs = new Dictionary<string, List<string>>();
+                Dictionary<string, List<string>> siparisNumaralari = new Dictionary<string, List<string>>();
+                Dictionary<string, List<string>> teslimNoktalar = new Dictionary<string, List<string>>();
+
+                // Diğer sütunlar
+                Dictionary<string, string> referansNos = new Dictionary<string, string>();
+                Dictionary<string, string> firmalar = new Dictionary<string, string>();
+                Dictionary<string, string> projeler = new Dictionary<string, string>();
+                Dictionary<string, string> hizmetTipleri = new Dictionary<string, string>();
+                Dictionary<string, string> istenilenAracTipleri = new Dictionary<string, string>();
+                Dictionary<string, string> yuklemeTarihleri = new Dictionary<string, string>();
+                Dictionary<string, string> teslimTarihleri = new Dictionary<string, string>();
+                Dictionary<string, string> noktaSayilari = new Dictionary<string, string>();
+                Dictionary<string, string> yuklemeNoktasi = new Dictionary<string, string>();
+                Dictionary<string, string> yuklemeIli = new Dictionary<string, string>();
+                Dictionary<string, string> yuklemeIlcesi = new Dictionary<string, string>();
+                Dictionary<string, string> siparisDurumlari = new Dictionary<string, string>();
+                Dictionary<string, string> teslimIli = new Dictionary<string, string>();
+                Dictionary<string, string> teslimIlcesi = new Dictionary<string, string>();
+                Dictionary<string, string> musteriler = new Dictionary<string, string>();
+                Dictionary<string, string> aciklamalar = new Dictionary<string, string>();
+                Dictionary<string, string> siparisAcanlar = new Dictionary<string, string>();
+                Dictionary<string, string> siparisAcilisZamanlari = new Dictionary<string, string>();
+                Dictionary<string, string> toplamKg = new Dictionary<string, string>();
 
                 for (int i = 0; i < gridView.RowCount; i++)
                 {
-                    var tmsOrderID = gridView.GetRowCellValue(i, gridView.Columns["TMSOrderID"])?.ToString();
                     var pozisyonNo = gridView.GetRowCellValue(i, gridView.Columns["PozisyonNo"])?.ToString();
 
-                    if (!string.IsNullOrEmpty(tmsOrderID) && !string.IsNullOrEmpty(pozisyonNo))
+                    if (!string.IsNullOrEmpty(pozisyonNo))
                     {
-                        // TMSOrderID'nin daha önce eklenip eklenmediğini kontrol et
-                        var existingRecord = context.TblDta.FirstOrDefault(x => x.TMSOrderID == tmsOrderID);
+                        // Verileri pozisyonNo'ya göre gruplamak
+                        AddToGroup(tmsOrderIDs, pozisyonNo, gridView.GetRowCellValue(i, gridView.Columns["TMSOrderID"])?.ToString());
+                        AddToGroup(siparisNumaralari, pozisyonNo, gridView.GetRowCellValue(i, gridView.Columns["SiparisNumarasi"])?.ToString());
+                        AddToGroup(teslimNoktalar, pozisyonNo, gridView.GetRowCellValue(i, gridView.Columns["TeslimNoktasi"])?.ToString());
 
-                        if (existingRecord != null)
-                        {
-                            // TMSOrderID zaten varsa, duplicate listesine ekle ve bu satırı atla
-                            duplicateTmsOrderIDs.Add(tmsOrderID);
-                            continue;
-                        }
-                        else
-                        {
-                            // Eğer TMSOrderID yoksa, yeni kayıt ekle
-                            TblDta newRecord = new TblDta
-                            {
-                                ReferansNo = gridView.GetRowCellValue(i, gridView.Columns["ReferansNo"])?.ToString(),
-                                TMSOrderID = tmsOrderID,
-                                Firma = gridView.GetRowCellValue(i, gridView.Columns["Firma"])?.ToString(),
-                                Proje = gridView.GetRowCellValue(i, gridView.Columns["Proje"])?.ToString(),
-                                HizmetTipi = gridView.GetRowCellValue(i, gridView.Columns["HizmetTipi"])?.ToString(),
-                                IstenilenAracTipi = gridView.GetRowCellValue(i, gridView.Columns["IstenilenAracTipi"])?.ToString(),
-                                SiparisNumarasi = gridView.GetRowCellValue(i, gridView.Columns["SiparisNumarasi"])?.ToString(),
-                                SiparisTarihi = gridView.GetRowCellValue(i, gridView.Columns["SiparisTarihi"])?.ToString(),
-                                YuklemeTarihi = gridView.GetRowCellValue(i, gridView.Columns["YuklemeTarihi"])?.ToString(),
-                                TeslimTarihi = gridView.GetRowCellValue(i, gridView.Columns["TeslimTarihi"])?.ToString(),
-                                NoktaSayisi = gridView.GetRowCellValue(i, gridView.Columns["NoktaSayisi"])?.ToString(),
-                                YuklemeNoktasi = gridView.GetRowCellValue(i, gridView.Columns["YuklemeNoktasi"])?.ToString(),
-                                YuklemeIli = gridView.GetRowCellValue(i, gridView.Columns["YuklemeIli"])?.ToString(),
-                                YuklemeIlcesi = gridView.GetRowCellValue(i, gridView.Columns["YuklemeIlcesi"])?.ToString(),
-                                SiparisDurumu = gridView.GetRowCellValue(i, gridView.Columns["SiparisDurumu"])?.ToString(),
-                                TeslimNoktasi = gridView.GetRowCellValue(i, gridView.Columns["TeslimNoktasi"])?.ToString(),
-                                TeslimIli = gridView.GetRowCellValue(i, gridView.Columns["TeslimIli"])?.ToString(),
-                                TeslimIlcesi = gridView.GetRowCellValue(i, gridView.Columns["TeslimIlcesi"])?.ToString(),
-                                MusteriSiparisNo = gridView.GetRowCellValue(i, gridView.Columns["MusteriSiparisNo"])?.ToString(),
-                                MusteriReferansNo = gridView.GetRowCellValue(i, gridView.Columns["MusteriReferansNo"])?.ToString(),
-                                Aciklama = gridView.GetRowCellValue(i, gridView.Columns["Aciklama"])?.ToString(),
-                                SiparisAcan = gridView.GetRowCellValue(i, gridView.Columns["SiparisAcan"])?.ToString(),
-                                SiparisAcilisZamani = gridView.GetRowCellValue(i, gridView.Columns["SiparisAcilisZamani"])?.ToString(),
-                                PozisyonNo = pozisyonNo, // PozisyonNo'yu kaydet
-                                ToplamKg = gridView.GetRowCellValue(i, gridView.Columns["ToplamKg"])?.ToString()
-                            };
+                        // Diğer sütunları da aynı şekilde grup edelim
+                        referansNos[pozisyonNo] = gridView.GetRowCellValue(i, gridView.Columns["ReferansNo"])?.ToString();
+                        firmalar[pozisyonNo] = gridView.GetRowCellValue(i, gridView.Columns["Firma"])?.ToString();
+                        projeler[pozisyonNo] = gridView.GetRowCellValue(i, gridView.Columns["Proje"])?.ToString();
+                        hizmetTipleri[pozisyonNo] = gridView.GetRowCellValue(i, gridView.Columns["HizmetTipi"])?.ToString();
+                        istenilenAracTipleri[pozisyonNo] = gridView.GetRowCellValue(i, gridView.Columns["IstenilenAracTipi"])?.ToString();
+                        yuklemeTarihleri[pozisyonNo] = gridView.GetRowCellValue(i, gridView.Columns["YuklemeTarihi"])?.ToString();
+                        teslimTarihleri[pozisyonNo] = gridView.GetRowCellValue(i, gridView.Columns["TeslimTarihi"])?.ToString();
+                        noktaSayilari[pozisyonNo] = gridView.GetRowCellValue(i, gridView.Columns["NoktaSayisi"])?.ToString();
+                        yuklemeNoktasi[pozisyonNo] = gridView.GetRowCellValue(i, gridView.Columns["YuklemeNoktasi"])?.ToString();
+                        yuklemeIli[pozisyonNo] = gridView.GetRowCellValue(i, gridView.Columns["YuklemeIli"])?.ToString();
+                        yuklemeIlcesi[pozisyonNo] = gridView.GetRowCellValue(i, gridView.Columns["YuklemeIlcesi"])?.ToString();
+                        siparisDurumlari[pozisyonNo] = gridView.GetRowCellValue(i, gridView.Columns["SiparisDurumu"])?.ToString();
+                        teslimIli[pozisyonNo] = gridView.GetRowCellValue(i, gridView.Columns["TeslimIli"])?.ToString();
+                        teslimIlcesi[pozisyonNo] = gridView.GetRowCellValue(i, gridView.Columns["TeslimIlcesi"])?.ToString();
+                        musteriler[pozisyonNo] = gridView.GetRowCellValue(i, gridView.Columns["MusteriSiparisNo"])?.ToString();
+                        aciklamalar[pozisyonNo] = gridView.GetRowCellValue(i, gridView.Columns["Aciklama"])?.ToString();
+                        siparisAcanlar[pozisyonNo] = gridView.GetRowCellValue(i, gridView.Columns["SiparisAcan"])?.ToString();
+                        siparisAcilisZamanlari[pozisyonNo] = gridView.GetRowCellValue(i, gridView.Columns["SiparisAcilisZamani"])?.ToString();
+                        toplamKg[pozisyonNo] = gridView.GetRowCellValue(i, gridView.Columns["ToplamKg"])?.ToString();
 
-                            context.TblDta.Add(newRecord);
-                            newTmsOrderIDs.Add(tmsOrderID); // Yeni eklenen TMSOrderID'yi takip et
-                        }
+                        // TblDetay'a veri kaydet
+                        TblDetay detayRecord = new TblDetay
+                        {
+                            PozisyonNo = pozisyonNo,
+                            TMSOrderID = gridView.GetRowCellValue(i, gridView.Columns["TMSOrderID"])?.ToString(),
+                            SiparisNumarasi = gridView.GetRowCellValue(i, gridView.Columns["SiparisNumarasi"])?.ToString(),
+                            TeslimNoktasi = gridView.GetRowCellValue(i, gridView.Columns["TeslimNoktasi"])?.ToString(),
+                            ReferansNo = referansNos[pozisyonNo],
+                            Firma = firmalar[pozisyonNo],
+                            Proje = projeler[pozisyonNo],
+                            HizmetTipi = hizmetTipleri[pozisyonNo],
+                            IstenilenAracTipi = istenilenAracTipleri[pozisyonNo],
+                            YuklemeTarihi = ConvertToDateTime(yuklemeTarihleri[pozisyonNo]),
+                            TeslimTarihi = ConvertToDateTime(teslimTarihleri[pozisyonNo]),
+                            NoktaSayisi = noktaSayilari[pozisyonNo],
+                            YuklemeNoktasi = yuklemeNoktasi[pozisyonNo],
+                            YuklemeIli = yuklemeIli[pozisyonNo],
+                            YuklemeIlcesi = yuklemeIlcesi[pozisyonNo],
+                            SiparisDurumu = siparisDurumlari[pozisyonNo],
+                            TeslimIli = teslimIli[pozisyonNo],
+                            TeslimIlcesi = teslimIlcesi[pozisyonNo],
+                            MusteriSiparisNo = musteriler[pozisyonNo],
+                            Aciklama = aciklamalar[pozisyonNo],
+                            SiparisAcan = siparisAcanlar[pozisyonNo],
+                            SiparisAcilisZamani = ConvertToDateTime(siparisAcilisZamanlari[pozisyonNo]),
+                            ToplamKg = toplamKg[pozisyonNo]
+                        };
+
+                        context.TblDetay.Add(detayRecord); // TblDetay'a kaydet
                     }
                 }
 
-                // Veriyi kaydediyoruz
-                try
+                // Zaten var olan TMSOrderID'leri kontrol et
+                var existingTmsOrderIDs = context.TblSiparisListesi.Select(s => s.TMSOrderID).ToList();
+                List<string> duplicateOrderIDs = new List<string>();
+
+                // Her PozisyonNo için tek bir kayıt oluştur
+                // Her PozisyonNo için tek bir kayıt oluştur
+                foreach (var pozisyon in tmsOrderIDs.Keys)
                 {
-                    context.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Veri kaydedilirken bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    var mergedTmsOrderID = string.Join(";", tmsOrderIDs[pozisyon]);
+                    var mergedSiparisNumarasi = string.Join(";", siparisNumaralari[pozisyon]);
+                    var mergedTeslimNoktasi = string.Join(";", teslimNoktalar[pozisyon]);
+
+                    if (existingTmsOrderIDs.Contains(mergedTmsOrderID))
+                    {
+                        duplicateOrderIDs.Add(mergedTmsOrderID);
+                        continue; // Zaten var olan TMSOrderID atlanır
+                    }
+
+                    // TblSiparisListesi kaydını oluştur
+                    TblSiparisListesi siparisRecord = new TblSiparisListesi
+                    {
+                        ReferansNo = referansNos[pozisyon],
+                        TMSOrderID = mergedTmsOrderID,
+                        Firma = firmalar[pozisyon],
+                        Proje = projeler[pozisyon],
+                        HizmetTipi = hizmetTipleri[pozisyon],
+                        IstenilenAracTipi = istenilenAracTipleri[pozisyon],
+                        SiparisNumarasi = mergedSiparisNumarasi,
+                        SiparisTarihi = ConvertToDateTime(yuklemeTarihleri[pozisyon]),
+                        YuklemeTarihi = ConvertToDateTime(yuklemeTarihleri[pozisyon]),
+                        TeslimTarihi = ConvertToDateTime(teslimTarihleri[pozisyon]),
+                        NoktaSayisi = noktaSayilari[pozisyon],
+                        YuklemeNoktasi = yuklemeNoktasi[pozisyon],
+                        YuklemeIli = yuklemeIli[pozisyon],
+                        YuklemeIlcesi = yuklemeIlcesi[pozisyon],
+                        SiparisDurumu = siparisDurumlari[pozisyon],
+                        TeslimNoktasi = mergedTeslimNoktasi,
+                        TeslimIli = teslimIli[pozisyon],
+                        TeslimIlcesi = teslimIlcesi[pozisyon],
+                        MusteriSiparisNo = musteriler[pozisyon],
+                        MusteriReferansNo = musteriler[pozisyon],
+                        Aciklama = aciklamalar[pozisyon],
+                        SiparisAcan = siparisAcanlar[pozisyon],
+                        SiparisAcilisZamani = ConvertToDateTime(siparisAcilisZamanlari[pozisyon]),
+                        PozisyonNo = pozisyon,
+                        ToplamKg = toplamKg[pozisyon]
+                    };
+
+                    context.TblSiparisListesi.Add(siparisRecord); // TblSiparisListesi'ne kaydet
+
+                    // TblSiparisListesiYedek kaydını oluştur (Aynı verileri yedek tabloya kaydet)
+                    TblSiparisListesiYedek siparisYedekRecord = new TblSiparisListesiYedek
+                    {
+                        ReferansNo = referansNos[pozisyon],
+                        TMSOrderID = mergedTmsOrderID,
+                        Firma = firmalar[pozisyon],
+                        Proje = projeler[pozisyon],
+                        HizmetTipi = hizmetTipleri[pozisyon],
+                        IstenilenAracTipi = istenilenAracTipleri[pozisyon],
+                        SiparisNumarasi = mergedSiparisNumarasi,
+                        SiparisTarihi = ConvertToDateTime(yuklemeTarihleri[pozisyon]),
+                        YuklemeTarihi = ConvertToDateTime(yuklemeTarihleri[pozisyon]),
+                        TeslimTarihi = ConvertToDateTime(teslimTarihleri[pozisyon]),
+                        NoktaSayisi = noktaSayilari[pozisyon],
+                        YuklemeNoktasi = yuklemeNoktasi[pozisyon],
+                        YuklemeIli = yuklemeIli[pozisyon],
+                        YuklemeIlcesi = yuklemeIlcesi[pozisyon],
+                        SiparisDurumu = siparisDurumlari[pozisyon],
+                        TeslimNoktasi = mergedTeslimNoktasi,
+                        TeslimIli = teslimIli[pozisyon],
+                        TeslimIlcesi = teslimIlcesi[pozisyon],
+                        MusteriSiparisNo = musteriler[pozisyon],
+                        MusteriReferansNo = musteriler[pozisyon],
+                        Aciklama = aciklamalar[pozisyon],
+                        SiparisAcan = siparisAcanlar[pozisyon],
+                        SiparisAcilisZamani = ConvertToDateTime(siparisAcilisZamanlari[pozisyon]),
+                        PozisyonNo = pozisyon,
+                        ToplamKg = toplamKg[pozisyon]
+                    };
+
+                    context.TblSiparisListesiYedek.Add(siparisYedekRecord); // TblSiparisListesiYedek'e kaydet
                 }
 
-                // Kaydedilen ve duplicate olan kayıtları bildiren mesajı gösteriyoruz
-                string message = string.Empty;
+                // Değişiklikleri kaydet
+                context.SaveChanges();
 
-                if (duplicateTmsOrderIDs.Any())
+
+                if (duplicateOrderIDs.Count > 0)
                 {
-                    message += "Bu TMSOrderID'leri zaten mevcut:\n" + string.Join(Environment.NewLine, duplicateTmsOrderIDs);
+                    MessageBox.Show($"Aşağıdaki TMSOrderID'ler zaten mevcut: {string.Join(", ", duplicateOrderIDs)}", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
-                if (newTmsOrderIDs.Any())
-                {
-                    message += (message.Length > 0 ? "\n" : "") + "Yeni TMSOrderID'leri başarıyla kaydedildi:\n" + string.Join(Environment.NewLine, newTmsOrderIDs);
-                }
-
-                MessageBox.Show(message, "Veri Kaydedildi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Değişiklikleri kaydet
+                context.SaveChanges();
             }
         }
+
+
+
+
+
+        private void AddToGroup(Dictionary<string, List<string>> group, string key, string value)
+        {
+            if (!group.ContainsKey(key))
+            {
+                group[key] = new List<string>();
+            }
+            if (!string.IsNullOrEmpty(value))
+            {
+                group[key].Add(value);
+            }
+        }
+
+        private DateTime? ConvertToDateTime(string dateTimeString)
+        {
+            if (DateTime.TryParse(dateTimeString, out DateTime result))
+            {
+                return result;
+            }
+            return null;
+        }
+
+
+
+        private DateTime ConvertToDateTime(object value)
+        {
+            if (value == null || value == DBNull.Value)
+            {
+                throw new InvalidOperationException("Tarih değeri null olamaz.");
+            }
+
+            if (DateTime.TryParse(value.ToString(), out DateTime result))
+            {
+                return result;
+            }
+
+            throw new FormatException($"Geçersiz tarih formatı: {value}");
+        }
+
 
         // Planlamaya atama işlemi (gerekirse bunu özelleştirebilirsiniz)
         private void AssignToPlanning()
         {
             // Placeholder for your logic to assign data to the planning system
         }
+
+        // Global bir DataTable değişkeni tanımlıyoruz
+        private DataTable allRowsData;
+
+        private DataTable originalData; // gridControlVeriler'in orijinal verilerini tutacak değişken
+
         private void gridControlVeriler_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            try
-            {
-                // Tıklanan satırın verilerini al
-                var selectedRow = gridViewVeriler.GetDataRow(e.RowHandle);
+            var gridView = sender as DevExpress.XtraGrid.Views.Grid.GridView;
 
-                // Eğer satır verisi varsa
+            if (gridView != null && e.RowHandle >= 0)
+            {
+                DataRow selectedRow = gridView.GetDataRow(e.RowHandle);
+
                 if (selectedRow != null)
                 {
-                    // sortedData ve allData'yı burada alıyorsunuz
-                    DataTable sortedData = gridViewVeriler.DataSource as DataTable; // GridView'in datasource'undan sortedData'yı alın
-                    DataTable allData = sortedData.Copy(); // allData'yı da aynı şekilde alabilirsiniz
+                    string pozisyonNo = selectedRow["PozisyonNo"].ToString();
 
-                    // FrmRowDetails formunu oluşturun
-                    FrmRowDetails frmRowDetails = new FrmRowDetails(sortedData, allData);
+                    // Aynı PozisyonNo'ya sahip diğer satırları filtrele
+                    DataTable filteredData = GetRowsByPozisyonNo(pozisyonNo);
 
-                    // Seçilen satır verisini formun SelectedDataRow özelliğine aktarın
-                    frmRowDetails.SelectedDataRow = selectedRow;
 
-                    // FrmRowDetails formunu gösterin
-                    frmRowDetails.ShowDialog(); // ShowDialog() ile modal olarak açılır
+
+                    // İlk veriyi sakla (arkada tutma)
+                    originalData = (gridControlVeriler.DataSource as DataTable);
+
+                    // Ekstra grid'i göster
+                    ShowExtraGridOnSameForm(filteredData);
+                }
+                else
+                {
+                    MessageBox.Show("Seçilen satır boş!"); // Hata tespiti
                 }
             }
-            catch (Exception ex)
+            else
             {
-                // Hata mesajını göstermek için
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("GridView veya RowHandle geçersiz."); // Hata tespiti
             }
         }
 
+        private DataTable GetRowsByPozisyonNo(string pozisyonNo)
+        {
+            DataTable filteredData = new DataTable();
+
+            // gridControlVeriler'in veri kaynağını al (örneğin: DataTable)
+            DataTable originalData = (gridControlVeriler.DataSource as DataTable);
+
+            if (originalData != null)
+            {
+                // PozisyonNo'ya göre filtreleme yap
+                var rows = originalData.Select($"PozisyonNo = '{pozisyonNo}'");
+
+                // Yeni DataTable'ı doldur
+                filteredData = originalData.Clone(); // Aynı yapıya sahip yeni bir DataTable oluştur
+                foreach (var row in rows)
+                {
+                    filteredData.ImportRow(row);
+                }
+            }
+
+            return filteredData;
+        }
+
+        private void ShowExtraGridOnSameForm(DataTable rowData)
+        {
+            // Eğer daha önce eklenmiş bir GridControl varsa, güncelle ve ön plana getir
+            var existingGrid = this.Controls.Find("extraGridControl", true).FirstOrDefault() as DevExpress.XtraGrid.GridControl;
+            if (existingGrid != null)
+            {
+                existingGrid.DataSource = rowData;
+                existingGrid.BringToFront(); // GridControl'ü ön plana getir
+                existingGrid.Refresh();
+                return;
+            }
+
+            // Yeni bir GridControl oluştur ve forma ekle
+            DevExpress.XtraGrid.GridControl extraGridControl = new DevExpress.XtraGrid.GridControl
+            {
+                Name = "extraGridControl",
+                DataSource = rowData,
+                Dock = DockStyle.Bottom,
+                Height = 200
+            };
+
+            DevExpress.XtraGrid.Views.Grid.GridView extraGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            extraGridControl.MainView = extraGridView;
+            extraGridControl.ViewCollection.Add(extraGridView);
+
+            // "Sıra" sütunu varsa düzenle, yoksa ekle
+            if (!rowData.Columns.Contains("Sıra"))
+            {
+                rowData.Columns.Add("Sıra", typeof(int));
+
+                // Varsayılan sıra değerlerini ekle
+                for (int i = 0; i < rowData.Rows.Count; i++)
+                {
+                    rowData.Rows[i]["Sıra"] = i + 1; // Başlangıç sırası mevcut sıraya göre
+                }
+            }
+
+            // Grid'i forma ekle
+            this.Controls.Add(extraGridControl);
+
+            // GridView ayarları
+            extraGridView.OptionsView.ShowGroupPanel = false;
+            extraGridView.BestFitColumns();
+            extraGridView.OptionsBehavior.Editable = true; // Satırların düzenlenebilir olmasını sağla
+            extraGridView.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.Inplace;
+
+            // "Sıra" sütununu düzenlenebilir yap
+            extraGridView.Columns["Sıra"].OptionsColumn.AllowEdit = true;
+
+            // Validasyon işlemleri için ValidatingEditor olayı
+            extraGridView.ValidatingEditor += (sender, e) =>
+            {
+                var view = sender as DevExpress.XtraGrid.Views.Grid.GridView;
+
+                if (view.FocusedColumn.FieldName == "Sıra")
+                {
+                    if (!int.TryParse(e.Value?.ToString(), out int newValue) || newValue <= 0)
+                    {
+                        e.Valid = false;
+                        e.ErrorText = "Sıra değeri pozitif bir sayı olmalıdır!";
+                    }
+                }
+            };
+
+            // Buton eklemek için bir panel oluştur
+            Panel bottomPanel = new Panel
+            {
+                Name = "bottomPanel",
+                Dock = DockStyle.Bottom,
+                Height = 40
+            };
+
+            // "Sırala" butonunu oluştur
+            Button extraButton = new Button
+            {
+                Text = "Sırala",
+                Dock = DockStyle.Fill
+            };
+
+            // Sırala butonuna tıklanınca sıralama işlemi
+            extraButton.Click += (sender, e) =>
+            {
+                // Ekstra GridControl'deki görünümden veriyi al
+                if (extraGridControl.MainView is DevExpress.XtraGrid.Views.Grid.GridView extraView)
+                {
+                    var extraDataSource = extraGridControl.DataSource as DataTable;
+                    if (extraDataSource == null) return;
+
+                    // Ekstra griddeki TMSOrderID değerlerini al
+                    var tmsOrderIds = extraDataSource.AsEnumerable()
+                                          .Select(row => row["TMSOrderID"].ToString())
+                                          .ToList();
+
+                    // Ana GridControl'ü bul
+                    var mainGrid = this.Controls.Find("gridControlVeriler", true).FirstOrDefault() as DevExpress.XtraGrid.GridControl;
+                    DataTable mainDataSource = null;
+
+                    // Silinen satırları ve indeksleri saklamak için listeler
+                    List<object[]> deletedRows = new List<object[]>();
+                    List<int> deletedIndexes = new List<int>();
+
+                    // Ana gridin yüksekliğini sabitle (daha sonrasında restore edilecek)
+                    int originalHeight = mainGrid.Height;
+
+                    if (mainGrid != null)
+                    {
+                        mainDataSource = mainGrid.DataSource as DataTable;
+                        if (mainDataSource != null)
+                        {
+                            // Ana griddeki TMSOrderID'ye göre eşleşen satırları sil ve indekslerini sakla
+                            for (int i = mainDataSource.Rows.Count - 1; i >= 0; i--)
+                            {
+                                var row = mainDataSource.Rows[i];
+                                var tmsOrderID = row["TMSOrderID"].ToString();
+
+                                if (tmsOrderIds.Contains(tmsOrderID))
+                                {
+                                    deletedRows.Insert(0, row.ItemArray); // Satır içeriğini sakla (öncelik sırasını korumak için başa ekliyoruz)
+                                    deletedIndexes.Insert(0, i);          // Silinen satırın indeksini sakla
+                                    mainDataSource.Rows.RemoveAt(i);
+                                }
+                            }
+
+                            // Grid'in görünümünü yenilemeden önce boyutu sabitle
+                            mainGrid.Height = originalHeight;
+
+                            // Ana grid görünümünü yenile (bunu en son yapalım, gereksiz yenilemelerden kaçınalım)
+                            mainGrid.Refresh();
+                        }
+                    }
+
+                    // Sıralama işlemi: "Sıra" sütununa göre sırala ve 1'den itibaren güncelle
+                    var sortedRows = extraDataSource.AsEnumerable()
+                                         .OrderBy(row => Convert.ToInt32(row["Sıra"]))
+                                         .ToList();
+
+                    // "Sıra" sütununu 1'den itibaren yeniden numaralandır
+                    for (int i = 0; i < sortedRows.Count; i++)
+                    {
+                        sortedRows[i]["Sıra"] = (i + 1).ToString();
+                    }
+
+                    // Yeni sıralanmış veriyi gridin veri kaynağına geri yükle
+                    extraGridControl.DataSource = sortedRows.CopyToDataTable();
+                    extraView.RefreshData();
+
+                    // Kullanıcıdan onay al
+                    var result = MessageBox.Show("Onaylıyor musunuz?", "Onay", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result == DialogResult.No)
+                    {
+                        // Silinen satırları orijinal indekslerine göre geri ekle
+                        for (int i = 0; i < deletedRows.Count; i++)
+                        {
+                            var newRow = mainDataSource.NewRow();
+                            newRow.ItemArray = deletedRows[i];
+                            mainDataSource.Rows.InsertAt(newRow, deletedIndexes[i]); // Orijinal indeksine ekle
+                        }
+
+                        // Grid'in boyutunu eski haline getirme
+                        mainGrid.Height = originalHeight;
+                        mainGrid.Refresh();
+                        MessageBox.Show("İşlem iptal edildi, silinen satırlar eski yerlerine geri getirildi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else if (result == DialogResult.Yes)
+                    {
+                        // Silinen satırların yerini ekstra griddeki sıralı satırlarla doldur
+                        for (int i = 0; i < deletedRows.Count; i++)
+                        {
+                            var sortedRow = sortedRows[i];
+                            var newRow = mainDataSource.NewRow();
+
+                            // Sadece ortak sütunları kopyala
+                            foreach (DataColumn column in mainDataSource.Columns)
+                            {
+                                if (extraDataSource.Columns.Contains(column.ColumnName)) // Ortak sütun kontrolü
+                                {
+                                    newRow[column.ColumnName] = sortedRow[column.ColumnName];
+                                }
+                            }
+
+                            // Silinen satırın yerine ekstra griddeki sıralı satırı ekle
+                            mainDataSource.Rows.InsertAt(newRow, deletedIndexes[i]);
+                        }
+
+                        // Grid'in boyutunu eski haline getirme
+                        mainGrid.Height = originalHeight;
+                        mainGrid.Refresh();
+
+                        MessageBox.Show("İşlem onaylandı, veriler güncellendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                    // Ekstra GridControl'ü tamamen kapat
+                    extraGridControl.Dispose(); // Ekstra grid'i kapat
+                    extraButton.Dispose();
+                }
+            };
+
+
+
+
+
+
+
+
+            // Butonu panele ekle ve paneli forma ekle
+            bottomPanel.Controls.Add(extraButton);
+            this.Controls.Add(bottomPanel);
+
+            // GridControl ve paneli ön plana getir
+            extraGridControl.BringToFront();
+            bottomPanel.BringToFront();
+        }
     }
 }
+
+
 

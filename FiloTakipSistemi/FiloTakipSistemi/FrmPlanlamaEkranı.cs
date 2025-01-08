@@ -2,13 +2,17 @@
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraGrid.Views.Grid; // DevExpress GridView namespace
-using FiloTakipSistemi.Entity2;
+using FiloTakipSistemi.Entity7;
 using System.Drawing; // Point türü için gerekli
 using System.Collections.Generic;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraEditors.Repository;
 using System.Data;
 using System.Data.Entity.Infrastructure;
+
+
+
+
 
 namespace FiloTakipSistemi
 {
@@ -22,16 +26,39 @@ namespace FiloTakipSistemi
         {
             InitializeComponent();
             gridControlSiparis.MouseDown += GridControlSiparis_MouseDown; // Olayı bağlayın
-            panel1.Visible = false;
             bindingSourceSiparisListesi = new BindingSource(); // BindingSource'ı başlat
+            gridControl1.Visible = false;
 
-            // Timer'ı başlat
-            myTimer = new Timer();
-            myTimer.Interval = 30; // Örneğin 30 ms
-            myTimer.Tick += Timer1_Tick; // Timer olayını bağlayın
+            // XtraGrid olaylarını bağlayın
+            var gridView = gridControlSiparis.MainView as DevExpress.XtraGrid.Views.Grid.GridView;
+            if (gridView != null)
+            {
+                gridView.MouseDown += GridView_MouseDown; // XtraGrid için MouseDown olayını bağladık
+                gridView.RowClick += GridView_RowClick;   // Satır tıklama olayını bağladık
+            }
 
-            // PictureEdit için tıklama olayını bağlayın
-            pictureEdit1.Click += PictureEdit1_Click; // Yeni olay işleyici
+            // RepositoryItemDateEdit (Tahmini Varış) için tarih ve saat seçimi
+            RepositoryItemDateEdit repositoryItemDateEdit1 = new RepositoryItemDateEdit();
+            repositoryItemDateEdit1.Mask.EditMask = "dd.MM.yyyy HH:mm"; // Tarih ve saat formatı
+            repositoryItemDateEdit1.Mask.UseMaskAsDisplayFormat = true; // Maskeyi görüntü formatı olarak kullan
+            repositoryItemDateEdit1.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True; // Vista takvimini etkinleştir
+            repositoryItemDateEdit1.VistaEditTime = DevExpress.Utils.DefaultBoolean.True; // Saat seçimini etkinleştir
+            gridControl1.RepositoryItems.Add(repositoryItemDateEdit1);
+
+            // "TahminiVaris" sütununa tarih ve saat seçimi ekle
+            gridView.Columns["TahminiVaris"].ColumnEdit = repositoryItemDateEdit1;
+        }
+
+        // XtraGrid MouseDown olayı
+        private void GridView_MouseDown(object sender, MouseEventArgs e)
+        {
+            // Burada XtraGrid üzerindeki fare tıklama olaylarını işleyebilirsiniz
+        }
+
+        // XtraGrid RowClick olayı
+        private void GridView_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            // Satır tıklama olayında yapılacak işlemleri burada yazabilirsiniz
         }
 
         private void FrmPlanlamaEkranı_Load(object sender, EventArgs e)
@@ -41,7 +68,7 @@ namespace FiloTakipSistemi
 
         public void Listele()
         {
-            using (FiloTakipEntities7 db = new FiloTakipEntities7())
+            using (FiloTakipEntities9 db = new FiloTakipEntities9())
             {
                 var siparisListesi = db.TblSiparisListesi.ToList();
                 bindingSourceSiparis.DataSource = siparisListesi;
@@ -58,13 +85,14 @@ namespace FiloTakipSistemi
                     RepositoryItemLookUpEdit repositoryItemLookUpEdit = new RepositoryItemLookUpEdit();
                     repositoryItemLookUpEdit.NullText = "Seçiniz";
 
-                    // Plaka listesini doldur (hepsi), belirli Durum'ları hariç tut
+                    // Plaka listesini doldur (hepsi)
                     var plakaListesi = db.TblPlakaDurumları
-                        .Where(p => p.Durum != "İZİNLİ" && p.Durum != "BAKIM İZNİ" && p.Durum != "ARIZALI")
                         .Select(p => new
                         {
                             Plaka = p.Plaka,
-                            Durum = p.Durum // Durum bilgisini ekliyoruz
+                            Durum = p.Durum,
+                            SonIl = p.SonIl,
+                            SonIlce = p.SonIlce
                         })
                         .ToList();
 
@@ -72,7 +100,9 @@ namespace FiloTakipSistemi
                     var plakaDurumListesi = plakaListesi.Select(p => new
                     {
                         Plaka = p.Plaka,
-                        Durum = p.Durum
+                        Durum = p.Durum,
+                        SonIl = p.SonIl,
+                        SonIlce = p.SonIlce
                     }).ToList();
 
                     repositoryItemLookUpEdit.DataSource = plakaDurumListesi;
@@ -94,6 +124,47 @@ namespace FiloTakipSistemi
                     {
                         plakaColumn.ColumnEdit = repositoryItemLookUpEdit;
                     }
+
+                    // CellValueChanged olayını kullanarak seçilen plaka durumunu kontrol et
+                    view.CellValueChanged += (sender, e) =>
+                    {
+                        if (e.Column.FieldName == "Plaka")
+                        {
+                            // İlk önce e.Value'yi kontrol edelim, null olup olmadığını kontrol ediyoruz
+                            if (e.Value == null)
+                            {
+                                MessageBox.Show("Plaka seçilmedi, lütfen bir plaka seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return; // Eğer değer null ise, işlemi sonlandırıyoruz
+                            }
+
+                            string plaka = e.Value.ToString();
+
+                            // Bu satırda, DbContext'i burada yeniden başlatıyoruz
+                            using (FiloTakipEntities9 dbContext = new FiloTakipEntities9())
+                            {
+                                // Plaka'nın durumunu kontrol et
+                                var plakaDurum = dbContext.TblPlakaDurumları
+                                    .Where(p => p.Plaka == plaka)
+                                    .Select(p => p.Durum)
+                                    .FirstOrDefault();
+
+                                if (plakaDurum != null && (plakaDurum == "İZİNLİ" || plakaDurum == "BAKIM İZNİ" || plakaDurum == "ARIZALI" || plakaDurum == "KESİNTİ"))
+                                {
+                                    MessageBox.Show($"Bu plaka şu anda '{plakaDurum}' durumunda olduğundan işlem yapılamaz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                                    // Burada kullanıcı geçersiz durumu seçtiği için plaka değerini sıfırlıyoruz
+                                    var viewLocal = sender as GridView;
+                                    if (viewLocal != null)
+                                    {
+                                        // Plaka sütununu temizleyelim
+                                        viewLocal.SetRowCellValue(e.RowHandle, e.Column, null);
+                                    }
+
+                                    return; // Geçersiz plaka durumu seçildiği için işlemi sonlandırıyoruz
+                                }
+                            }
+                        }
+                    };
                 }
 
                 if (siparisListesi.Count == 0)
@@ -107,9 +178,10 @@ namespace FiloTakipSistemi
 
 
 
+
         public void PlakaDurumunuGuncelle(int plakaID)
         {
-            using (var db = new FiloTakipEntities7())
+            using (var db = new FiloTakipEntities9())
             {
                 var plaka = db.TblPlakaDurumları.FirstOrDefault(p => p.ID == plakaID);
                 if (plaka != null)
@@ -152,33 +224,36 @@ namespace FiloTakipSistemi
             }
         }
 
+
         private void plakaÖnerisiYapToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
-            panel1.Location = new Point(panel1.Location.X, this.Height); // Formun altına yerleştir
-            myTimer.Start(); // Timer başlat
+            // gridControl1 kontrolünü görünür hale getiriyoruz
+            gridControl1.Visible = true;  // Burada gridControl1 kontrolünü görünür hale getiriyoruz.
 
             // Seçili satırdan bilgileri alın
             var selectedOrders = GetSelectedOrders();
             if (selectedOrders.Count > 0)
             {
                 var selectedOrder = selectedOrders.First(); // İlk seçili satırı alın
-                string yuklemeIl = selectedOrder.YuklemeIl;
-                string yuklemeIlce = selectedOrder.YuklemeIlce;
+                string yuklemeIl = selectedOrder.YuklemeIli;
+                string yuklemeIlce = selectedOrder.YuklemeIlcesi;
 
+                // ListelePlakaOnerisi metodunu çağırarak verileri listele
                 ListelePlakaOnerisi(yuklemeIl, yuklemeIlce); // Parametreleri gönder
             }
         }
+
+
+
+
 
         public void ListelePlakaOnerisi(string yuklemeIl, string yuklemeIlce)
         {
             try
             {
-                using (FiloTakipEntities7 db = new FiloTakipEntities7())
+                using (FiloTakipEntities9 db = new FiloTakipEntities9())
                 {
-                    // TblPlakaDurumları ile eşleştirip verileri oluştur
                     var plakaDurumlariListesi = db.TblPlakaDurumları
-                        .Where(p => p.Durum == "BOŞTA") // Sadece "BOŞTA" durumundaki kayıtları al
                         .Select(p => new
                         {
                             p.ID,
@@ -186,7 +261,6 @@ namespace FiloTakipSistemi
                             p.SonIl,
                             p.SonIlce,
                             p.Durum,
-                            p.TahminiVarisZamani,
                             YuklemeYeriArasındaKm = db.TblMesafe
                                 .Where(m => m.YuklemeIl == yuklemeIl && m.YuklemeIlce == yuklemeIlce &&
                                             m.TahliyeIl == p.SonIl && m.TahliyeIlce == p.SonIlce)
@@ -202,7 +276,6 @@ namespace FiloTakipSistemi
                         return;
                     }
 
-                    // Mesafe sütununu ekle
                     var resultList = plakaDurumlariListesi.Select(p => new
                     {
                         p.ID,
@@ -210,26 +283,50 @@ namespace FiloTakipSistemi
                         p.SonIl,
                         p.SonIlce,
                         p.Durum,
-                        p.TahminiVarisZamani,
-                        MesafeKm = p.YuklemeYeriArasındaKm
+                        MesafeKm = p.YuklemeYeriArasındaKm,
+                        // Molasız Varis saat ve dakika hesaplanır
+                        MolasizVarisSaatVeDakika = FormatSaatDakika(Convert.ToDouble(p.YuklemeYeriArasındaKm) / 80),
+                        // Molalı Varis saat ve dakika hesaplanır
+                        MolaliVarisSaatVeDakika = MolaliVarisHesapla(Convert.ToDouble(p.YuklemeYeriArasındaKm) / 80)
                     }).ToList();
 
-                    bindingSourcePlakaOnerisi.DataSource = resultList;
-                    gridControlPlakaOnerisi.DataSource = bindingSourcePlakaOnerisi;
+                    // gridControl1 ile veri bağlama
+                    gridControl1.Visible = true;
+                    gridControl1.DataSource = resultList;
 
-                    var view = gridControlPlakaOnerisi.MainView as GridView;
+                    var view = gridControl1.MainView as GridView;
                     if (view != null)
                     {
                         view.OptionsSelection.MultiSelect = true;
                         view.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
 
-                        if (view.Columns["Mesafe (km)"] != null)
+                        // Molasız Varis Saat ve Dakika sütunu eklenir
+                        if (!view.Columns.Cast<GridColumn>().Any(col => col.FieldName == "MolasizVarisSaatVeDakika"))
                         {
-                            view.Columns["Mesafe (km)"].Visible = false;
-                            view.Columns.Remove(view.Columns["Mesafe (km)"]);
+                            var molasizVarisSaatVeDakikaColumn = new DevExpress.XtraGrid.Columns.GridColumn
+                            {
+                                Caption = "Molasız Varis Saat ve Dakika",
+                                FieldName = "MolasizVarisSaatVeDakika",
+                                Visible = true,
+                                UnboundType = DevExpress.Data.UnboundColumnType.Object
+                            };
+                            view.Columns.Add(molasizVarisSaatVeDakikaColumn);
                         }
 
-                        // "Plaka Ata" adında yeni bir sütun ekle
+                        // Molalı Varis Saat ve Dakika sütunu eklenir
+                        if (!view.Columns.Cast<GridColumn>().Any(col => col.FieldName == "MolaliVarisSaatVeDakika"))
+                        {
+                            var molaliVarisSaatVeDakikaColumn = new DevExpress.XtraGrid.Columns.GridColumn
+                            {
+                                Caption = "Molalı Varis Saat ve Dakika",
+                                FieldName = "MolaliVarisSaatVeDakika",
+                                Visible = true,
+                                UnboundType = DevExpress.Data.UnboundColumnType.Object
+                            };
+                            view.Columns.Add(molaliVarisSaatVeDakikaColumn);
+                        }
+
+                        // Plaka Ata sütunu eklenir
                         if (!view.Columns.Cast<GridColumn>().Any(col => col.FieldName == "PlakaAta"))
                         {
                             var plakaAtaColumn = new DevExpress.XtraGrid.Columns.GridColumn
@@ -242,6 +339,7 @@ namespace FiloTakipSistemi
                             view.Columns.Add(plakaAtaColumn);
                         }
 
+                        // ButtonEdit ile Plaka Ata işlemi
                         RepositoryItemButtonEdit buttonEdit = new RepositoryItemButtonEdit
                         {
                             TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
@@ -253,28 +351,24 @@ namespace FiloTakipSistemi
                         buttonEdit.ButtonClick += (sender, e) =>
                         {
                             int rowHandle = view.FocusedRowHandle;
-                            string plaka = view.GetRowCellValue(rowHandle, "Plaka").ToString(); // Plaka sütunundaki değeri al
+                            string plaka = view.GetRowCellValue(rowHandle, "Plaka").ToString();
 
-                            // gridControlSiparis'e erişerek Plaka kısmını güncelle
                             var siparisView = gridControlSiparis.MainView as GridView;
                             if (siparisView != null)
                             {
-                                // Seçili satırın Plaka alanını güncelle
                                 int siparisRowHandle = siparisView.FocusedRowHandle;
-                                siparisView.SetRowCellValue(siparisRowHandle, "Plaka", plaka); // Plaka sütununa plaka bilgisini yaz
+                                siparisView.SetRowCellValue(siparisRowHandle, "Plaka", plaka);
                             }
 
-                            using (FiloTakipEntities7 dbContext = new FiloTakipEntities7())
+                            using (FiloTakipEntities9 dbContext = new FiloTakipEntities9())
                             {
-                                var plakaDurumu = dbContext.TblPlakaDurumları.FirstOrDefault(p => p.Plaka == plaka); // Plakayı bul
+                                var plakaDurumu = dbContext.TblPlakaDurumları.FirstOrDefault(p => p.Plaka == plaka);
                                 if (plakaDurumu != null)
                                 {
-                                    // Durumu "PLAKA ATANDI" olarak güncelle
                                     plakaDurumu.Durum = "PLAKA ATANDI";
-
                                     try
                                     {
-                                        dbContext.SaveChanges(); // Veritabanına kaydet
+                                        dbContext.SaveChanges();
                                         MessageBox.Show($"Plaka {plaka} için durum 'PLAKA ATANDI' olarak güncellendi.", "Plaka Seçimi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     }
                                     catch (Exception ex)
@@ -305,36 +399,53 @@ namespace FiloTakipSistemi
             }
         }
 
-
-
-
-
-
-
-
-        private void Timer1_Tick(object sender, EventArgs e)
+        private string FormatSaatDakika(double hours)
         {
-            if (panel1.Location.Y > this.Height - panel1.Height) // Panel yukarı hareket etsin
-            {
-                panel1.Location = new Point(panel1.Location.X, panel1.Location.Y - 5); // 5 birim yukarı hareket et
-            }
-            else
-            {
-                myTimer.Stop(); // Panel istenilen konuma ulaştığında timer'ı durdur
-
-                // Seçili siparişi al
-                var selectedOrders = GetSelectedOrders();
-                if (selectedOrders.Count > 0)
-                {
-                    var selectedOrder = selectedOrders.First(); // İlk seçili siparişi al
-                    string yuklemeIl = selectedOrder.YuklemeIl;
-                    string yuklemeIlce = selectedOrder.YuklemeIlce;
-
-                    // ListelePlakaOnerisi metodunu çağır ve parametreleri geç
-                    ListelePlakaOnerisi(yuklemeIl, yuklemeIlce);
-                }
-            }
+            int totalMinutes = (int)(hours * 60); // Saatten dakikaya çevrilir
+            int hoursPart = totalMinutes / 60;    // Saat kısmı
+            int minutesPart = totalMinutes % 60; // Dakika kısmı
+            return $"{hoursPart} saat {minutesPart} dakika";
         }
+
+        private string MolaliVarisHesapla(double hours)
+        {
+            int totalMinutes = (int)(hours * 60); // Saatten dakikaya çevrilir
+            int hoursPart = totalMinutes / 60;    // Saat kısmı
+            int minutesPart = totalMinutes % 60; // Dakika kısmı
+
+            // Eğer süre 9 saati geçiyorsa, 11 saat eklenir
+            if (hoursPart > 9)
+            {
+                hoursPart += 11;
+            }
+
+            // Eğer süre 24 saati geçiyorsa, "1 gün" eklenir
+            string result = $"{hoursPart} saat {minutesPart} dakika";
+            if (hoursPart >= 24)
+            {
+                int days = hoursPart / 24;
+                int remainingHours = hoursPart % 24;
+                result = $"{days} gün {remainingHours} saat {minutesPart} dakika";
+            }
+
+            return result;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         private void satırSilmeToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -351,7 +462,7 @@ namespace FiloTakipSistemi
 
                 if (dialogResult == DialogResult.Yes)
                 {
-                    using (FiloTakipEntities7 db = new FiloTakipEntities7())
+                    using (FiloTakipEntities9 db = new FiloTakipEntities9())
                     {
                         // Seçilen satırların verilerini sil
                         foreach (var rowHandle in selectedRows.OrderByDescending(x => x)) // En son seçilen satırdan başlayarak sil
@@ -381,17 +492,6 @@ namespace FiloTakipSistemi
             }
         }
 
-        private void PictureEdit1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void pictureEdit1_EditValueChanged(object sender, EventArgs e)
-        {
-            // Paneli kapat
-            panel1.Visible = false;
-        }
-
-      
         public void Guncelle()
         {
             // gridControlSiparis için veri kaynağını güncelle
@@ -405,20 +505,12 @@ namespace FiloTakipSistemi
         // Örnek bir metod: Veritabanından güncellenmiş verileri çekmek için
         private object GetUpdatedData()
         {
-            using (FiloTakipEntities7 db = new FiloTakipEntities7())
+            using (FiloTakipEntities9 db = new FiloTakipEntities9())
             {
                 return db.TblSiparisListesi.ToList(); // İlgili veri kaynağını döndürün
             }
         }
 
-           
-
-        private void FrmPlanlamaEkranı_Load_1(object sender, EventArgs e)
-        {
-            // TODO: Bu kod satırı 'filoTakipDataSet18.TblSiparisListesi' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
-            this.tblSiparisListesiTableAdapter.Fill(this.filoTakipDataSet18.TblSiparisListesi);
-
-        }
 
         private void labelControl1_Click(object sender, EventArgs e)
         {
@@ -446,91 +538,157 @@ namespace FiloTakipSistemi
                 return;
             }
 
-            // Plaka sütunu doluysa işlemlere devam et
-            var siparis = (TblSiparisListesi)siparisView.GetRow(siparisView.FocusedRowHandle);
+            // Seçili satırdan TahminiVaris değerini al (string olarak)
+            var tahminiVarisString = siparisView.GetRowCellValue(siparisView.FocusedRowHandle, "TahminiVaris")?.ToString();
 
-            // Yeni TblPlakaAtandi nesnesi oluştur
-            var plakaAtandi = new TblPlakaAtandi
+            // Eğer TahminiVaris boşsa, uyarı ver ve işlemi sonlandır
+            if (string.IsNullOrWhiteSpace(tahminiVarisString))
             {
-                Plaka = plaka, // Plaka değerini kullan
-                PlakaDurumu = "PLAKA ATANDI",
-                SeferTarihi = DateTime.Now,
-                MusteriAdi = siparis.MusteriAdi,
-                YuklemeNoktasi = siparis.YuklemeNoktasi,
-                YuklemeIl = siparis.YuklemeIl,
-                YuklemeIlcesi = siparis.YuklemeIlce,
-                TeslimNoktasi = siparis.TeslimNoktasi,
-                TeslimIli = siparis.TeslimIl,
-                TeslimIlcesi = siparis.TeslimIlce
-            };
+                MessageBox.Show("Lütfen Tahmini Varış saatini giriniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // İşlemi sonlandır
+            }
 
-            // Plaka atandı bilgisi ver
-            DialogResult result = MessageBox.Show($"{plaka} plakası atandı. Devam etmek ister misiniz?", "Onay", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
+            // TahminiVaris değerini DateTime? türüne dönüştür
+            DateTime? tahminiVaris = null;
+            if (DateTime.TryParse(tahminiVarisString, out DateTime parsedTahminiVaris))
             {
-                using (FiloTakipEntities7 dbContext = new FiloTakipEntities7())
+                tahminiVaris = parsedTahminiVaris;
+            }
+            else
+            {
+                // Dönüştürme başarısız olursa, gerekirse default bir değer verebilirsiniz
+                // Örneğin, null bırakabiliriz.
+                tahminiVaris = null;
+            }
+
+            // TblPlakaDurumları tablosunda plaka bilgilerini ara
+            using (FiloTakipEntities9 dbContext = new FiloTakipEntities9())
+            {
+                var plakaDurum = dbContext.TblPlakaDurumları.FirstOrDefault(p => p.Plaka == plaka);
+
+                if (plakaDurum != null)
                 {
-                    // TblPlakaAtandi nesnesini veritabanına ekle
-                    dbContext.TblPlakaAtandi.Add(plakaAtandi);
-                    dbContext.SaveChanges(); // Veritabanına kaydet
-
-                    // Seçili siparişi silmek için mevcut DbContext ile tekrar al
-                    var siparisToDelete = dbContext.TblSiparisListesi.Find(siparis.ID);
-
-                    if (siparisToDelete != null)
+                    // Durum "BOŞTA" değilse, veriyi TblRezerve tablosuna at
+                    if (plakaDurum.Durum != "BOŞTA")
                     {
-                        // Seçili siparişi sil
-                        dbContext.TblSiparisListesi.Remove(siparisToDelete);
-                        dbContext.SaveChanges(); // Değişiklikleri kaydet
-
-                        // TblPlakaDurumları tablosunda durumu güncelle ve sürücü bilgilerini al
-                        var plakaDurum = dbContext.TblPlakaDurumları.FirstOrDefault(p => p.Plaka == plaka);
-                        if (plakaDurum != null)
+                        // TblRezerve tablosuna veri eklerken sürücü bilgilerini de alıyoruz
+                        var rezerv = new TblRezerve
                         {
-                            // Durumu güncelle
-                            plakaDurum.Durum = "PLAKA ATANDI"; // Durumu güncelle
+                            Plaka = plaka,
+                            SeferTarihi = DateTime.Now,
+                            MusteriAdi = siparisView.GetRowCellValue(siparisView.FocusedRowHandle, "Firma")?.ToString(),
+                            YuklemeNoktasi = siparisView.GetRowCellValue(siparisView.FocusedRowHandle, "YuklemeNoktasi")?.ToString(),
+                            YuklemeIl = siparisView.GetRowCellValue(siparisView.FocusedRowHandle, "YuklemeIli")?.ToString(),
+                            YuklemeIlcesi = siparisView.GetRowCellValue(siparisView.FocusedRowHandle, "YuklemeIlcesi")?.ToString(),
+                            TeslimNoktasi = siparisView.GetRowCellValue(siparisView.FocusedRowHandle, "TeslimNoktasi")?.ToString(),
+                            TeslimIli = siparisView.GetRowCellValue(siparisView.FocusedRowHandle, "TeslimIli")?.ToString(),
+                            TeslimIlcesi = siparisView.GetRowCellValue(siparisView.FocusedRowHandle, "TeslimIlcesi")?.ToString(),
+                            SurucuAdSoyad = plakaDurum.SurucuAdı,          // Sürücü adı
+                            SurucuTelefon = plakaDurum.SurucuTelefon,  // Sürücü telefon
+                            SurucuTC = plakaDurum.SurucuTC,             // Sürücü TC
+                            RezervasyonTarihi = DateTime.Now,
+                            PlakaDurumu = "REZERVE EDİLDİ",
+                            // SonNokta değerini burada da ekliyoruz
+                            SonNokta = plakaDurum.SonNokta, // SonNokta'yı burada kullanıyoruz
+                            TahminiVaris = siparisView.GetRowCellValue(siparisView.FocusedRowHandle, "TahminiVaris") as DateTime? // DateTime? nullable türü kullanılıyor                           
+                        };
 
-                            // Sürücü bilgilerini al ve TblPlakaAtandi'ye ekle
-                            plakaAtandi.SurucuAdSoyad = plakaDurum.SurucuAdı; // Sürücü adı
-                            plakaAtandi.SurucuTelefon = plakaDurum.SurucuTelefon; // Sürücü telefon
-                            plakaAtandi.SurucuTC = plakaDurum.SurucuTC; // Sürücü TC
+                        // TblRezerve tablosuna veriyi ekle
+                        dbContext.TblRezerve.Add(rezerv);
+                        dbContext.SaveChanges();
 
-                            // Güncellemeleri yap
-                            plakaDurum.SeferTarihi = DateTime.Now; // SeferTarihi sütununa günün tarihini getir
-                            plakaDurum.YuklemeNoktası = siparis.YuklemeNoktasi; // YuklemeNoktası değerini getir
-                            plakaDurum.TeslimNoktası = siparis.TeslimNoktasi; // TeslimNoktası değerini getir
-                            plakaDurum.SonIl = siparis.TeslimIl; // TeslimIl değerini getir
-                            plakaDurum.SonIlce = siparis.TeslimIlce; // TeslimIlce değerini getir
-
-                            // SonNokta değerini TblBolgeler tablosundan al
-                            var bolge = dbContext.TblBolgeler.FirstOrDefault(b => b.İl == plakaDurum.SonIl);
-                            plakaDurum.SonNokta = bolge?.Bolge; // Eğer bulursa, Bolge değerini al
-
+                        // Seçili siparişi TblSiparisListesi tablosundan sil
+                        var siparisToDelete = dbContext.TblSiparisListesi.Find(siparisView.GetRowCellValue(siparisView.FocusedRowHandle, "ID"));
+                        if (siparisToDelete != null)
+                        {
+                            dbContext.TblSiparisListesi.Remove(siparisToDelete);
                             dbContext.SaveChanges(); // Değişiklikleri kaydet
                         }
 
-                        // TblPlakaAtandi tablosunda plaka durumunu güncelle
-                        var plakaAtandiToUpdate = dbContext.TblPlakaAtandi.FirstOrDefault(pa => pa.Plaka == plaka);
-                        if (plakaAtandiToUpdate != null)
-                        {
-                            plakaAtandiToUpdate.PlakaDurumu = "PLAKA ATANDI"; // Durum güncelle
-                            dbContext.SaveChanges(); // Değişiklikleri kaydet
-                        }
+                        // Seçili satırı GridView'den sil
+                        siparisView.DeleteRow(siparisView.FocusedRowHandle);
 
-                        // FrmPlanlamaEkranı formunu güncelle
-                        var frmPlanlamaEkranı = Application.OpenForms.OfType<FrmPlanlamaEkranı>().FirstOrDefault();
-                        if (frmPlanlamaEkranı != null)
-                        {
-                            frmPlanlamaEkranı.LoadData(); // Formun güncellenmesi için LoadData() metodunu çağırın
-                        }
-
-                        MessageBox.Show("Plaka atandı, durumu güncellendi ve sipariş güncellendi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Plaka rezerve edildi ve sipariş silindi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Silmek için sipariş bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        // Durum "BOŞTA" ise, veriyi TblPlakaAtandi tablosuna at
+
+                        // TblPlakaDurumları tablosunda "Durum" sütununu "PLAKA ATANDI" olarak güncelle
+                        plakaDurum.Durum = "PLAKA ATANDI";
+                        plakaDurum.YuklemeNoktası = siparisView.GetRowCellValue(siparisView.FocusedRowHandle, "YuklemeNoktasi")?.ToString();
+                        plakaDurum.TeslimNoktası = siparisView.GetRowCellValue(siparisView.FocusedRowHandle, "TeslimNoktasi")?.ToString();
+                        plakaDurum.SonIl = siparisView.GetRowCellValue(siparisView.FocusedRowHandle, "TeslimIli")?.ToString();
+                        plakaDurum.SonIlce = siparisView.GetRowCellValue(siparisView.FocusedRowHandle, "TeslimIlcesi")?.ToString();
+
+                        // SonNokta sütununa, SonIl'deki ile karşılık gelen Bölge'yi getir
+                        string sonIl = plakaDurum.SonIl;
+
+                        // Bölgeyi TblBolgeler tablosundan alıyoruz
+                        var bolge = dbContext.TblBolgeler
+                                             .FirstOrDefault(b => b.İl == sonIl)?.Bolge;
+
+                        // Eğer Bölge bulunduysa, SonNokta'ya ata
+                        if (!string.IsNullOrEmpty(bolge))
+                        {
+                            plakaDurum.SonNokta = bolge;
+                        }
+                        else
+                        {
+                            // Bölge bulunamazsa, SonNokta'ya varsayılan bir değer ata (opsiyonel)
+                            plakaDurum.SonNokta = "Bölge Bulunamadı";
+                        }
+
+                        dbContext.SaveChanges(); // Durumu güncelle
+
+                        // TblPlakaDurumları tablosundan sürücü bilgilerini al
+                        var surucuAdi = plakaDurum.SurucuAdı;
+                        var surucuTelefon = plakaDurum.SurucuTelefon;
+                        var surucuTC = plakaDurum.SurucuTC;
+
+
+                        // TblPlakaAtandi tablosuna veriyi eklerken TahminiVaris'i de kaydediyoruz
+                        var plakaAtandi = new TblPlakaAtandi
+                        {
+                            Plaka = plaka,
+                            PlakaDurumu = "PLAKA ATANDI",
+                            SeferTarihi = DateTime.Now,
+                            MusteriAdi = siparisView.GetRowCellValue(siparisView.FocusedRowHandle, "Firma")?.ToString(),
+                            YuklemeNoktasi = siparisView.GetRowCellValue(siparisView.FocusedRowHandle, "YuklemeNoktasi")?.ToString(),
+                            YuklemeIl = siparisView.GetRowCellValue(siparisView.FocusedRowHandle, "YuklemeIli")?.ToString(),
+                            YuklemeIlcesi = siparisView.GetRowCellValue(siparisView.FocusedRowHandle, "YuklemeIlcesi")?.ToString(),
+                            TeslimNoktasi = siparisView.GetRowCellValue(siparisView.FocusedRowHandle, "TeslimNoktasi")?.ToString(),
+                            TeslimIli = siparisView.GetRowCellValue(siparisView.FocusedRowHandle, "TeslimIli")?.ToString(),
+                            TeslimIlcesi = siparisView.GetRowCellValue(siparisView.FocusedRowHandle, "TeslimIlcesi")?.ToString(),
+                            SurucuAdSoyad = surucuAdi,          // Sürücü adı
+                            SurucuTelefon = surucuTelefon,     // Sürücü telefon
+                            SurucuTC = surucuTC,               // Sürücü TC
+                            TahminiVaris = tahminiVaris,       // DateTime? türünde TahminiVaris'i kaydediyoruz
+                            TMSOrderID = siparisView.GetRowCellValue(siparisView.FocusedRowHandle, "TMSOrderID")?.ToString(),
+                            PozisyonNo = siparisView.GetRowCellValue(siparisView.FocusedRowHandle, "PozisyonNo")?.ToString()
+                        };
+
+                        // TblPlakaAtandi tablosuna veriyi ekle
+                        dbContext.TblPlakaAtandi.Add(plakaAtandi);
+                        dbContext.SaveChanges();
+
+                        // Seçili siparişi TblSiparisListesi tablosundan sil
+                        var siparisToDelete = dbContext.TblSiparisListesi.Find(siparisView.GetRowCellValue(siparisView.FocusedRowHandle, "ID"));
+                        if (siparisToDelete != null)
+                        {
+                            dbContext.TblSiparisListesi.Remove(siparisToDelete);
+                            dbContext.SaveChanges(); // Değişiklikleri kaydet
+                        }
+
+                        // Seçili satırı GridView'den sil
+                        siparisView.DeleteRow(siparisView.FocusedRowHandle);
+
+                        MessageBox.Show("Plaka atandı ve sürücü bilgileri eklendi, sipariş silindi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Plaka durumu bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -543,49 +701,18 @@ namespace FiloTakipSistemi
         public void LoadData()
         {
             // Veritabanından verileri yükleyin
-            using (FiloTakipEntities7 dbContext = new FiloTakipEntities7())
+            using (FiloTakipEntities9 dbContext = new FiloTakipEntities9())
             {
                 // Örneğin, bir grid kontrolüne veri yüklemek için
                 var data = dbContext.TblSiparisListesi.ToList();
                 bindingSourceSiparisListesi.DataSource = data; // bindingSourceSiparisListesi adında bir BindingSource kullandığınızı varsayıyorum
                 gridControlSiparis.DataSource = bindingSourceSiparisListesi; // gridControlSiparis adında bir GridControl kullandığınızı varsayıyorum
+                                                                             // GridControlSiparis'e RowClick olayını ekleyin
             }
         }
+
+
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

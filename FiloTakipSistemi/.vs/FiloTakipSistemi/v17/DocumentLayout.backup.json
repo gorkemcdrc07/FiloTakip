@@ -1,110 +1,110 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\",
+  "WorkspaceRootPath": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|c:\\users\\gorkem.cadirci.odak\\source\\repos\\filotakipsistemi\\filotakipsistemi\\frmverieklemeekran\u0131.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmverieklemeekran\u0131.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\filotakipsistemi\\frmmobiliz.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmmobiliz.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\filotakipsistemi\\frmverieklemeekran\u0131.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmverieklemeekran\u0131.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\filotakipsistemi\\frmmobiliz.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmmobiliz.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\filotakipsistemi\\frmrowdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmrowdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\filotakipsistemi\\frmrowdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmrowdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\filotakipsistemi\\frmrowdetails.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmrowdetails.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\filotakipsistemi\\frmverig\u00F6ster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmverig\u00F6ster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\filotakipsistemi\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\filotakipsistemi\\frmverieklemeekran\u0131.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmverieklemeekran\u0131.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\filotakipsistemi\\entity2\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
-      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\entity2\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\filotakipsistemi\\frmplanlamaekran\u0131.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmplanlamaekran\u0131.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\filotakipsistemi\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\filotakipsistemi\\frmaracdurumbelirleme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmaracdurumbelirleme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\filotakipsistemi\\frmgiris.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmgiris.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\filotakipsistemi\\frmrapor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmrapor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\filotakipsistemi\\frmplakaatandi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmplakaatandi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\filotakipsistemi\\frmplakaatandi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmplakaatandi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\filotakipsistemi\\frmplanlamaekran\u0131.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmplanlamaekran\u0131.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\filotakipsistemi\\frmverig\u00F6ster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmverig\u00F6ster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\filotakipsistemi\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\filotakipsistemi\\frmplanlamaekran\u0131.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmplanlamaekran\u0131.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\filotakipsistemi\\frmaracbilgileri.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmaracbilgileri.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\filotakipsistemi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\filotakipsistemi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\filotakipsistemi\\frmaracdurumbelirleme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmaracdurumbelirleme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|c:\\users\\gorkem.cadirci\\source\\repos\\filotakip\\filotakipsistemi\\filotakipsistemi\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\filotakipsistemi\\frmaracdurumlar\u0131.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\filotakipsistemi\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\filotakipsistemi\\frmplakaatandi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmplakaatandi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\filotakipsistemi\\frmplakaatandi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmplakaatandi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\filotakipsistemi\\frmplanlamaekran\u0131.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmplanlamaekran\u0131.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\filotakipsistemi\\frmplanlamaekran\u0131.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmplanlamaekran\u0131.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\filotakipsistemi\\frmverieklemeekran\u0131.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmverieklemeekran\u0131.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\filotakipsistemi\\frmsiparisdetay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmsiparisdetay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\filotakipsistemi\\frmgiris.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmgiris.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\filotakipsistemi\\frmgiris.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmgiris.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\filotakipsistemi\\frmrapor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmrapor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\filotakipsistemi\\frmrapor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmrapor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\filotakipsistemi\\frmaracdurumbelirleme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmaracdurumbelirleme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\filotakipsistemi\\frmaracdurumlar\u0131.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmaracdurumlar\u0131.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\filotakipsistemi\\frmaracdurumlar\u0131.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmaracdurumlar\u0131.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\filotakipsistemi\\frmaracmuayene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\filotakipsistemi\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\filotakipsistemi\\frmrezerveplakalar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmrezerveplakalar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\filotakipsistemi\\frmverig\u00F6ster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmverig\u00F6ster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\filotakipsistemi\\frmsiparisdetay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmsiparisdetay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\filotakipsistemi\\frmsat\u0131rd\u00FCzenle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmsat\u0131rd\u00FCzenle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\filotakipsistemi\\frmverieklemeekran\u0131.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmverieklemeekran\u0131.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\filotakipsistemi\\frmaracmuayene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmaracmuayene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\filotakipsistemi\\frmgiris.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmgiris.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\filotakipsistemi\\frmaracbilgileri.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CAE71197-E3DA-4869-899F-A7E4DE376176}|FiloTakipSistemi\\FiloTakipSistemi.csproj|solutionrelative:filotakipsistemi\\frmaracbilgileri.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -114,311 +114,318 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FrmVeriEklemeEkran\u0131.cs",
-              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmVeriEklemeEkran\u0131.cs",
-              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmVeriEklemeEkran\u0131.cs",
-              "ToolTip": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmVeriEklemeEkran\u0131.cs",
-              "RelativeToolTip": "FiloTakipSistemi\\FrmVeriEklemeEkran\u0131.cs",
-              "ViewState": "AgIAAK0AAAAAAAAAAAAiwPwAAAAgAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\Program.cs",
+              "RelativeDocumentMoniker": "FiloTakipSistemi\\Program.cs",
+              "ToolTip": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\Program.cs",
+              "RelativeToolTip": "FiloTakipSistemi\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T12:43:56.343Z",
+              "WhenOpened": "2025-01-07T08:28:47.757Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FrmMobiliz.cs",
+              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmMobiliz.cs",
+              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmMobiliz.cs",
+              "ToolTip": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmMobiliz.cs*",
+              "RelativeToolTip": "FiloTakipSistemi\\FrmMobiliz.cs*",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAjwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T08:24:24.537Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FrmVeriEklemeEkran\u0131.cs [Tasar\u0131m]",
-              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmVeriEklemeEkran\u0131.cs",
-              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmVeriEklemeEkran\u0131.cs",
-              "ToolTip": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmVeriEklemeEkran\u0131.cs [Tasar\u0131m]",
-              "RelativeToolTip": "FiloTakipSistemi\\FrmVeriEklemeEkran\u0131.cs [Tasar\u0131m]",
+              "Title": "FrmMobiliz.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmMobiliz.cs",
+              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmMobiliz.cs",
+              "ToolTip": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmMobiliz.cs [Tasar\u0131m]*",
+              "RelativeToolTip": "FiloTakipSistemi\\FrmMobiliz.cs [Tasar\u0131m]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T12:18:41.114Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FrmVeriEklemeEkran\u0131.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmVeriEklemeEkran\u0131.Designer.cs",
-              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmVeriEklemeEkran\u0131.Designer.cs",
-              "ToolTip": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmVeriEklemeEkran\u0131.Designer.cs",
-              "RelativeToolTip": "FiloTakipSistemi\\FrmVeriEklemeEkran\u0131.Designer.cs",
-              "ViewState": "AgIAAEIBAAAAAAAAAAAlwEkBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T08:44:27.913Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FrmRowDetails.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmRowDetails.Designer.cs",
-              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmRowDetails.Designer.cs",
-              "ToolTip": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmRowDetails.Designer.cs",
-              "RelativeToolTip": "FiloTakipSistemi\\FrmRowDetails.Designer.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAlwEYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T09:17:24.601Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FrmRowDetails.cs [Tasar\u0131m]",
-              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmRowDetails.cs",
-              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmRowDetails.cs",
-              "ToolTip": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmRowDetails.cs [Tasar\u0131m]",
-              "RelativeToolTip": "FiloTakipSistemi\\FrmRowDetails.cs [Tasar\u0131m]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T07:01:00.299Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FrmRowDetails.cs",
-              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmRowDetails.cs",
-              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmRowDetails.cs",
-              "ToolTip": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmRowDetails.cs",
-              "RelativeToolTip": "FiloTakipSistemi\\FrmRowDetails.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAA1wCoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T07:01:06.017Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FrmVeriG\u00F6ster.cs [Tasar\u0131m]",
-              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmVeriG\u00F6ster.cs",
-              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmVeriG\u00F6ster.cs",
-              "ToolTip": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmVeriG\u00F6ster.cs [Tasar\u0131m]",
-              "RelativeToolTip": "FiloTakipSistemi\\FrmVeriG\u00F6ster.cs [Tasar\u0131m]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T07:52:52.4Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\Form1.cs",
-              "RelativeDocumentMoniker": "FiloTakipSistemi\\Form1.cs",
-              "ToolTip": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\Form1.cs",
-              "RelativeToolTip": "FiloTakipSistemi\\Form1.cs",
-              "ViewState": "AgIAADoBAAAAAAAAAAAvwGgBAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T14:13:02.385Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FrmPlanlamaEkran\u0131.cs [Tasar\u0131m]",
-              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmPlanlamaEkran\u0131.cs",
-              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmPlanlamaEkran\u0131.cs",
-              "ToolTip": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmPlanlamaEkran\u0131.cs [Tasar\u0131m]",
-              "RelativeToolTip": "FiloTakipSistemi\\FrmPlanlamaEkran\u0131.cs [Tasar\u0131m]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T11:57:04.885Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "FrmPlakaAtandi.cs [Tasar\u0131m]",
-              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmPlakaAtandi.cs",
-              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmPlakaAtandi.cs",
-              "ToolTip": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmPlakaAtandi.cs [Tasar\u0131m]",
-              "RelativeToolTip": "FiloTakipSistemi\\FrmPlakaAtandi.cs [Tasar\u0131m]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T11:58:31.348Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Form1.cs [Tasar\u0131m]",
-              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\Form1.cs",
-              "RelativeDocumentMoniker": "FiloTakipSistemi\\Form1.cs",
-              "ToolTip": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\Form1.cs [Tasar\u0131m]",
-              "RelativeToolTip": "FiloTakipSistemi\\Form1.cs [Tasar\u0131m]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T14:13:00.671Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Model1.edmx [Diagram1]",
-              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\Entity2\\Model1.edmx",
-              "RelativeDocumentMoniker": "FiloTakipSistemi\\Entity2\\Model1.edmx",
-              "ToolTip": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\Entity2\\Model1.edmx [Diagram1]",
-              "RelativeToolTip": "FiloTakipSistemi\\Entity2\\Model1.edmx [Diagram1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2024-11-25T09:38:30.215Z"
+              "WhenOpened": "2025-01-07T08:24:14.641Z",
+              "EditorCaption": " [Tasar\u0131m]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "FrmAracDurumBelirleme.cs [Tasar\u0131m]",
-              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmAracDurumBelirleme.cs",
-              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmAracDurumBelirleme.cs",
-              "ToolTip": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmAracDurumBelirleme.cs [Tasar\u0131m]",
-              "RelativeToolTip": "FiloTakipSistemi\\FrmAracDurumBelirleme.cs [Tasar\u0131m]",
+              "Title": "FrmGiris.cs",
+              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmGiris.cs",
+              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmGiris.cs",
+              "ToolTip": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmGiris.cs",
+              "RelativeToolTip": "FiloTakipSistemi\\FrmGiris.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T12:00:44.972Z"
+              "WhenOpened": "2025-01-01T17:09:03.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FrmPlakaAtandi.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmPlakaAtandi.cs",
+              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmPlakaAtandi.cs",
+              "ToolTip": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmPlakaAtandi.cs [Tasar\u0131m]",
+              "RelativeToolTip": "FiloTakipSistemi\\FrmPlakaAtandi.cs [Tasar\u0131m]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-01T09:51:47.799Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form1.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\Form1.cs",
+              "RelativeDocumentMoniker": "FiloTakipSistemi\\Form1.cs",
+              "ToolTip": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\Form1.cs [Tasar\u0131m]",
+              "RelativeToolTip": "FiloTakipSistemi\\Form1.cs [Tasar\u0131m]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-01T11:02:15.605Z",
+              "EditorCaption": " [Tasar\u0131m]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "FrmGiris.cs [Tasar\u0131m]",
-              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmGiris.cs",
+              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmGiris.cs",
               "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmGiris.cs",
-              "ToolTip": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmGiris.cs [Tasar\u0131m]",
+              "ToolTip": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmGiris.cs [Tasar\u0131m]",
               "RelativeToolTip": "FiloTakipSistemi\\FrmGiris.cs [Tasar\u0131m]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T14:09:49.588Z"
+              "WhenOpened": "2025-01-01T13:09:38.013Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "FrmRapor.cs [Tasar\u0131m]",
-              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmRapor.cs",
-              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmRapor.cs",
-              "ToolTip": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmRapor.cs [Tasar\u0131m]",
-              "RelativeToolTip": "FiloTakipSistemi\\FrmRapor.cs [Tasar\u0131m]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T12:10:15.64Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 5,
               "Title": "FrmPlakaAtandi.cs",
-              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmPlakaAtandi.cs",
+              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmPlakaAtandi.cs",
               "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmPlakaAtandi.cs",
-              "ToolTip": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmPlakaAtandi.cs",
+              "ToolTip": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmPlakaAtandi.cs",
               "RelativeToolTip": "FiloTakipSistemi\\FrmPlakaAtandi.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAADwv10AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAtwAsCAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T08:28:34.171Z"
+              "WhenOpened": "2025-01-01T09:51:49.825Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FrmPlanlamaEkran\u0131.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmPlanlamaEkran\u0131.cs",
+              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmPlanlamaEkran\u0131.cs",
+              "ToolTip": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmPlanlamaEkran\u0131.cs [Tasar\u0131m]",
+              "RelativeToolTip": "FiloTakipSistemi\\FrmPlanlamaEkran\u0131.cs [Tasar\u0131m]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T20:32:50.015Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\Form1.cs",
+              "RelativeDocumentMoniker": "FiloTakipSistemi\\Form1.cs",
+              "ToolTip": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\Form1.cs",
+              "RelativeToolTip": "FiloTakipSistemi\\Form1.cs",
+              "ViewState": "AgIAAL0BAAAAAAAAAAAiwM4BAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-01T11:02:17.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FrmPlanlamaEkran\u0131.cs",
+              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmPlanlamaEkran\u0131.cs",
+              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmPlanlamaEkran\u0131.cs",
+              "ToolTip": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmPlanlamaEkran\u0131.cs",
+              "RelativeToolTip": "FiloTakipSistemi\\FrmPlanlamaEkran\u0131.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-01T14:24:20.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FrmSiparisDetay.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmSiparisDetay.cs",
+              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmSiparisDetay.cs",
+              "ToolTip": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmSiparisDetay.cs [Tasar\u0131m]",
+              "RelativeToolTip": "FiloTakipSistemi\\FrmSiparisDetay.cs [Tasar\u0131m]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-01T14:33:59.178Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FrmVeriEklemeEkran\u0131.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmVeriEklemeEkran\u0131.cs",
+              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmVeriEklemeEkran\u0131.cs",
+              "ToolTip": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmVeriEklemeEkran\u0131.cs [Tasar\u0131m]",
+              "RelativeToolTip": "FiloTakipSistemi\\FrmVeriEklemeEkran\u0131.cs [Tasar\u0131m]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-01T13:09:56.234Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 16,
-              "Title": "FrmPlanlamaEkran\u0131.cs",
-              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmPlanlamaEkran\u0131.cs",
-              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmPlanlamaEkran\u0131.cs",
-              "ToolTip": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmPlanlamaEkran\u0131.cs",
-              "RelativeToolTip": "FiloTakipSistemi\\FrmPlanlamaEkran\u0131.cs",
-              "ViewState": "AgIAAI4BAAAAAAAAAAAswJwBAAAAAAAAAAAAAA==",
+              "Title": "FrmAracDurumlar\u0131.cs",
+              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmAracDurumlar\u0131.cs",
+              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmAracDurumlar\u0131.cs",
+              "ToolTip": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmAracDurumlar\u0131.cs",
+              "RelativeToolTip": "FiloTakipSistemi\\FrmAracDurumlar\u0131.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T08:12:25.24Z"
+              "WhenOpened": "2025-01-06T08:03:05.032Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "FrmRapor.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmRapor.cs",
+              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmRapor.cs",
+              "ToolTip": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmRapor.cs [Tasar\u0131m]",
+              "RelativeToolTip": "FiloTakipSistemi\\FrmRapor.cs [Tasar\u0131m]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T08:06:51.63Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "FrmRapor.cs",
+              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmRapor.cs",
+              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmRapor.cs",
+              "ToolTip": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmRapor.cs",
+              "RelativeToolTip": "FiloTakipSistemi\\FrmRapor.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAgwE4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T08:07:44.906Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "FrmAracDurumBelirleme.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmAracDurumBelirleme.cs",
+              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmAracDurumBelirleme.cs",
+              "ToolTip": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmAracDurumBelirleme.cs [Tasar\u0131m]",
+              "RelativeToolTip": "FiloTakipSistemi\\FrmAracDurumBelirleme.cs [Tasar\u0131m]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-01T13:09:29.093Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "FrmSiparisDetay.cs",
+              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmSiparisDetay.cs",
+              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmSiparisDetay.cs",
+              "ToolTip": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmSiparisDetay.cs",
+              "RelativeToolTip": "FiloTakipSistemi\\FrmSiparisDetay.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAA6wFoAAABnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-01T14:34:01.985Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 17,
-              "Title": "FrmVeriG\u00F6ster.cs",
-              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmVeriG\u00F6ster.cs",
-              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmVeriG\u00F6ster.cs",
-              "ToolTip": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmVeriG\u00F6ster.cs",
-              "RelativeToolTip": "FiloTakipSistemi\\FrmVeriG\u00F6ster.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAqwDsAAAAAAAAAAAAAAA==",
+              "Title": "FrmAracDurumlar\u0131.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmAracDurumlar\u0131.cs",
+              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmAracDurumlar\u0131.cs",
+              "ToolTip": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmAracDurumlar\u0131.cs [Tasar\u0131m]",
+              "RelativeToolTip": "FiloTakipSistemi\\FrmAracDurumlar\u0131.cs [Tasar\u0131m]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T08:13:16.225Z"
+              "WhenOpened": "2025-01-01T13:09:31.893Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "FrmRezervePlakalar.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmRezervePlakalar.cs",
+              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmRezervePlakalar.cs",
+              "ToolTip": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmRezervePlakalar.cs [Tasar\u0131m]",
+              "RelativeToolTip": "FiloTakipSistemi\\FrmRezervePlakalar.cs [Tasar\u0131m]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-01T13:09:52.939Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 18,
               "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "FiloTakipSistemi\\Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\Form1.Designer.cs",
               "RelativeToolTip": "FiloTakipSistemi\\Form1.Designer.cs",
-              "ViewState": "AgIAAB8BAAAAAAAAAAAAwDgBAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAQwHAAAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T13:50:05.355Z"
+              "WhenOpened": "2025-01-04T18:58:39.034Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 20,
-              "Title": "FrmAracBilgileri.cs [Tasar\u0131m]",
-              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmAracBilgileri.cs",
-              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmAracBilgileri.cs",
-              "ToolTip": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmAracBilgileri.cs [Tasar\u0131m]",
-              "RelativeToolTip": "FiloTakipSistemi\\FrmAracBilgileri.cs [Tasar\u0131m]",
+              "Title": "FrmVeriG\u00F6ster.cs",
+              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmVeriG\u00F6ster.cs",
+              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmVeriG\u00F6ster.cs",
+              "ToolTip": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmVeriG\u00F6ster.cs",
+              "RelativeToolTip": "FiloTakipSistemi\\FrmVeriG\u00F6ster.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T12:00:59.378Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "FrmPlanlamaEkran\u0131.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmPlanlamaEkran\u0131.Designer.cs",
-              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmPlanlamaEkran\u0131.Designer.cs",
-              "ToolTip": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmPlanlamaEkran\u0131.Designer.cs",
-              "RelativeToolTip": "FiloTakipSistemi\\FrmPlanlamaEkran\u0131.Designer.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAlwMgBAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T13:20:08.708Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\Program.cs",
-              "RelativeDocumentMoniker": "FiloTakipSistemi\\Program.cs",
-              "ToolTip": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\Program.cs",
-              "RelativeToolTip": "FiloTakipSistemi\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T06:55:37.341Z"
+              "WhenOpened": "2025-01-04T19:30:22.306Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 22,
-              "Title": "FrmAracDurumBelirleme.cs",
-              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmAracDurumBelirleme.cs",
-              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmAracDurumBelirleme.cs",
-              "ToolTip": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmAracDurumBelirleme.cs",
-              "RelativeToolTip": "FiloTakipSistemi\\FrmAracDurumBelirleme.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAA==",
+              "Title": "FrmSat\u0131rD\u00FCzenle.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmSat\u0131rD\u00FCzenle.cs",
+              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmSat\u0131rD\u00FCzenle.cs",
+              "ToolTip": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmSat\u0131rD\u00FCzenle.cs [Tasar\u0131m]",
+              "RelativeToolTip": "FiloTakipSistemi\\FrmSat\u0131rD\u00FCzenle.cs [Tasar\u0131m]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T07:35:08.462Z"
+              "WhenOpened": "2025-01-01T13:09:54.583Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "FrmVeriEklemeEkran\u0131.cs",
+              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmVeriEklemeEkran\u0131.cs",
+              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmVeriEklemeEkran\u0131.cs",
+              "ToolTip": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmVeriEklemeEkran\u0131.cs",
+              "RelativeToolTip": "FiloTakipSistemi\\FrmVeriEklemeEkran\u0131.cs",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAvwIEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-01T13:12:24.337Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 24,
               "Title": "FrmAracMuayene.cs [Tasar\u0131m]",
-              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmAracMuayene.cs",
+              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmAracMuayene.cs",
               "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmAracMuayene.cs",
-              "ToolTip": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmAracMuayene.cs [Tasar\u0131m]",
+              "ToolTip": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmAracMuayene.cs [Tasar\u0131m]",
               "RelativeToolTip": "FiloTakipSistemi\\FrmAracMuayene.cs [Tasar\u0131m]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T11:59:56.669Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "FrmAracDurumlar\u0131.cs [Tasar\u0131m]",
-              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmAracDurumlar\u0131.cs",
-              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmAracDurumlar\u0131.cs",
-              "ToolTip": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmAracDurumlar\u0131.cs [Tasar\u0131m]",
-              "RelativeToolTip": "FiloTakipSistemi\\FrmAracDurumlar\u0131.cs [Tasar\u0131m]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T12:00:20.576Z"
+              "WhenOpened": "2025-01-01T13:09:34.269Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 25,
-              "Title": "FrmGiris.cs",
-              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmGiris.cs",
-              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmGiris.cs",
-              "ToolTip": "C:\\Users\\Gorkem.Cadirci.ODAK\\source\\repos\\FiloTakipSistemi\\FiloTakipSistemi\\FrmGiris.cs",
-              "RelativeToolTip": "FiloTakipSistemi\\FrmGiris.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAQwIYAAAAAAAAAAAAAAA==",
+              "Title": "FrmAracBilgileri.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmAracBilgileri.cs",
+              "RelativeDocumentMoniker": "FiloTakipSistemi\\FrmAracBilgileri.cs",
+              "ToolTip": "C:\\Users\\Gorkem.Cadirci\\source\\repos\\FiloTakip\\FiloTakipSistemi\\FiloTakipSistemi\\FrmAracBilgileri.cs [Tasar\u0131m]",
+              "RelativeToolTip": "FiloTakipSistemi\\FrmAracBilgileri.cs [Tasar\u0131m]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T14:09:51.591Z"
+              "WhenOpened": "2025-01-01T13:09:25.646Z"
             }
           ]
         }

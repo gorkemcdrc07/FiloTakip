@@ -24,7 +24,11 @@ namespace FiloTakipSistemi {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class FiloTakipDataSet18 : global::System.Data.DataSet {
         
-        private TblSiparisListesiDataTable tableTblSiparisListesi;
+        private TblRezerveDataTable tableTblRezerve;
+        
+        private TblPlakaAtandiDataTable tableTblPlakaAtandi;
+        
+        private TblPlakaDurumlarıDataTable tableTblPlakaDurumları;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +58,14 @@ namespace FiloTakipSistemi {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["TblSiparisListesi"] != null)) {
-                    base.Tables.Add(new TblSiparisListesiDataTable(ds.Tables["TblSiparisListesi"]));
+                if ((ds.Tables["TblRezerve"] != null)) {
+                    base.Tables.Add(new TblRezerveDataTable(ds.Tables["TblRezerve"]));
+                }
+                if ((ds.Tables["TblPlakaAtandi"] != null)) {
+                    base.Tables.Add(new TblPlakaAtandiDataTable(ds.Tables["TblPlakaAtandi"]));
+                }
+                if ((ds.Tables["TblPlakaDurumları"] != null)) {
+                    base.Tables.Add(new TblPlakaDurumlarıDataTable(ds.Tables["TblPlakaDurumları"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +89,29 @@ namespace FiloTakipSistemi {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public TblSiparisListesiDataTable TblSiparisListesi {
+        public TblRezerveDataTable TblRezerve {
             get {
-                return this.tableTblSiparisListesi;
+                return this.tableTblRezerve;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public TblPlakaAtandiDataTable TblPlakaAtandi {
+            get {
+                return this.tableTblPlakaAtandi;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public TblPlakaDurumlarıDataTable TblPlakaDurumları {
+            get {
+                return this.tableTblPlakaDurumları;
             }
         }
         
@@ -152,8 +182,14 @@ namespace FiloTakipSistemi {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["TblSiparisListesi"] != null)) {
-                    base.Tables.Add(new TblSiparisListesiDataTable(ds.Tables["TblSiparisListesi"]));
+                if ((ds.Tables["TblRezerve"] != null)) {
+                    base.Tables.Add(new TblRezerveDataTable(ds.Tables["TblRezerve"]));
+                }
+                if ((ds.Tables["TblPlakaAtandi"] != null)) {
+                    base.Tables.Add(new TblPlakaAtandiDataTable(ds.Tables["TblPlakaAtandi"]));
+                }
+                if ((ds.Tables["TblPlakaDurumları"] != null)) {
+                    base.Tables.Add(new TblPlakaDurumlarıDataTable(ds.Tables["TblPlakaDurumları"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +224,22 @@ namespace FiloTakipSistemi {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableTblSiparisListesi = ((TblSiparisListesiDataTable)(base.Tables["TblSiparisListesi"]));
+            this.tableTblRezerve = ((TblRezerveDataTable)(base.Tables["TblRezerve"]));
             if ((initTable == true)) {
-                if ((this.tableTblSiparisListesi != null)) {
-                    this.tableTblSiparisListesi.InitVars();
+                if ((this.tableTblRezerve != null)) {
+                    this.tableTblRezerve.InitVars();
+                }
+            }
+            this.tableTblPlakaAtandi = ((TblPlakaAtandiDataTable)(base.Tables["TblPlakaAtandi"]));
+            if ((initTable == true)) {
+                if ((this.tableTblPlakaAtandi != null)) {
+                    this.tableTblPlakaAtandi.InitVars();
+                }
+            }
+            this.tableTblPlakaDurumları = ((TblPlakaDurumlarıDataTable)(base.Tables["TblPlakaDurumları"]));
+            if ((initTable == true)) {
+                if ((this.tableTblPlakaDurumları != null)) {
+                    this.tableTblPlakaDurumları.InitVars();
                 }
             }
         }
@@ -204,13 +252,29 @@ namespace FiloTakipSistemi {
             this.Namespace = "http://tempuri.org/FiloTakipDataSet18.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableTblSiparisListesi = new TblSiparisListesiDataTable();
-            base.Tables.Add(this.tableTblSiparisListesi);
+            this.tableTblRezerve = new TblRezerveDataTable();
+            base.Tables.Add(this.tableTblRezerve);
+            this.tableTblPlakaAtandi = new TblPlakaAtandiDataTable();
+            base.Tables.Add(this.tableTblPlakaAtandi);
+            this.tableTblPlakaDurumları = new TblPlakaDurumlarıDataTable();
+            base.Tables.Add(this.tableTblPlakaDurumları);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeTblSiparisListesi() {
+        private bool ShouldSerializeTblRezerve() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeTblPlakaAtandi() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeTblPlakaDurumları() {
             return false;
         }
         
@@ -270,57 +334,61 @@ namespace FiloTakipSistemi {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void TblSiparisListesiRowChangeEventHandler(object sender, TblSiparisListesiRowChangeEvent e);
+        public delegate void TblRezerveRowChangeEventHandler(object sender, TblRezerveRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void TblPlakaAtandiRowChangeEventHandler(object sender, TblPlakaAtandiRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void TblPlakaDurumlarıRowChangeEventHandler(object sender, TblPlakaDurumlarıRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class TblSiparisListesiDataTable : global::System.Data.TypedTableBase<TblSiparisListesiRow> {
+        public partial class TblRezerveDataTable : global::System.Data.TypedTableBase<TblRezerveRow> {
             
-            private global::System.Data.DataColumn columnID;
+            private global::System.Data.DataColumn columnPlakaDurumu;
+            
+            private global::System.Data.DataColumn columnSeferTarihi;
             
             private global::System.Data.DataColumn columnPlaka;
             
+            private global::System.Data.DataColumn columnSurucuAdSoyad;
+            
+            private global::System.Data.DataColumn columnSurucuTelefon;
+            
+            private global::System.Data.DataColumn columnSurucuTC;
+            
             private global::System.Data.DataColumn columnMusteriAdi;
-            
-            private global::System.Data.DataColumn columnHizmetTipi;
-            
-            private global::System.Data.DataColumn columnProjeAdi;
-            
-            private global::System.Data.DataColumn columnAracTipi;
-            
-            private global::System.Data.DataColumn columnSiparisTarihi;
-            
-            private global::System.Data.DataColumn columnSiparisNo;
-            
-            private global::System.Data.DataColumn columnYuklemeTarihi;
-            
-            private global::System.Data.DataColumn columnNoktaSayisi;
             
             private global::System.Data.DataColumn columnYuklemeNoktasi;
             
             private global::System.Data.DataColumn columnYuklemeIl;
             
-            private global::System.Data.DataColumn columnYuklemeIlce;
+            private global::System.Data.DataColumn columnYuklemeIlcesi;
+            
+            private global::System.Data.DataColumn columnTonaj;
             
             private global::System.Data.DataColumn columnTeslimNoktasi;
             
-            private global::System.Data.DataColumn columnTeslimIl;
+            private global::System.Data.DataColumn columnTeslimIli;
             
-            private global::System.Data.DataColumn columnTeslimIlce;
+            private global::System.Data.DataColumn columnTeslimIlcesi;
             
-            private global::System.Data.DataColumn columnPozisyonNo;
+            private global::System.Data.DataColumn columnNavlunTutar;
             
-            private global::System.Data.DataColumn columnTahminiKm;
+            private global::System.Data.DataColumn columnAciklama;
             
-            private global::System.Data.DataColumn columnTahminiVarisSaatTarih;
+            private global::System.Data.DataColumn columnSonNokta;
+            
+            private global::System.Data.DataColumn columnRezervasyonTarihi;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TblSiparisListesiDataTable() {
-                this.TableName = "TblSiparisListesi";
+            public TblRezerveDataTable() {
+                this.TableName = "TblRezerve";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -328,7 +396,7 @@ namespace FiloTakipSistemi {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal TblSiparisListesiDataTable(global::System.Data.DataTable table) {
+            internal TblRezerveDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -345,16 +413,24 @@ namespace FiloTakipSistemi {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected TblSiparisListesiDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected TblRezerveDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
+            public global::System.Data.DataColumn PlakaDurumuColumn {
                 get {
-                    return this.columnID;
+                    return this.columnPlakaDurumu;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SeferTarihiColumn {
+                get {
+                    return this.columnSeferTarihi;
                 }
             }
             
@@ -368,65 +444,33 @@ namespace FiloTakipSistemi {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SurucuAdSoyadColumn {
+                get {
+                    return this.columnSurucuAdSoyad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SurucuTelefonColumn {
+                get {
+                    return this.columnSurucuTelefon;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SurucuTCColumn {
+                get {
+                    return this.columnSurucuTC;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn MusteriAdiColumn {
                 get {
                     return this.columnMusteriAdi;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn HizmetTipiColumn {
-                get {
-                    return this.columnHizmetTipi;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ProjeAdiColumn {
-                get {
-                    return this.columnProjeAdi;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn AracTipiColumn {
-                get {
-                    return this.columnAracTipi;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn SiparisTarihiColumn {
-                get {
-                    return this.columnSiparisTarihi;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn SiparisNoColumn {
-                get {
-                    return this.columnSiparisNo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn YuklemeTarihiColumn {
-                get {
-                    return this.columnYuklemeTarihi;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn NoktaSayisiColumn {
-                get {
-                    return this.columnNoktaSayisi;
                 }
             }
             
@@ -448,9 +492,17 @@ namespace FiloTakipSistemi {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn YuklemeIlceColumn {
+            public global::System.Data.DataColumn YuklemeIlcesiColumn {
                 get {
-                    return this.columnYuklemeIlce;
+                    return this.columnYuklemeIlcesi;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TonajColumn {
+                get {
+                    return this.columnTonaj;
                 }
             }
             
@@ -464,41 +516,49 @@ namespace FiloTakipSistemi {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TeslimIlColumn {
+            public global::System.Data.DataColumn TeslimIliColumn {
                 get {
-                    return this.columnTeslimIl;
+                    return this.columnTeslimIli;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TeslimIlceColumn {
+            public global::System.Data.DataColumn TeslimIlcesiColumn {
                 get {
-                    return this.columnTeslimIlce;
+                    return this.columnTeslimIlcesi;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PozisyonNoColumn {
+            public global::System.Data.DataColumn NavlunTutarColumn {
                 get {
-                    return this.columnPozisyonNo;
+                    return this.columnNavlunTutar;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TahminiKmColumn {
+            public global::System.Data.DataColumn AciklamaColumn {
                 get {
-                    return this.columnTahminiKm;
+                    return this.columnAciklama;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TahminiVarisSaatTarihColumn {
+            public global::System.Data.DataColumn SonNoktaColumn {
                 get {
-                    return this.columnTahminiVarisSaatTarih;
+                    return this.columnSonNokta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn RezervasyonTarihiColumn {
+                get {
+                    return this.columnRezervasyonTarihi;
                 }
             }
             
@@ -513,88 +573,80 @@ namespace FiloTakipSistemi {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TblSiparisListesiRow this[int index] {
+            public TblRezerveRow this[int index] {
                 get {
-                    return ((TblSiparisListesiRow)(this.Rows[index]));
+                    return ((TblRezerveRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event TblSiparisListesiRowChangeEventHandler TblSiparisListesiRowChanging;
+            public event TblRezerveRowChangeEventHandler TblRezerveRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event TblSiparisListesiRowChangeEventHandler TblSiparisListesiRowChanged;
+            public event TblRezerveRowChangeEventHandler TblRezerveRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event TblSiparisListesiRowChangeEventHandler TblSiparisListesiRowDeleting;
+            public event TblRezerveRowChangeEventHandler TblRezerveRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event TblSiparisListesiRowChangeEventHandler TblSiparisListesiRowDeleted;
+            public event TblRezerveRowChangeEventHandler TblRezerveRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddTblSiparisListesiRow(TblSiparisListesiRow row) {
+            public void AddTblRezerveRow(TblRezerveRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TblSiparisListesiRow AddTblSiparisListesiRow(
+            public TblRezerveRow AddTblRezerveRow(
+                        string PlakaDurumu, 
+                        System.DateTime SeferTarihi, 
                         string Plaka, 
+                        string SurucuAdSoyad, 
+                        string SurucuTelefon, 
+                        string SurucuTC, 
                         string MusteriAdi, 
-                        string HizmetTipi, 
-                        string ProjeAdi, 
-                        string AracTipi, 
-                        System.DateTime SiparisTarihi, 
-                        string SiparisNo, 
-                        System.DateTime YuklemeTarihi, 
-                        string NoktaSayisi, 
                         string YuklemeNoktasi, 
                         string YuklemeIl, 
-                        string YuklemeIlce, 
+                        string YuklemeIlcesi, 
+                        string Tonaj, 
                         string TeslimNoktasi, 
-                        string TeslimIl, 
-                        string TeslimIlce, 
-                        string PozisyonNo, 
-                        string TahminiKm, 
-                        string TahminiVarisSaatTarih) {
-                TblSiparisListesiRow rowTblSiparisListesiRow = ((TblSiparisListesiRow)(this.NewRow()));
+                        string TeslimIli, 
+                        string TeslimIlcesi, 
+                        string NavlunTutar, 
+                        string Aciklama, 
+                        string SonNokta, 
+                        System.DateTime RezervasyonTarihi) {
+                TblRezerveRow rowTblRezerveRow = ((TblRezerveRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        PlakaDurumu,
+                        SeferTarihi,
                         Plaka,
+                        SurucuAdSoyad,
+                        SurucuTelefon,
+                        SurucuTC,
                         MusteriAdi,
-                        HizmetTipi,
-                        ProjeAdi,
-                        AracTipi,
-                        SiparisTarihi,
-                        SiparisNo,
-                        YuklemeTarihi,
-                        NoktaSayisi,
                         YuklemeNoktasi,
                         YuklemeIl,
-                        YuklemeIlce,
+                        YuklemeIlcesi,
+                        Tonaj,
                         TeslimNoktasi,
-                        TeslimIl,
-                        TeslimIlce,
-                        PozisyonNo,
-                        TahminiKm,
-                        TahminiVarisSaatTarih};
-                rowTblSiparisListesiRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowTblSiparisListesiRow);
-                return rowTblSiparisListesiRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TblSiparisListesiRow FindByID(int ID) {
-                return ((TblSiparisListesiRow)(this.Rows.Find(new object[] {
-                            ID})));
+                        TeslimIli,
+                        TeslimIlcesi,
+                        NavlunTutar,
+                        Aciklama,
+                        SonNokta,
+                        RezervasyonTarihi};
+                rowTblRezerveRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTblRezerveRow);
+                return rowTblRezerveRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                TblSiparisListesiDataTable cln = ((TblSiparisListesiDataTable)(base.Clone()));
+                TblRezerveDataTable cln = ((TblRezerveDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -602,124 +654,113 @@ namespace FiloTakipSistemi {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new TblSiparisListesiDataTable();
+                return new TblRezerveDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnID = base.Columns["ID"];
+                this.columnPlakaDurumu = base.Columns["PlakaDurumu"];
+                this.columnSeferTarihi = base.Columns["SeferTarihi"];
                 this.columnPlaka = base.Columns["Plaka"];
+                this.columnSurucuAdSoyad = base.Columns["SurucuAdSoyad"];
+                this.columnSurucuTelefon = base.Columns["SurucuTelefon"];
+                this.columnSurucuTC = base.Columns["SurucuTC"];
                 this.columnMusteriAdi = base.Columns["MusteriAdi"];
-                this.columnHizmetTipi = base.Columns["HizmetTipi"];
-                this.columnProjeAdi = base.Columns["ProjeAdi"];
-                this.columnAracTipi = base.Columns["AracTipi"];
-                this.columnSiparisTarihi = base.Columns["SiparisTarihi"];
-                this.columnSiparisNo = base.Columns["SiparisNo"];
-                this.columnYuklemeTarihi = base.Columns["YuklemeTarihi"];
-                this.columnNoktaSayisi = base.Columns["NoktaSayisi"];
                 this.columnYuklemeNoktasi = base.Columns["YuklemeNoktasi"];
                 this.columnYuklemeIl = base.Columns["YuklemeIl"];
-                this.columnYuklemeIlce = base.Columns["YuklemeIlce"];
+                this.columnYuklemeIlcesi = base.Columns["YuklemeIlcesi"];
+                this.columnTonaj = base.Columns["Tonaj"];
                 this.columnTeslimNoktasi = base.Columns["TeslimNoktasi"];
-                this.columnTeslimIl = base.Columns["TeslimIl"];
-                this.columnTeslimIlce = base.Columns["TeslimIlce"];
-                this.columnPozisyonNo = base.Columns["PozisyonNo"];
-                this.columnTahminiKm = base.Columns["TahminiKm"];
-                this.columnTahminiVarisSaatTarih = base.Columns["TahminiVarisSaatTarih"];
+                this.columnTeslimIli = base.Columns["TeslimIli"];
+                this.columnTeslimIlcesi = base.Columns["TeslimIlcesi"];
+                this.columnNavlunTutar = base.Columns["NavlunTutar"];
+                this.columnAciklama = base.Columns["Aciklama"];
+                this.columnSonNokta = base.Columns["SonNokta"];
+                this.columnRezervasyonTarihi = base.Columns["RezervasyonTarihi"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
+                this.columnPlakaDurumu = new global::System.Data.DataColumn("PlakaDurumu", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPlakaDurumu);
+                this.columnSeferTarihi = new global::System.Data.DataColumn("SeferTarihi", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSeferTarihi);
                 this.columnPlaka = new global::System.Data.DataColumn("Plaka", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPlaka);
+                this.columnSurucuAdSoyad = new global::System.Data.DataColumn("SurucuAdSoyad", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSurucuAdSoyad);
+                this.columnSurucuTelefon = new global::System.Data.DataColumn("SurucuTelefon", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSurucuTelefon);
+                this.columnSurucuTC = new global::System.Data.DataColumn("SurucuTC", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSurucuTC);
                 this.columnMusteriAdi = new global::System.Data.DataColumn("MusteriAdi", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMusteriAdi);
-                this.columnHizmetTipi = new global::System.Data.DataColumn("HizmetTipi", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHizmetTipi);
-                this.columnProjeAdi = new global::System.Data.DataColumn("ProjeAdi", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProjeAdi);
-                this.columnAracTipi = new global::System.Data.DataColumn("AracTipi", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAracTipi);
-                this.columnSiparisTarihi = new global::System.Data.DataColumn("SiparisTarihi", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSiparisTarihi);
-                this.columnSiparisNo = new global::System.Data.DataColumn("SiparisNo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSiparisNo);
-                this.columnYuklemeTarihi = new global::System.Data.DataColumn("YuklemeTarihi", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnYuklemeTarihi);
-                this.columnNoktaSayisi = new global::System.Data.DataColumn("NoktaSayisi", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNoktaSayisi);
                 this.columnYuklemeNoktasi = new global::System.Data.DataColumn("YuklemeNoktasi", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnYuklemeNoktasi);
                 this.columnYuklemeIl = new global::System.Data.DataColumn("YuklemeIl", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnYuklemeIl);
-                this.columnYuklemeIlce = new global::System.Data.DataColumn("YuklemeIlce", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnYuklemeIlce);
+                this.columnYuklemeIlcesi = new global::System.Data.DataColumn("YuklemeIlcesi", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnYuklemeIlcesi);
+                this.columnTonaj = new global::System.Data.DataColumn("Tonaj", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTonaj);
                 this.columnTeslimNoktasi = new global::System.Data.DataColumn("TeslimNoktasi", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTeslimNoktasi);
-                this.columnTeslimIl = new global::System.Data.DataColumn("TeslimIl", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTeslimIl);
-                this.columnTeslimIlce = new global::System.Data.DataColumn("TeslimIlce", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTeslimIlce);
-                this.columnPozisyonNo = new global::System.Data.DataColumn("PozisyonNo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPozisyonNo);
-                this.columnTahminiKm = new global::System.Data.DataColumn("TahminiKm", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTahminiKm);
-                this.columnTahminiVarisSaatTarih = new global::System.Data.DataColumn("TahminiVarisSaatTarih", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTahminiVarisSaatTarih);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID}, true));
-                this.columnID.AutoIncrement = true;
-                this.columnID.AutoIncrementSeed = -1;
-                this.columnID.AutoIncrementStep = -1;
-                this.columnID.AllowDBNull = false;
-                this.columnID.ReadOnly = true;
-                this.columnID.Unique = true;
-                this.columnPlaka.MaxLength = 300;
+                this.columnTeslimIli = new global::System.Data.DataColumn("TeslimIli", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTeslimIli);
+                this.columnTeslimIlcesi = new global::System.Data.DataColumn("TeslimIlcesi", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTeslimIlcesi);
+                this.columnNavlunTutar = new global::System.Data.DataColumn("NavlunTutar", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNavlunTutar);
+                this.columnAciklama = new global::System.Data.DataColumn("Aciklama", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAciklama);
+                this.columnSonNokta = new global::System.Data.DataColumn("SonNokta", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSonNokta);
+                this.columnRezervasyonTarihi = new global::System.Data.DataColumn("RezervasyonTarihi", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRezervasyonTarihi);
+                this.columnPlakaDurumu.MaxLength = 300;
+                this.columnPlaka.MaxLength = 500;
+                this.columnSurucuAdSoyad.MaxLength = 300;
+                this.columnSurucuTelefon.MaxLength = 300;
+                this.columnSurucuTC.MaxLength = 11;
                 this.columnMusteriAdi.MaxLength = 300;
-                this.columnHizmetTipi.MaxLength = 300;
-                this.columnProjeAdi.MaxLength = 300;
-                this.columnAracTipi.MaxLength = 300;
-                this.columnSiparisNo.MaxLength = 300;
-                this.columnNoktaSayisi.MaxLength = 300;
-                this.columnYuklemeNoktasi.MaxLength = 300;
-                this.columnYuklemeIl.MaxLength = 300;
-                this.columnYuklemeIlce.MaxLength = 300;
-                this.columnTeslimNoktasi.MaxLength = 300;
-                this.columnTeslimIl.MaxLength = 300;
-                this.columnTeslimIlce.MaxLength = 300;
-                this.columnPozisyonNo.MaxLength = 300;
-                this.columnTahminiKm.MaxLength = 300;
-                this.columnTahminiVarisSaatTarih.MaxLength = 300;
+                this.columnYuklemeNoktasi.MaxLength = 500;
+                this.columnYuklemeIl.MaxLength = 500;
+                this.columnYuklemeIlcesi.MaxLength = 500;
+                this.columnTonaj.MaxLength = 500;
+                this.columnTeslimNoktasi.MaxLength = 500;
+                this.columnTeslimIli.MaxLength = 500;
+                this.columnTeslimIlcesi.MaxLength = 500;
+                this.columnNavlunTutar.MaxLength = 500;
+                this.columnAciklama.MaxLength = 2147483647;
+                this.columnSonNokta.MaxLength = 300;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TblSiparisListesiRow NewTblSiparisListesiRow() {
-                return ((TblSiparisListesiRow)(this.NewRow()));
+            public TblRezerveRow NewTblRezerveRow() {
+                return ((TblRezerveRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new TblSiparisListesiRow(builder);
+                return new TblRezerveRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(TblSiparisListesiRow);
+                return typeof(TblRezerveRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.TblSiparisListesiRowChanged != null)) {
-                    this.TblSiparisListesiRowChanged(this, new TblSiparisListesiRowChangeEvent(((TblSiparisListesiRow)(e.Row)), e.Action));
+                if ((this.TblRezerveRowChanged != null)) {
+                    this.TblRezerveRowChanged(this, new TblRezerveRowChangeEvent(((TblRezerveRow)(e.Row)), e.Action));
                 }
             }
             
@@ -727,8 +768,8 @@ namespace FiloTakipSistemi {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.TblSiparisListesiRowChanging != null)) {
-                    this.TblSiparisListesiRowChanging(this, new TblSiparisListesiRowChangeEvent(((TblSiparisListesiRow)(e.Row)), e.Action));
+                if ((this.TblRezerveRowChanging != null)) {
+                    this.TblRezerveRowChanging(this, new TblRezerveRowChangeEvent(((TblRezerveRow)(e.Row)), e.Action));
                 }
             }
             
@@ -736,8 +777,8 @@ namespace FiloTakipSistemi {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.TblSiparisListesiRowDeleted != null)) {
-                    this.TblSiparisListesiRowDeleted(this, new TblSiparisListesiRowChangeEvent(((TblSiparisListesiRow)(e.Row)), e.Action));
+                if ((this.TblRezerveRowDeleted != null)) {
+                    this.TblRezerveRowDeleted(this, new TblRezerveRowChangeEvent(((TblRezerveRow)(e.Row)), e.Action));
                 }
             }
             
@@ -745,14 +786,14 @@ namespace FiloTakipSistemi {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.TblSiparisListesiRowDeleting != null)) {
-                    this.TblSiparisListesiRowDeleting(this, new TblSiparisListesiRowChangeEvent(((TblSiparisListesiRow)(e.Row)), e.Action));
+                if ((this.TblRezerveRowDeleting != null)) {
+                    this.TblRezerveRowDeleting(this, new TblRezerveRowChangeEvent(((TblRezerveRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveTblSiparisListesiRow(TblSiparisListesiRow row) {
+            public void RemoveTblRezerveRow(TblRezerveRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -779,7 +820,1085 @@ namespace FiloTakipSistemi {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "TblSiparisListesiDataTable";
+                attribute2.FixedValue = "TblRezerveDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class TblPlakaAtandiDataTable : global::System.Data.TypedTableBase<TblPlakaAtandiRow> {
+            
+            private global::System.Data.DataColumn columnID;
+            
+            private global::System.Data.DataColumn columnPlakaDurumu;
+            
+            private global::System.Data.DataColumn columnSeferTarihi;
+            
+            private global::System.Data.DataColumn columnPlaka;
+            
+            private global::System.Data.DataColumn columnSurucuAdSoyad;
+            
+            private global::System.Data.DataColumn columnSurucuTelefon;
+            
+            private global::System.Data.DataColumn columnSurucuTC;
+            
+            private global::System.Data.DataColumn columnMusteriAdi;
+            
+            private global::System.Data.DataColumn columnYuklemeNoktasi;
+            
+            private global::System.Data.DataColumn columnYuklemeIl;
+            
+            private global::System.Data.DataColumn columnYuklemeIlcesi;
+            
+            private global::System.Data.DataColumn columnTonaj;
+            
+            private global::System.Data.DataColumn columnTeslimNoktasi;
+            
+            private global::System.Data.DataColumn columnTeslimIli;
+            
+            private global::System.Data.DataColumn columnTeslimIlcesi;
+            
+            private global::System.Data.DataColumn columnNavlunTutar;
+            
+            private global::System.Data.DataColumn columnAciklama;
+            
+            private global::System.Data.DataColumn columnSonNokta;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TblPlakaAtandiDataTable() {
+                this.TableName = "TblPlakaAtandi";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal TblPlakaAtandiDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected TblPlakaAtandiDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PlakaDurumuColumn {
+                get {
+                    return this.columnPlakaDurumu;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SeferTarihiColumn {
+                get {
+                    return this.columnSeferTarihi;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PlakaColumn {
+                get {
+                    return this.columnPlaka;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SurucuAdSoyadColumn {
+                get {
+                    return this.columnSurucuAdSoyad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SurucuTelefonColumn {
+                get {
+                    return this.columnSurucuTelefon;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SurucuTCColumn {
+                get {
+                    return this.columnSurucuTC;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MusteriAdiColumn {
+                get {
+                    return this.columnMusteriAdi;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn YuklemeNoktasiColumn {
+                get {
+                    return this.columnYuklemeNoktasi;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn YuklemeIlColumn {
+                get {
+                    return this.columnYuklemeIl;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn YuklemeIlcesiColumn {
+                get {
+                    return this.columnYuklemeIlcesi;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TonajColumn {
+                get {
+                    return this.columnTonaj;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TeslimNoktasiColumn {
+                get {
+                    return this.columnTeslimNoktasi;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TeslimIliColumn {
+                get {
+                    return this.columnTeslimIli;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TeslimIlcesiColumn {
+                get {
+                    return this.columnTeslimIlcesi;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn NavlunTutarColumn {
+                get {
+                    return this.columnNavlunTutar;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn AciklamaColumn {
+                get {
+                    return this.columnAciklama;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SonNoktaColumn {
+                get {
+                    return this.columnSonNokta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TblPlakaAtandiRow this[int index] {
+                get {
+                    return ((TblPlakaAtandiRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event TblPlakaAtandiRowChangeEventHandler TblPlakaAtandiRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event TblPlakaAtandiRowChangeEventHandler TblPlakaAtandiRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event TblPlakaAtandiRowChangeEventHandler TblPlakaAtandiRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event TblPlakaAtandiRowChangeEventHandler TblPlakaAtandiRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddTblPlakaAtandiRow(TblPlakaAtandiRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TblPlakaAtandiRow AddTblPlakaAtandiRow(
+                        string PlakaDurumu, 
+                        System.DateTime SeferTarihi, 
+                        string Plaka, 
+                        string SurucuAdSoyad, 
+                        string SurucuTelefon, 
+                        string SurucuTC, 
+                        string MusteriAdi, 
+                        string YuklemeNoktasi, 
+                        string YuklemeIl, 
+                        string YuklemeIlcesi, 
+                        string Tonaj, 
+                        string TeslimNoktasi, 
+                        string TeslimIli, 
+                        string TeslimIlcesi, 
+                        string NavlunTutar, 
+                        string Aciklama, 
+                        string SonNokta) {
+                TblPlakaAtandiRow rowTblPlakaAtandiRow = ((TblPlakaAtandiRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        PlakaDurumu,
+                        SeferTarihi,
+                        Plaka,
+                        SurucuAdSoyad,
+                        SurucuTelefon,
+                        SurucuTC,
+                        MusteriAdi,
+                        YuklemeNoktasi,
+                        YuklemeIl,
+                        YuklemeIlcesi,
+                        Tonaj,
+                        TeslimNoktasi,
+                        TeslimIli,
+                        TeslimIlcesi,
+                        NavlunTutar,
+                        Aciklama,
+                        SonNokta};
+                rowTblPlakaAtandiRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTblPlakaAtandiRow);
+                return rowTblPlakaAtandiRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TblPlakaAtandiRow FindByID(int ID) {
+                return ((TblPlakaAtandiRow)(this.Rows.Find(new object[] {
+                            ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                TblPlakaAtandiDataTable cln = ((TblPlakaAtandiDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new TblPlakaAtandiDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnID = base.Columns["ID"];
+                this.columnPlakaDurumu = base.Columns["PlakaDurumu"];
+                this.columnSeferTarihi = base.Columns["SeferTarihi"];
+                this.columnPlaka = base.Columns["Plaka"];
+                this.columnSurucuAdSoyad = base.Columns["SurucuAdSoyad"];
+                this.columnSurucuTelefon = base.Columns["SurucuTelefon"];
+                this.columnSurucuTC = base.Columns["SurucuTC"];
+                this.columnMusteriAdi = base.Columns["MusteriAdi"];
+                this.columnYuklemeNoktasi = base.Columns["YuklemeNoktasi"];
+                this.columnYuklemeIl = base.Columns["YuklemeIl"];
+                this.columnYuklemeIlcesi = base.Columns["YuklemeIlcesi"];
+                this.columnTonaj = base.Columns["Tonaj"];
+                this.columnTeslimNoktasi = base.Columns["TeslimNoktasi"];
+                this.columnTeslimIli = base.Columns["TeslimIli"];
+                this.columnTeslimIlcesi = base.Columns["TeslimIlcesi"];
+                this.columnNavlunTutar = base.Columns["NavlunTutar"];
+                this.columnAciklama = base.Columns["Aciklama"];
+                this.columnSonNokta = base.Columns["SonNokta"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+                this.columnPlakaDurumu = new global::System.Data.DataColumn("PlakaDurumu", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPlakaDurumu);
+                this.columnSeferTarihi = new global::System.Data.DataColumn("SeferTarihi", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSeferTarihi);
+                this.columnPlaka = new global::System.Data.DataColumn("Plaka", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPlaka);
+                this.columnSurucuAdSoyad = new global::System.Data.DataColumn("SurucuAdSoyad", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSurucuAdSoyad);
+                this.columnSurucuTelefon = new global::System.Data.DataColumn("SurucuTelefon", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSurucuTelefon);
+                this.columnSurucuTC = new global::System.Data.DataColumn("SurucuTC", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSurucuTC);
+                this.columnMusteriAdi = new global::System.Data.DataColumn("MusteriAdi", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMusteriAdi);
+                this.columnYuklemeNoktasi = new global::System.Data.DataColumn("YuklemeNoktasi", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnYuklemeNoktasi);
+                this.columnYuklemeIl = new global::System.Data.DataColumn("YuklemeIl", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnYuklemeIl);
+                this.columnYuklemeIlcesi = new global::System.Data.DataColumn("YuklemeIlcesi", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnYuklemeIlcesi);
+                this.columnTonaj = new global::System.Data.DataColumn("Tonaj", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTonaj);
+                this.columnTeslimNoktasi = new global::System.Data.DataColumn("TeslimNoktasi", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTeslimNoktasi);
+                this.columnTeslimIli = new global::System.Data.DataColumn("TeslimIli", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTeslimIli);
+                this.columnTeslimIlcesi = new global::System.Data.DataColumn("TeslimIlcesi", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTeslimIlcesi);
+                this.columnNavlunTutar = new global::System.Data.DataColumn("NavlunTutar", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNavlunTutar);
+                this.columnAciklama = new global::System.Data.DataColumn("Aciklama", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAciklama);
+                this.columnSonNokta = new global::System.Data.DataColumn("SonNokta", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSonNokta);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID}, true));
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = -1;
+                this.columnID.AutoIncrementStep = -1;
+                this.columnID.AllowDBNull = false;
+                this.columnID.ReadOnly = true;
+                this.columnID.Unique = true;
+                this.columnPlakaDurumu.MaxLength = 300;
+                this.columnPlaka.MaxLength = 500;
+                this.columnSurucuAdSoyad.MaxLength = 300;
+                this.columnSurucuTelefon.MaxLength = 300;
+                this.columnSurucuTC.MaxLength = 11;
+                this.columnMusteriAdi.MaxLength = 500;
+                this.columnYuklemeNoktasi.MaxLength = 500;
+                this.columnYuklemeIl.MaxLength = 500;
+                this.columnYuklemeIlcesi.MaxLength = 500;
+                this.columnTonaj.MaxLength = 500;
+                this.columnTeslimNoktasi.MaxLength = 500;
+                this.columnTeslimIli.MaxLength = 500;
+                this.columnTeslimIlcesi.MaxLength = 500;
+                this.columnNavlunTutar.MaxLength = 500;
+                this.columnAciklama.MaxLength = 2147483647;
+                this.columnSonNokta.MaxLength = 300;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TblPlakaAtandiRow NewTblPlakaAtandiRow() {
+                return ((TblPlakaAtandiRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new TblPlakaAtandiRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(TblPlakaAtandiRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.TblPlakaAtandiRowChanged != null)) {
+                    this.TblPlakaAtandiRowChanged(this, new TblPlakaAtandiRowChangeEvent(((TblPlakaAtandiRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.TblPlakaAtandiRowChanging != null)) {
+                    this.TblPlakaAtandiRowChanging(this, new TblPlakaAtandiRowChangeEvent(((TblPlakaAtandiRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.TblPlakaAtandiRowDeleted != null)) {
+                    this.TblPlakaAtandiRowDeleted(this, new TblPlakaAtandiRowChangeEvent(((TblPlakaAtandiRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.TblPlakaAtandiRowDeleting != null)) {
+                    this.TblPlakaAtandiRowDeleting(this, new TblPlakaAtandiRowChangeEvent(((TblPlakaAtandiRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveTblPlakaAtandiRow(TblPlakaAtandiRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                FiloTakipDataSet18 ds = new FiloTakipDataSet18();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "TblPlakaAtandiDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class TblPlakaDurumlarıDataTable : global::System.Data.TypedTableBase<TblPlakaDurumlarıRow> {
+            
+            private global::System.Data.DataColumn columnID;
+            
+            private global::System.Data.DataColumn columnPlaka;
+            
+            private global::System.Data.DataColumn columnSurucuAdı;
+            
+            private global::System.Data.DataColumn columnSurucuTelefon;
+            
+            private global::System.Data.DataColumn columnSurucuTC;
+            
+            private global::System.Data.DataColumn columnSeferTarihi;
+            
+            private global::System.Data.DataColumn columnYuklemeNoktası;
+            
+            private global::System.Data.DataColumn columnTeslimNoktası;
+            
+            private global::System.Data.DataColumn columnSonIl;
+            
+            private global::System.Data.DataColumn columnSonIlce;
+            
+            private global::System.Data.DataColumn columnSonNokta;
+            
+            private global::System.Data.DataColumn columnTahminiVarisZamani;
+            
+            private global::System.Data.DataColumn columnYuklemeYeriArasındaKm;
+            
+            private global::System.Data.DataColumn columnDurum;
+            
+            private global::System.Data.DataColumn columnBaslangıcTarihi;
+            
+            private global::System.Data.DataColumn columnBitisTarihi;
+            
+            private global::System.Data.DataColumn columnAciklama;
+            
+            private global::System.Data.DataColumn columnSebep;
+            
+            private global::System.Data.DataColumn columnTarih;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TblPlakaDurumlarıDataTable() {
+                this.TableName = "TblPlakaDurumları";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal TblPlakaDurumlarıDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected TblPlakaDurumlarıDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PlakaColumn {
+                get {
+                    return this.columnPlaka;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SurucuAdıColumn {
+                get {
+                    return this.columnSurucuAdı;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SurucuTelefonColumn {
+                get {
+                    return this.columnSurucuTelefon;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SurucuTCColumn {
+                get {
+                    return this.columnSurucuTC;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SeferTarihiColumn {
+                get {
+                    return this.columnSeferTarihi;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn YuklemeNoktasıColumn {
+                get {
+                    return this.columnYuklemeNoktası;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TeslimNoktasıColumn {
+                get {
+                    return this.columnTeslimNoktası;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SonIlColumn {
+                get {
+                    return this.columnSonIl;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SonIlceColumn {
+                get {
+                    return this.columnSonIlce;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SonNoktaColumn {
+                get {
+                    return this.columnSonNokta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TahminiVarisZamaniColumn {
+                get {
+                    return this.columnTahminiVarisZamani;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn YuklemeYeriArasındaKmColumn {
+                get {
+                    return this.columnYuklemeYeriArasındaKm;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DurumColumn {
+                get {
+                    return this.columnDurum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn BaslangıcTarihiColumn {
+                get {
+                    return this.columnBaslangıcTarihi;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn BitisTarihiColumn {
+                get {
+                    return this.columnBitisTarihi;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn AciklamaColumn {
+                get {
+                    return this.columnAciklama;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SebepColumn {
+                get {
+                    return this.columnSebep;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TarihColumn {
+                get {
+                    return this.columnTarih;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TblPlakaDurumlarıRow this[int index] {
+                get {
+                    return ((TblPlakaDurumlarıRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event TblPlakaDurumlarıRowChangeEventHandler TblPlakaDurumlarıRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event TblPlakaDurumlarıRowChangeEventHandler TblPlakaDurumlarıRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event TblPlakaDurumlarıRowChangeEventHandler TblPlakaDurumlarıRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event TblPlakaDurumlarıRowChangeEventHandler TblPlakaDurumlarıRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddTblPlakaDurumlarıRow(TblPlakaDurumlarıRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TblPlakaDurumlarıRow AddTblPlakaDurumlarıRow(
+                        string Plaka, 
+                        string SurucuAdı, 
+                        string SurucuTelefon, 
+                        string SurucuTC, 
+                        System.DateTime SeferTarihi, 
+                        string YuklemeNoktası, 
+                        string TeslimNoktası, 
+                        string SonIl, 
+                        string SonIlce, 
+                        string SonNokta, 
+                        System.DateTime TahminiVarisZamani, 
+                        string YuklemeYeriArasındaKm, 
+                        string Durum, 
+                        System.DateTime BaslangıcTarihi, 
+                        System.DateTime BitisTarihi, 
+                        string Aciklama, 
+                        string Sebep, 
+                        System.DateTime Tarih) {
+                TblPlakaDurumlarıRow rowTblPlakaDurumlarıRow = ((TblPlakaDurumlarıRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        Plaka,
+                        SurucuAdı,
+                        SurucuTelefon,
+                        SurucuTC,
+                        SeferTarihi,
+                        YuklemeNoktası,
+                        TeslimNoktası,
+                        SonIl,
+                        SonIlce,
+                        SonNokta,
+                        TahminiVarisZamani,
+                        YuklemeYeriArasındaKm,
+                        Durum,
+                        BaslangıcTarihi,
+                        BitisTarihi,
+                        Aciklama,
+                        Sebep,
+                        Tarih};
+                rowTblPlakaDurumlarıRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTblPlakaDurumlarıRow);
+                return rowTblPlakaDurumlarıRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TblPlakaDurumlarıRow FindByID(int ID) {
+                return ((TblPlakaDurumlarıRow)(this.Rows.Find(new object[] {
+                            ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                TblPlakaDurumlarıDataTable cln = ((TblPlakaDurumlarıDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new TblPlakaDurumlarıDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnID = base.Columns["ID"];
+                this.columnPlaka = base.Columns["Plaka"];
+                this.columnSurucuAdı = base.Columns["SurucuAdı"];
+                this.columnSurucuTelefon = base.Columns["SurucuTelefon"];
+                this.columnSurucuTC = base.Columns["SurucuTC"];
+                this.columnSeferTarihi = base.Columns["SeferTarihi"];
+                this.columnYuklemeNoktası = base.Columns["YuklemeNoktası"];
+                this.columnTeslimNoktası = base.Columns["TeslimNoktası"];
+                this.columnSonIl = base.Columns["SonIl"];
+                this.columnSonIlce = base.Columns["SonIlce"];
+                this.columnSonNokta = base.Columns["SonNokta"];
+                this.columnTahminiVarisZamani = base.Columns["TahminiVarisZamani"];
+                this.columnYuklemeYeriArasındaKm = base.Columns["YuklemeYeriArasındaKm"];
+                this.columnDurum = base.Columns["Durum"];
+                this.columnBaslangıcTarihi = base.Columns["BaslangıcTarihi"];
+                this.columnBitisTarihi = base.Columns["BitisTarihi"];
+                this.columnAciklama = base.Columns["Aciklama"];
+                this.columnSebep = base.Columns["Sebep"];
+                this.columnTarih = base.Columns["Tarih"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+                this.columnPlaka = new global::System.Data.DataColumn("Plaka", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPlaka);
+                this.columnSurucuAdı = new global::System.Data.DataColumn("SurucuAdı", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSurucuAdı);
+                this.columnSurucuTelefon = new global::System.Data.DataColumn("SurucuTelefon", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSurucuTelefon);
+                this.columnSurucuTC = new global::System.Data.DataColumn("SurucuTC", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSurucuTC);
+                this.columnSeferTarihi = new global::System.Data.DataColumn("SeferTarihi", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSeferTarihi);
+                this.columnYuklemeNoktası = new global::System.Data.DataColumn("YuklemeNoktası", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnYuklemeNoktası);
+                this.columnTeslimNoktası = new global::System.Data.DataColumn("TeslimNoktası", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTeslimNoktası);
+                this.columnSonIl = new global::System.Data.DataColumn("SonIl", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSonIl);
+                this.columnSonIlce = new global::System.Data.DataColumn("SonIlce", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSonIlce);
+                this.columnSonNokta = new global::System.Data.DataColumn("SonNokta", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSonNokta);
+                this.columnTahminiVarisZamani = new global::System.Data.DataColumn("TahminiVarisZamani", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTahminiVarisZamani);
+                this.columnYuklemeYeriArasındaKm = new global::System.Data.DataColumn("YuklemeYeriArasındaKm", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnYuklemeYeriArasındaKm);
+                this.columnDurum = new global::System.Data.DataColumn("Durum", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDurum);
+                this.columnBaslangıcTarihi = new global::System.Data.DataColumn("BaslangıcTarihi", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBaslangıcTarihi);
+                this.columnBitisTarihi = new global::System.Data.DataColumn("BitisTarihi", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBitisTarihi);
+                this.columnAciklama = new global::System.Data.DataColumn("Aciklama", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAciklama);
+                this.columnSebep = new global::System.Data.DataColumn("Sebep", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSebep);
+                this.columnTarih = new global::System.Data.DataColumn("Tarih", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTarih);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID}, true));
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = -1;
+                this.columnID.AutoIncrementStep = -1;
+                this.columnID.AllowDBNull = false;
+                this.columnID.ReadOnly = true;
+                this.columnID.Unique = true;
+                this.columnPlaka.MaxLength = 500;
+                this.columnSurucuAdı.MaxLength = 500;
+                this.columnSurucuTelefon.MaxLength = 200;
+                this.columnSurucuTC.MaxLength = 11;
+                this.columnYuklemeNoktası.MaxLength = 500;
+                this.columnTeslimNoktası.MaxLength = 500;
+                this.columnSonIl.MaxLength = 500;
+                this.columnSonIlce.MaxLength = 500;
+                this.columnSonNokta.MaxLength = 500;
+                this.columnYuklemeYeriArasındaKm.MaxLength = 200;
+                this.columnDurum.MaxLength = 500;
+                this.columnAciklama.MaxLength = 2147483647;
+                this.columnSebep.MaxLength = 255;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TblPlakaDurumlarıRow NewTblPlakaDurumlarıRow() {
+                return ((TblPlakaDurumlarıRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new TblPlakaDurumlarıRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(TblPlakaDurumlarıRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.TblPlakaDurumlarıRowChanged != null)) {
+                    this.TblPlakaDurumlarıRowChanged(this, new TblPlakaDurumlarıRowChangeEvent(((TblPlakaDurumlarıRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.TblPlakaDurumlarıRowChanging != null)) {
+                    this.TblPlakaDurumlarıRowChanging(this, new TblPlakaDurumlarıRowChangeEvent(((TblPlakaDurumlarıRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.TblPlakaDurumlarıRowDeleted != null)) {
+                    this.TblPlakaDurumlarıRowDeleted(this, new TblPlakaDurumlarıRowChangeEvent(((TblPlakaDurumlarıRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.TblPlakaDurumlarıRowDeleting != null)) {
+                    this.TblPlakaDurumlarıRowDeleting(this, new TblPlakaDurumlarıRowChangeEvent(((TblPlakaDurumlarıRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveTblPlakaDurumlarıRow(TblPlakaDurumlarıRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                FiloTakipDataSet18 ds = new FiloTakipDataSet18();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "TblPlakaDurumlarıDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -823,25 +1942,46 @@ namespace FiloTakipSistemi {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class TblSiparisListesiRow : global::System.Data.DataRow {
+        public partial class TblRezerveRow : global::System.Data.DataRow {
             
-            private TblSiparisListesiDataTable tableTblSiparisListesi;
+            private TblRezerveDataTable tableTblRezerve;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal TblSiparisListesiRow(global::System.Data.DataRowBuilder rb) : 
+            internal TblRezerveRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableTblSiparisListesi = ((TblSiparisListesiDataTable)(this.Table));
+                this.tableTblRezerve = ((TblRezerveDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int ID {
+            public string PlakaDurumu {
                 get {
-                    return ((int)(this[this.tableTblSiparisListesi.IDColumn]));
+                    try {
+                        return ((string)(this[this.tableTblRezerve.PlakaDurumuColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblRezerve\' tablosundaki \'PlakaDurumu\' sütunun değeri DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableTblSiparisListesi.IDColumn] = value;
+                    this[this.tableTblRezerve.PlakaDurumuColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime SeferTarihi {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableTblRezerve.SeferTarihiColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblRezerve\' tablosundaki \'SeferTarihi\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblRezerve.SeferTarihiColumn] = value;
                 }
             }
             
@@ -850,14 +1990,62 @@ namespace FiloTakipSistemi {
             public string Plaka {
                 get {
                     try {
-                        return ((string)(this[this.tableTblSiparisListesi.PlakaColumn]));
+                        return ((string)(this[this.tableTblRezerve.PlakaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'TblSiparisListesi\' tablosundaki \'Plaka\' sütunun değeri DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("\'TblRezerve\' tablosundaki \'Plaka\' sütunun değeri DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTblSiparisListesi.PlakaColumn] = value;
+                    this[this.tableTblRezerve.PlakaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SurucuAdSoyad {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblRezerve.SurucuAdSoyadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblRezerve\' tablosundaki \'SurucuAdSoyad\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblRezerve.SurucuAdSoyadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SurucuTelefon {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblRezerve.SurucuTelefonColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblRezerve\' tablosundaki \'SurucuTelefon\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblRezerve.SurucuTelefonColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SurucuTC {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblRezerve.SurucuTCColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblRezerve\' tablosundaki \'SurucuTC\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblRezerve.SurucuTCColumn] = value;
                 }
             }
             
@@ -866,126 +2054,14 @@ namespace FiloTakipSistemi {
             public string MusteriAdi {
                 get {
                     try {
-                        return ((string)(this[this.tableTblSiparisListesi.MusteriAdiColumn]));
+                        return ((string)(this[this.tableTblRezerve.MusteriAdiColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'TblSiparisListesi\' tablosundaki \'MusteriAdi\' sütunun değeri DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("\'TblRezerve\' tablosundaki \'MusteriAdi\' sütunun değeri DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTblSiparisListesi.MusteriAdiColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string HizmetTipi {
-                get {
-                    try {
-                        return ((string)(this[this.tableTblSiparisListesi.HizmetTipiColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'TblSiparisListesi\' tablosundaki \'HizmetTipi\' sütunun değeri DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableTblSiparisListesi.HizmetTipiColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ProjeAdi {
-                get {
-                    try {
-                        return ((string)(this[this.tableTblSiparisListesi.ProjeAdiColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'TblSiparisListesi\' tablosundaki \'ProjeAdi\' sütunun değeri DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableTblSiparisListesi.ProjeAdiColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string AracTipi {
-                get {
-                    try {
-                        return ((string)(this[this.tableTblSiparisListesi.AracTipiColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'TblSiparisListesi\' tablosundaki \'AracTipi\' sütunun değeri DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableTblSiparisListesi.AracTipiColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime SiparisTarihi {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableTblSiparisListesi.SiparisTarihiColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'TblSiparisListesi\' tablosundaki \'SiparisTarihi\' sütunun değeri DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableTblSiparisListesi.SiparisTarihiColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string SiparisNo {
-                get {
-                    try {
-                        return ((string)(this[this.tableTblSiparisListesi.SiparisNoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'TblSiparisListesi\' tablosundaki \'SiparisNo\' sütunun değeri DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableTblSiparisListesi.SiparisNoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime YuklemeTarihi {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableTblSiparisListesi.YuklemeTarihiColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'TblSiparisListesi\' tablosundaki \'YuklemeTarihi\' sütunun değeri DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableTblSiparisListesi.YuklemeTarihiColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string NoktaSayisi {
-                get {
-                    try {
-                        return ((string)(this[this.tableTblSiparisListesi.NoktaSayisiColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'TblSiparisListesi\' tablosundaki \'NoktaSayisi\' sütunun değeri DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableTblSiparisListesi.NoktaSayisiColumn] = value;
+                    this[this.tableTblRezerve.MusteriAdiColumn] = value;
                 }
             }
             
@@ -994,14 +2070,14 @@ namespace FiloTakipSistemi {
             public string YuklemeNoktasi {
                 get {
                     try {
-                        return ((string)(this[this.tableTblSiparisListesi.YuklemeNoktasiColumn]));
+                        return ((string)(this[this.tableTblRezerve.YuklemeNoktasiColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'TblSiparisListesi\' tablosundaki \'YuklemeNoktasi\' sütunun değeri DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("\'TblRezerve\' tablosundaki \'YuklemeNoktasi\' sütunun değeri DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTblSiparisListesi.YuklemeNoktasiColumn] = value;
+                    this[this.tableTblRezerve.YuklemeNoktasiColumn] = value;
                 }
             }
             
@@ -1010,30 +2086,46 @@ namespace FiloTakipSistemi {
             public string YuklemeIl {
                 get {
                     try {
-                        return ((string)(this[this.tableTblSiparisListesi.YuklemeIlColumn]));
+                        return ((string)(this[this.tableTblRezerve.YuklemeIlColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'TblSiparisListesi\' tablosundaki \'YuklemeIl\' sütunun değeri DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("\'TblRezerve\' tablosundaki \'YuklemeIl\' sütunun değeri DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTblSiparisListesi.YuklemeIlColumn] = value;
+                    this[this.tableTblRezerve.YuklemeIlColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string YuklemeIlce {
+            public string YuklemeIlcesi {
                 get {
                     try {
-                        return ((string)(this[this.tableTblSiparisListesi.YuklemeIlceColumn]));
+                        return ((string)(this[this.tableTblRezerve.YuklemeIlcesiColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'TblSiparisListesi\' tablosundaki \'YuklemeIlce\' sütunun değeri DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("\'TblRezerve\' tablosundaki \'YuklemeIlcesi\' sütunun değeri DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTblSiparisListesi.YuklemeIlceColumn] = value;
+                    this[this.tableTblRezerve.YuklemeIlcesiColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Tonaj {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblRezerve.TonajColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblRezerve\' tablosundaki \'Tonaj\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblRezerve.TonajColumn] = value;
                 }
             }
             
@@ -1042,311 +2134,1359 @@ namespace FiloTakipSistemi {
             public string TeslimNoktasi {
                 get {
                     try {
-                        return ((string)(this[this.tableTblSiparisListesi.TeslimNoktasiColumn]));
+                        return ((string)(this[this.tableTblRezerve.TeslimNoktasiColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'TblSiparisListesi\' tablosundaki \'TeslimNoktasi\' sütunun değeri DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("\'TblRezerve\' tablosundaki \'TeslimNoktasi\' sütunun değeri DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTblSiparisListesi.TeslimNoktasiColumn] = value;
+                    this[this.tableTblRezerve.TeslimNoktasiColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string TeslimIl {
+            public string TeslimIli {
                 get {
                     try {
-                        return ((string)(this[this.tableTblSiparisListesi.TeslimIlColumn]));
+                        return ((string)(this[this.tableTblRezerve.TeslimIliColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'TblSiparisListesi\' tablosundaki \'TeslimIl\' sütunun değeri DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("\'TblRezerve\' tablosundaki \'TeslimIli\' sütunun değeri DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTblSiparisListesi.TeslimIlColumn] = value;
+                    this[this.tableTblRezerve.TeslimIliColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string TeslimIlce {
+            public string TeslimIlcesi {
                 get {
                     try {
-                        return ((string)(this[this.tableTblSiparisListesi.TeslimIlceColumn]));
+                        return ((string)(this[this.tableTblRezerve.TeslimIlcesiColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'TblSiparisListesi\' tablosundaki \'TeslimIlce\' sütunun değeri DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("\'TblRezerve\' tablosundaki \'TeslimIlcesi\' sütunun değeri DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTblSiparisListesi.TeslimIlceColumn] = value;
+                    this[this.tableTblRezerve.TeslimIlcesiColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string PozisyonNo {
+            public string NavlunTutar {
                 get {
                     try {
-                        return ((string)(this[this.tableTblSiparisListesi.PozisyonNoColumn]));
+                        return ((string)(this[this.tableTblRezerve.NavlunTutarColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'TblSiparisListesi\' tablosundaki \'PozisyonNo\' sütunun değeri DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("\'TblRezerve\' tablosundaki \'NavlunTutar\' sütunun değeri DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTblSiparisListesi.PozisyonNoColumn] = value;
+                    this[this.tableTblRezerve.NavlunTutarColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string TahminiKm {
+            public string Aciklama {
                 get {
                     try {
-                        return ((string)(this[this.tableTblSiparisListesi.TahminiKmColumn]));
+                        return ((string)(this[this.tableTblRezerve.AciklamaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'TblSiparisListesi\' tablosundaki \'TahminiKm\' sütunun değeri DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("\'TblRezerve\' tablosundaki \'Aciklama\' sütunun değeri DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTblSiparisListesi.TahminiKmColumn] = value;
+                    this[this.tableTblRezerve.AciklamaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string TahminiVarisSaatTarih {
+            public string SonNokta {
                 get {
                     try {
-                        return ((string)(this[this.tableTblSiparisListesi.TahminiVarisSaatTarihColumn]));
+                        return ((string)(this[this.tableTblRezerve.SonNoktaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'TblSiparisListesi\' tablosundaki \'TahminiVarisSaatTarih\' sütunun değeri DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("\'TblRezerve\' tablosundaki \'SonNokta\' sütunun değeri DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTblSiparisListesi.TahminiVarisSaatTarihColumn] = value;
+                    this[this.tableTblRezerve.SonNoktaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime RezervasyonTarihi {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableTblRezerve.RezervasyonTarihiColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblRezerve\' tablosundaki \'RezervasyonTarihi\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblRezerve.RezervasyonTarihiColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPlakaDurumuNull() {
+                return this.IsNull(this.tableTblRezerve.PlakaDurumuColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPlakaDurumuNull() {
+                this[this.tableTblRezerve.PlakaDurumuColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSeferTarihiNull() {
+                return this.IsNull(this.tableTblRezerve.SeferTarihiColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSeferTarihiNull() {
+                this[this.tableTblRezerve.SeferTarihiColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPlakaNull() {
+                return this.IsNull(this.tableTblRezerve.PlakaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPlakaNull() {
+                this[this.tableTblRezerve.PlakaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSurucuAdSoyadNull() {
+                return this.IsNull(this.tableTblRezerve.SurucuAdSoyadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSurucuAdSoyadNull() {
+                this[this.tableTblRezerve.SurucuAdSoyadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSurucuTelefonNull() {
+                return this.IsNull(this.tableTblRezerve.SurucuTelefonColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSurucuTelefonNull() {
+                this[this.tableTblRezerve.SurucuTelefonColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSurucuTCNull() {
+                return this.IsNull(this.tableTblRezerve.SurucuTCColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSurucuTCNull() {
+                this[this.tableTblRezerve.SurucuTCColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMusteriAdiNull() {
+                return this.IsNull(this.tableTblRezerve.MusteriAdiColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMusteriAdiNull() {
+                this[this.tableTblRezerve.MusteriAdiColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsYuklemeNoktasiNull() {
+                return this.IsNull(this.tableTblRezerve.YuklemeNoktasiColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetYuklemeNoktasiNull() {
+                this[this.tableTblRezerve.YuklemeNoktasiColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsYuklemeIlNull() {
+                return this.IsNull(this.tableTblRezerve.YuklemeIlColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetYuklemeIlNull() {
+                this[this.tableTblRezerve.YuklemeIlColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsYuklemeIlcesiNull() {
+                return this.IsNull(this.tableTblRezerve.YuklemeIlcesiColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetYuklemeIlcesiNull() {
+                this[this.tableTblRezerve.YuklemeIlcesiColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTonajNull() {
+                return this.IsNull(this.tableTblRezerve.TonajColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTonajNull() {
+                this[this.tableTblRezerve.TonajColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTeslimNoktasiNull() {
+                return this.IsNull(this.tableTblRezerve.TeslimNoktasiColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTeslimNoktasiNull() {
+                this[this.tableTblRezerve.TeslimNoktasiColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTeslimIliNull() {
+                return this.IsNull(this.tableTblRezerve.TeslimIliColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTeslimIliNull() {
+                this[this.tableTblRezerve.TeslimIliColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTeslimIlcesiNull() {
+                return this.IsNull(this.tableTblRezerve.TeslimIlcesiColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTeslimIlcesiNull() {
+                this[this.tableTblRezerve.TeslimIlcesiColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsNavlunTutarNull() {
+                return this.IsNull(this.tableTblRezerve.NavlunTutarColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetNavlunTutarNull() {
+                this[this.tableTblRezerve.NavlunTutarColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsAciklamaNull() {
+                return this.IsNull(this.tableTblRezerve.AciklamaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetAciklamaNull() {
+                this[this.tableTblRezerve.AciklamaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSonNoktaNull() {
+                return this.IsNull(this.tableTblRezerve.SonNoktaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSonNoktaNull() {
+                this[this.tableTblRezerve.SonNoktaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsRezervasyonTarihiNull() {
+                return this.IsNull(this.tableTblRezerve.RezervasyonTarihiColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetRezervasyonTarihiNull() {
+                this[this.tableTblRezerve.RezervasyonTarihiColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class TblPlakaAtandiRow : global::System.Data.DataRow {
+            
+            private TblPlakaAtandiDataTable tableTblPlakaAtandi;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal TblPlakaAtandiRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableTblPlakaAtandi = ((TblPlakaAtandiDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int ID {
+                get {
+                    return ((int)(this[this.tableTblPlakaAtandi.IDColumn]));
+                }
+                set {
+                    this[this.tableTblPlakaAtandi.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PlakaDurumu {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaAtandi.PlakaDurumuColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaAtandi\' tablosundaki \'PlakaDurumu\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaAtandi.PlakaDurumuColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime SeferTarihi {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableTblPlakaAtandi.SeferTarihiColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaAtandi\' tablosundaki \'SeferTarihi\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaAtandi.SeferTarihiColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Plaka {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaAtandi.PlakaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaAtandi\' tablosundaki \'Plaka\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaAtandi.PlakaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SurucuAdSoyad {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaAtandi.SurucuAdSoyadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaAtandi\' tablosundaki \'SurucuAdSoyad\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaAtandi.SurucuAdSoyadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SurucuTelefon {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaAtandi.SurucuTelefonColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaAtandi\' tablosundaki \'SurucuTelefon\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaAtandi.SurucuTelefonColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SurucuTC {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaAtandi.SurucuTCColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaAtandi\' tablosundaki \'SurucuTC\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaAtandi.SurucuTCColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string MusteriAdi {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaAtandi.MusteriAdiColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaAtandi\' tablosundaki \'MusteriAdi\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaAtandi.MusteriAdiColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string YuklemeNoktasi {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaAtandi.YuklemeNoktasiColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaAtandi\' tablosundaki \'YuklemeNoktasi\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaAtandi.YuklemeNoktasiColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string YuklemeIl {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaAtandi.YuklemeIlColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaAtandi\' tablosundaki \'YuklemeIl\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaAtandi.YuklemeIlColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string YuklemeIlcesi {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaAtandi.YuklemeIlcesiColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaAtandi\' tablosundaki \'YuklemeIlcesi\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaAtandi.YuklemeIlcesiColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Tonaj {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaAtandi.TonajColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaAtandi\' tablosundaki \'Tonaj\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaAtandi.TonajColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string TeslimNoktasi {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaAtandi.TeslimNoktasiColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaAtandi\' tablosundaki \'TeslimNoktasi\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaAtandi.TeslimNoktasiColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string TeslimIli {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaAtandi.TeslimIliColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaAtandi\' tablosundaki \'TeslimIli\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaAtandi.TeslimIliColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string TeslimIlcesi {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaAtandi.TeslimIlcesiColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaAtandi\' tablosundaki \'TeslimIlcesi\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaAtandi.TeslimIlcesiColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string NavlunTutar {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaAtandi.NavlunTutarColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaAtandi\' tablosundaki \'NavlunTutar\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaAtandi.NavlunTutarColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Aciklama {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaAtandi.AciklamaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaAtandi\' tablosundaki \'Aciklama\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaAtandi.AciklamaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SonNokta {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaAtandi.SonNoktaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaAtandi\' tablosundaki \'SonNokta\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaAtandi.SonNoktaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPlakaDurumuNull() {
+                return this.IsNull(this.tableTblPlakaAtandi.PlakaDurumuColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPlakaDurumuNull() {
+                this[this.tableTblPlakaAtandi.PlakaDurumuColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSeferTarihiNull() {
+                return this.IsNull(this.tableTblPlakaAtandi.SeferTarihiColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSeferTarihiNull() {
+                this[this.tableTblPlakaAtandi.SeferTarihiColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPlakaNull() {
+                return this.IsNull(this.tableTblPlakaAtandi.PlakaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPlakaNull() {
+                this[this.tableTblPlakaAtandi.PlakaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSurucuAdSoyadNull() {
+                return this.IsNull(this.tableTblPlakaAtandi.SurucuAdSoyadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSurucuAdSoyadNull() {
+                this[this.tableTblPlakaAtandi.SurucuAdSoyadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSurucuTelefonNull() {
+                return this.IsNull(this.tableTblPlakaAtandi.SurucuTelefonColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSurucuTelefonNull() {
+                this[this.tableTblPlakaAtandi.SurucuTelefonColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSurucuTCNull() {
+                return this.IsNull(this.tableTblPlakaAtandi.SurucuTCColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSurucuTCNull() {
+                this[this.tableTblPlakaAtandi.SurucuTCColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMusteriAdiNull() {
+                return this.IsNull(this.tableTblPlakaAtandi.MusteriAdiColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMusteriAdiNull() {
+                this[this.tableTblPlakaAtandi.MusteriAdiColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsYuklemeNoktasiNull() {
+                return this.IsNull(this.tableTblPlakaAtandi.YuklemeNoktasiColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetYuklemeNoktasiNull() {
+                this[this.tableTblPlakaAtandi.YuklemeNoktasiColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsYuklemeIlNull() {
+                return this.IsNull(this.tableTblPlakaAtandi.YuklemeIlColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetYuklemeIlNull() {
+                this[this.tableTblPlakaAtandi.YuklemeIlColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsYuklemeIlcesiNull() {
+                return this.IsNull(this.tableTblPlakaAtandi.YuklemeIlcesiColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetYuklemeIlcesiNull() {
+                this[this.tableTblPlakaAtandi.YuklemeIlcesiColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTonajNull() {
+                return this.IsNull(this.tableTblPlakaAtandi.TonajColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTonajNull() {
+                this[this.tableTblPlakaAtandi.TonajColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTeslimNoktasiNull() {
+                return this.IsNull(this.tableTblPlakaAtandi.TeslimNoktasiColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTeslimNoktasiNull() {
+                this[this.tableTblPlakaAtandi.TeslimNoktasiColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTeslimIliNull() {
+                return this.IsNull(this.tableTblPlakaAtandi.TeslimIliColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTeslimIliNull() {
+                this[this.tableTblPlakaAtandi.TeslimIliColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTeslimIlcesiNull() {
+                return this.IsNull(this.tableTblPlakaAtandi.TeslimIlcesiColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTeslimIlcesiNull() {
+                this[this.tableTblPlakaAtandi.TeslimIlcesiColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsNavlunTutarNull() {
+                return this.IsNull(this.tableTblPlakaAtandi.NavlunTutarColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetNavlunTutarNull() {
+                this[this.tableTblPlakaAtandi.NavlunTutarColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsAciklamaNull() {
+                return this.IsNull(this.tableTblPlakaAtandi.AciklamaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetAciklamaNull() {
+                this[this.tableTblPlakaAtandi.AciklamaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSonNoktaNull() {
+                return this.IsNull(this.tableTblPlakaAtandi.SonNoktaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSonNoktaNull() {
+                this[this.tableTblPlakaAtandi.SonNoktaColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class TblPlakaDurumlarıRow : global::System.Data.DataRow {
+            
+            private TblPlakaDurumlarıDataTable tableTblPlakaDurumları;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal TblPlakaDurumlarıRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableTblPlakaDurumları = ((TblPlakaDurumlarıDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int ID {
+                get {
+                    return ((int)(this[this.tableTblPlakaDurumları.IDColumn]));
+                }
+                set {
+                    this[this.tableTblPlakaDurumları.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Plaka {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaDurumları.PlakaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaDurumları\' tablosundaki \'Plaka\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaDurumları.PlakaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SurucuAdı {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaDurumları.SurucuAdıColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaDurumları\' tablosundaki \'SurucuAdı\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaDurumları.SurucuAdıColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SurucuTelefon {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaDurumları.SurucuTelefonColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaDurumları\' tablosundaki \'SurucuTelefon\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaDurumları.SurucuTelefonColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SurucuTC {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaDurumları.SurucuTCColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaDurumları\' tablosundaki \'SurucuTC\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaDurumları.SurucuTCColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime SeferTarihi {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableTblPlakaDurumları.SeferTarihiColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaDurumları\' tablosundaki \'SeferTarihi\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaDurumları.SeferTarihiColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string YuklemeNoktası {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaDurumları.YuklemeNoktasıColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaDurumları\' tablosundaki \'YuklemeNoktası\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaDurumları.YuklemeNoktasıColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string TeslimNoktası {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaDurumları.TeslimNoktasıColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaDurumları\' tablosundaki \'TeslimNoktası\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaDurumları.TeslimNoktasıColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SonIl {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaDurumları.SonIlColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaDurumları\' tablosundaki \'SonIl\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaDurumları.SonIlColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SonIlce {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaDurumları.SonIlceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaDurumları\' tablosundaki \'SonIlce\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaDurumları.SonIlceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SonNokta {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaDurumları.SonNoktaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaDurumları\' tablosundaki \'SonNokta\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaDurumları.SonNoktaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime TahminiVarisZamani {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableTblPlakaDurumları.TahminiVarisZamaniColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaDurumları\' tablosundaki \'TahminiVarisZamani\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaDurumları.TahminiVarisZamaniColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string YuklemeYeriArasındaKm {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaDurumları.YuklemeYeriArasındaKmColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaDurumları\' tablosundaki \'YuklemeYeriArasındaKm\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaDurumları.YuklemeYeriArasındaKmColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Durum {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaDurumları.DurumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaDurumları\' tablosundaki \'Durum\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaDurumları.DurumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime BaslangıcTarihi {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableTblPlakaDurumları.BaslangıcTarihiColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaDurumları\' tablosundaki \'BaslangıcTarihi\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaDurumları.BaslangıcTarihiColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime BitisTarihi {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableTblPlakaDurumları.BitisTarihiColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaDurumları\' tablosundaki \'BitisTarihi\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaDurumları.BitisTarihiColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Aciklama {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaDurumları.AciklamaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaDurumları\' tablosundaki \'Aciklama\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaDurumları.AciklamaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Sebep {
+                get {
+                    try {
+                        return ((string)(this[this.tableTblPlakaDurumları.SebepColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaDurumları\' tablosundaki \'Sebep\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaDurumları.SebepColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime Tarih {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableTblPlakaDurumları.TarihColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'TblPlakaDurumları\' tablosundaki \'Tarih\' sütunun değeri DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTblPlakaDurumları.TarihColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsPlakaNull() {
-                return this.IsNull(this.tableTblSiparisListesi.PlakaColumn);
+                return this.IsNull(this.tableTblPlakaDurumları.PlakaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetPlakaNull() {
-                this[this.tableTblSiparisListesi.PlakaColumn] = global::System.Convert.DBNull;
+                this[this.tableTblPlakaDurumları.PlakaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsMusteriAdiNull() {
-                return this.IsNull(this.tableTblSiparisListesi.MusteriAdiColumn);
+            public bool IsSurucuAdıNull() {
+                return this.IsNull(this.tableTblPlakaDurumları.SurucuAdıColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetMusteriAdiNull() {
-                this[this.tableTblSiparisListesi.MusteriAdiColumn] = global::System.Convert.DBNull;
+            public void SetSurucuAdıNull() {
+                this[this.tableTblPlakaDurumları.SurucuAdıColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsHizmetTipiNull() {
-                return this.IsNull(this.tableTblSiparisListesi.HizmetTipiColumn);
+            public bool IsSurucuTelefonNull() {
+                return this.IsNull(this.tableTblPlakaDurumları.SurucuTelefonColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetHizmetTipiNull() {
-                this[this.tableTblSiparisListesi.HizmetTipiColumn] = global::System.Convert.DBNull;
+            public void SetSurucuTelefonNull() {
+                this[this.tableTblPlakaDurumları.SurucuTelefonColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsProjeAdiNull() {
-                return this.IsNull(this.tableTblSiparisListesi.ProjeAdiColumn);
+            public bool IsSurucuTCNull() {
+                return this.IsNull(this.tableTblPlakaDurumları.SurucuTCColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetProjeAdiNull() {
-                this[this.tableTblSiparisListesi.ProjeAdiColumn] = global::System.Convert.DBNull;
+            public void SetSurucuTCNull() {
+                this[this.tableTblPlakaDurumları.SurucuTCColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsAracTipiNull() {
-                return this.IsNull(this.tableTblSiparisListesi.AracTipiColumn);
+            public bool IsSeferTarihiNull() {
+                return this.IsNull(this.tableTblPlakaDurumları.SeferTarihiColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetAracTipiNull() {
-                this[this.tableTblSiparisListesi.AracTipiColumn] = global::System.Convert.DBNull;
+            public void SetSeferTarihiNull() {
+                this[this.tableTblPlakaDurumları.SeferTarihiColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsSiparisTarihiNull() {
-                return this.IsNull(this.tableTblSiparisListesi.SiparisTarihiColumn);
+            public bool IsYuklemeNoktasıNull() {
+                return this.IsNull(this.tableTblPlakaDurumları.YuklemeNoktasıColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetSiparisTarihiNull() {
-                this[this.tableTblSiparisListesi.SiparisTarihiColumn] = global::System.Convert.DBNull;
+            public void SetYuklemeNoktasıNull() {
+                this[this.tableTblPlakaDurumları.YuklemeNoktasıColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsSiparisNoNull() {
-                return this.IsNull(this.tableTblSiparisListesi.SiparisNoColumn);
+            public bool IsTeslimNoktasıNull() {
+                return this.IsNull(this.tableTblPlakaDurumları.TeslimNoktasıColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetSiparisNoNull() {
-                this[this.tableTblSiparisListesi.SiparisNoColumn] = global::System.Convert.DBNull;
+            public void SetTeslimNoktasıNull() {
+                this[this.tableTblPlakaDurumları.TeslimNoktasıColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsYuklemeTarihiNull() {
-                return this.IsNull(this.tableTblSiparisListesi.YuklemeTarihiColumn);
+            public bool IsSonIlNull() {
+                return this.IsNull(this.tableTblPlakaDurumları.SonIlColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetYuklemeTarihiNull() {
-                this[this.tableTblSiparisListesi.YuklemeTarihiColumn] = global::System.Convert.DBNull;
+            public void SetSonIlNull() {
+                this[this.tableTblPlakaDurumları.SonIlColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNoktaSayisiNull() {
-                return this.IsNull(this.tableTblSiparisListesi.NoktaSayisiColumn);
+            public bool IsSonIlceNull() {
+                return this.IsNull(this.tableTblPlakaDurumları.SonIlceColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNoktaSayisiNull() {
-                this[this.tableTblSiparisListesi.NoktaSayisiColumn] = global::System.Convert.DBNull;
+            public void SetSonIlceNull() {
+                this[this.tableTblPlakaDurumları.SonIlceColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsYuklemeNoktasiNull() {
-                return this.IsNull(this.tableTblSiparisListesi.YuklemeNoktasiColumn);
+            public bool IsSonNoktaNull() {
+                return this.IsNull(this.tableTblPlakaDurumları.SonNoktaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetYuklemeNoktasiNull() {
-                this[this.tableTblSiparisListesi.YuklemeNoktasiColumn] = global::System.Convert.DBNull;
+            public void SetSonNoktaNull() {
+                this[this.tableTblPlakaDurumları.SonNoktaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsYuklemeIlNull() {
-                return this.IsNull(this.tableTblSiparisListesi.YuklemeIlColumn);
+            public bool IsTahminiVarisZamaniNull() {
+                return this.IsNull(this.tableTblPlakaDurumları.TahminiVarisZamaniColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetYuklemeIlNull() {
-                this[this.tableTblSiparisListesi.YuklemeIlColumn] = global::System.Convert.DBNull;
+            public void SetTahminiVarisZamaniNull() {
+                this[this.tableTblPlakaDurumları.TahminiVarisZamaniColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsYuklemeIlceNull() {
-                return this.IsNull(this.tableTblSiparisListesi.YuklemeIlceColumn);
+            public bool IsYuklemeYeriArasındaKmNull() {
+                return this.IsNull(this.tableTblPlakaDurumları.YuklemeYeriArasındaKmColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetYuklemeIlceNull() {
-                this[this.tableTblSiparisListesi.YuklemeIlceColumn] = global::System.Convert.DBNull;
+            public void SetYuklemeYeriArasındaKmNull() {
+                this[this.tableTblPlakaDurumları.YuklemeYeriArasındaKmColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsTeslimNoktasiNull() {
-                return this.IsNull(this.tableTblSiparisListesi.TeslimNoktasiColumn);
+            public bool IsDurumNull() {
+                return this.IsNull(this.tableTblPlakaDurumları.DurumColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetTeslimNoktasiNull() {
-                this[this.tableTblSiparisListesi.TeslimNoktasiColumn] = global::System.Convert.DBNull;
+            public void SetDurumNull() {
+                this[this.tableTblPlakaDurumları.DurumColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsTeslimIlNull() {
-                return this.IsNull(this.tableTblSiparisListesi.TeslimIlColumn);
+            public bool IsBaslangıcTarihiNull() {
+                return this.IsNull(this.tableTblPlakaDurumları.BaslangıcTarihiColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetTeslimIlNull() {
-                this[this.tableTblSiparisListesi.TeslimIlColumn] = global::System.Convert.DBNull;
+            public void SetBaslangıcTarihiNull() {
+                this[this.tableTblPlakaDurumları.BaslangıcTarihiColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsTeslimIlceNull() {
-                return this.IsNull(this.tableTblSiparisListesi.TeslimIlceColumn);
+            public bool IsBitisTarihiNull() {
+                return this.IsNull(this.tableTblPlakaDurumları.BitisTarihiColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetTeslimIlceNull() {
-                this[this.tableTblSiparisListesi.TeslimIlceColumn] = global::System.Convert.DBNull;
+            public void SetBitisTarihiNull() {
+                this[this.tableTblPlakaDurumları.BitisTarihiColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsPozisyonNoNull() {
-                return this.IsNull(this.tableTblSiparisListesi.PozisyonNoColumn);
+            public bool IsAciklamaNull() {
+                return this.IsNull(this.tableTblPlakaDurumları.AciklamaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetPozisyonNoNull() {
-                this[this.tableTblSiparisListesi.PozisyonNoColumn] = global::System.Convert.DBNull;
+            public void SetAciklamaNull() {
+                this[this.tableTblPlakaDurumları.AciklamaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsTahminiKmNull() {
-                return this.IsNull(this.tableTblSiparisListesi.TahminiKmColumn);
+            public bool IsSebepNull() {
+                return this.IsNull(this.tableTblPlakaDurumları.SebepColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetTahminiKmNull() {
-                this[this.tableTblSiparisListesi.TahminiKmColumn] = global::System.Convert.DBNull;
+            public void SetSebepNull() {
+                this[this.tableTblPlakaDurumları.SebepColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsTahminiVarisSaatTarihNull() {
-                return this.IsNull(this.tableTblSiparisListesi.TahminiVarisSaatTarihColumn);
+            public bool IsTarihNull() {
+                return this.IsNull(this.tableTblPlakaDurumları.TarihColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetTahminiVarisSaatTarihNull() {
-                this[this.tableTblSiparisListesi.TahminiVarisSaatTarihColumn] = global::System.Convert.DBNull;
+            public void SetTarihNull() {
+                this[this.tableTblPlakaDurumları.TarihColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1354,22 +3494,90 @@ namespace FiloTakipSistemi {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class TblSiparisListesiRowChangeEvent : global::System.EventArgs {
+        public class TblRezerveRowChangeEvent : global::System.EventArgs {
             
-            private TblSiparisListesiRow eventRow;
+            private TblRezerveRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TblSiparisListesiRowChangeEvent(TblSiparisListesiRow row, global::System.Data.DataRowAction action) {
+            public TblRezerveRowChangeEvent(TblRezerveRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TblSiparisListesiRow Row {
+            public TblRezerveRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class TblPlakaAtandiRowChangeEvent : global::System.EventArgs {
+            
+            private TblPlakaAtandiRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TblPlakaAtandiRowChangeEvent(TblPlakaAtandiRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TblPlakaAtandiRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class TblPlakaDurumlarıRowChangeEvent : global::System.EventArgs {
+            
+            private TblPlakaDurumlarıRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TblPlakaDurumlarıRowChangeEvent(TblPlakaDurumlarıRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public TblPlakaDurumlarıRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1397,7 +3605,7 @@ namespace FiloTakipSistemi.FiloTakipDataSet18TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class TblSiparisListesiTableAdapter : global::System.ComponentModel.Component {
+    public partial class TblRezerveTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1411,7 +3619,7 @@ namespace FiloTakipSistemi.FiloTakipDataSet18TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public TblSiparisListesiTableAdapter() {
+        public TblRezerveTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1508,214 +3716,55 @@ namespace FiloTakipSistemi.FiloTakipDataSet18TableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "TblSiparisListesi";
-            tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.DataSetTable = "TblRezerve";
+            tableMapping.ColumnMappings.Add("PlakaDurumu", "PlakaDurumu");
+            tableMapping.ColumnMappings.Add("SeferTarihi", "SeferTarihi");
             tableMapping.ColumnMappings.Add("Plaka", "Plaka");
+            tableMapping.ColumnMappings.Add("SurucuAdSoyad", "SurucuAdSoyad");
+            tableMapping.ColumnMappings.Add("SurucuTelefon", "SurucuTelefon");
+            tableMapping.ColumnMappings.Add("SurucuTC", "SurucuTC");
             tableMapping.ColumnMappings.Add("MusteriAdi", "MusteriAdi");
-            tableMapping.ColumnMappings.Add("HizmetTipi", "HizmetTipi");
-            tableMapping.ColumnMappings.Add("ProjeAdi", "ProjeAdi");
-            tableMapping.ColumnMappings.Add("AracTipi", "AracTipi");
-            tableMapping.ColumnMappings.Add("SiparisTarihi", "SiparisTarihi");
-            tableMapping.ColumnMappings.Add("SiparisNo", "SiparisNo");
-            tableMapping.ColumnMappings.Add("YuklemeTarihi", "YuklemeTarihi");
-            tableMapping.ColumnMappings.Add("NoktaSayisi", "NoktaSayisi");
             tableMapping.ColumnMappings.Add("YuklemeNoktasi", "YuklemeNoktasi");
             tableMapping.ColumnMappings.Add("YuklemeIl", "YuklemeIl");
-            tableMapping.ColumnMappings.Add("YuklemeIlce", "YuklemeIlce");
+            tableMapping.ColumnMappings.Add("YuklemeIlcesi", "YuklemeIlcesi");
+            tableMapping.ColumnMappings.Add("Tonaj", "Tonaj");
             tableMapping.ColumnMappings.Add("TeslimNoktasi", "TeslimNoktasi");
-            tableMapping.ColumnMappings.Add("TeslimIl", "TeslimIl");
-            tableMapping.ColumnMappings.Add("TeslimIlce", "TeslimIlce");
-            tableMapping.ColumnMappings.Add("PozisyonNo", "PozisyonNo");
-            tableMapping.ColumnMappings.Add("TahminiKm", "TahminiKm");
-            tableMapping.ColumnMappings.Add("TahminiVarisSaatTarih", "TahminiVarisSaatTarih");
+            tableMapping.ColumnMappings.Add("TeslimIli", "TeslimIli");
+            tableMapping.ColumnMappings.Add("TeslimIlcesi", "TeslimIlcesi");
+            tableMapping.ColumnMappings.Add("NavlunTutar", "NavlunTutar");
+            tableMapping.ColumnMappings.Add("Aciklama", "Aciklama");
+            tableMapping.ColumnMappings.Add("SonNokta", "SonNokta");
+            tableMapping.ColumnMappings.Add("RezervasyonTarihi", "RezervasyonTarihi");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[TblSiparisListesi] WHERE (([ID] = @Original_ID) AND ((@IsNull_" +
-                "Plaka = 1 AND [Plaka] IS NULL) OR ([Plaka] = @Original_Plaka)) AND ((@IsNull_Mus" +
-                "teriAdi = 1 AND [MusteriAdi] IS NULL) OR ([MusteriAdi] = @Original_MusteriAdi)) " +
-                "AND ((@IsNull_HizmetTipi = 1 AND [HizmetTipi] IS NULL) OR ([HizmetTipi] = @Origi" +
-                "nal_HizmetTipi)) AND ((@IsNull_ProjeAdi = 1 AND [ProjeAdi] IS NULL) OR ([ProjeAd" +
-                "i] = @Original_ProjeAdi)) AND ((@IsNull_AracTipi = 1 AND [AracTipi] IS NULL) OR " +
-                "([AracTipi] = @Original_AracTipi)) AND ((@IsNull_SiparisTarihi = 1 AND [SiparisT" +
-                "arihi] IS NULL) OR ([SiparisTarihi] = @Original_SiparisTarihi)) AND ((@IsNull_Si" +
-                "parisNo = 1 AND [SiparisNo] IS NULL) OR ([SiparisNo] = @Original_SiparisNo)) AND" +
-                " ((@IsNull_YuklemeTarihi = 1 AND [YuklemeTarihi] IS NULL) OR ([YuklemeTarihi] = " +
-                "@Original_YuklemeTarihi)) AND ((@IsNull_NoktaSayisi = 1 AND [NoktaSayisi] IS NUL" +
-                "L) OR ([NoktaSayisi] = @Original_NoktaSayisi)) AND ((@IsNull_YuklemeNoktasi = 1 " +
-                "AND [YuklemeNoktasi] IS NULL) OR ([YuklemeNoktasi] = @Original_YuklemeNoktasi)) " +
-                "AND ((@IsNull_YuklemeIl = 1 AND [YuklemeIl] IS NULL) OR ([YuklemeIl] = @Original" +
-                "_YuklemeIl)) AND ((@IsNull_YuklemeIlce = 1 AND [YuklemeIlce] IS NULL) OR ([Yukle" +
-                "meIlce] = @Original_YuklemeIlce)) AND ((@IsNull_TeslimNoktasi = 1 AND [TeslimNok" +
-                "tasi] IS NULL) OR ([TeslimNoktasi] = @Original_TeslimNoktasi)) AND ((@IsNull_Tes" +
-                "limIl = 1 AND [TeslimIl] IS NULL) OR ([TeslimIl] = @Original_TeslimIl)) AND ((@I" +
-                "sNull_TeslimIlce = 1 AND [TeslimIlce] IS NULL) OR ([TeslimIlce] = @Original_Tesl" +
-                "imIlce)) AND ((@IsNull_PozisyonNo = 1 AND [PozisyonNo] IS NULL) OR ([PozisyonNo]" +
-                " = @Original_PozisyonNo)) AND ((@IsNull_TahminiKm = 1 AND [TahminiKm] IS NULL) O" +
-                "R ([TahminiKm] = @Original_TahminiKm)) AND ((@IsNull_TahminiVarisSaatTarih = 1 A" +
-                "ND [TahminiVarisSaatTarih] IS NULL) OR ([TahminiVarisSaatTarih] = @Original_Tahm" +
-                "iniVarisSaatTarih)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Plaka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plaka", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Plaka", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plaka", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MusteriAdi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MusteriAdi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MusteriAdi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MusteriAdi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HizmetTipi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HizmetTipi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HizmetTipi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HizmetTipi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ProjeAdi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProjeAdi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ProjeAdi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProjeAdi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AracTipi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AracTipi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AracTipi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AracTipi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SiparisTarihi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SiparisTarihi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SiparisTarihi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SiparisTarihi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SiparisNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SiparisNo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SiparisNo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SiparisNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_YuklemeTarihi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeTarihi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_YuklemeTarihi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeTarihi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NoktaSayisi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoktaSayisi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NoktaSayisi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoktaSayisi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_YuklemeNoktasi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeNoktasi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_YuklemeNoktasi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeNoktasi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_YuklemeIl", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeIl", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_YuklemeIl", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeIl", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_YuklemeIlce", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeIlce", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_YuklemeIlce", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeIlce", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TeslimNoktasi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimNoktasi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TeslimNoktasi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimNoktasi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TeslimIl", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimIl", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TeslimIl", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimIl", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TeslimIlce", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimIlce", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TeslimIlce", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimIlce", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PozisyonNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PozisyonNo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PozisyonNo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PozisyonNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TahminiKm", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TahminiKm", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TahminiKm", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TahminiKm", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TahminiVarisSaatTarih", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TahminiVarisSaatTarih", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TahminiVarisSaatTarih", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TahminiVarisSaatTarih", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[TblSiparisListesi] ([Plaka], [MusteriAdi], [HizmetTipi], [ProjeAdi], [AracTipi], [SiparisTarihi], [SiparisNo], [YuklemeTarihi], [NoktaSayisi], [YuklemeNoktasi], [YuklemeIl], [YuklemeIlce], [TeslimNoktasi], [TeslimIl], [TeslimIlce], [PozisyonNo], [TahminiKm], [TahminiVarisSaatTarih]) VALUES (@Plaka, @MusteriAdi, @HizmetTipi, @ProjeAdi, @AracTipi, @SiparisTarihi, @SiparisNo, @YuklemeTarihi, @NoktaSayisi, @YuklemeNoktasi, @YuklemeIl, @YuklemeIlce, @TeslimNoktasi, @TeslimIl, @TeslimIlce, @PozisyonNo, @TahminiKm, @TahminiVarisSaatTarih);
-SELECT ID, Plaka, MusteriAdi, HizmetTipi, ProjeAdi, AracTipi, SiparisTarihi, SiparisNo, YuklemeTarihi, NoktaSayisi, YuklemeNoktasi, YuklemeIl, YuklemeIlce, TeslimNoktasi, TeslimIl, TeslimIlce, PozisyonNo, TahminiKm, TahminiVarisSaatTarih FROM TblSiparisListesi WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[TblRezerve] ([PlakaDurumu], [SeferTarihi], [Plaka], [SurucuAdSoyad], [SurucuTelefon], [SurucuTC], [MusteriAdi], [YuklemeNoktasi], [YuklemeIl], [YuklemeIlcesi], [Tonaj], [TeslimNoktasi], [TeslimIli], [TeslimIlcesi], [NavlunTutar], [Aciklama], [SonNokta], [RezervasyonTarihi]) VALUES (@PlakaDurumu, @SeferTarihi, @Plaka, @SurucuAdSoyad, @SurucuTelefon, @SurucuTC, @MusteriAdi, @YuklemeNoktasi, @YuklemeIl, @YuklemeIlcesi, @Tonaj, @TeslimNoktasi, @TeslimIli, @TeslimIlcesi, @NavlunTutar, @Aciklama, @SonNokta, @RezervasyonTarihi)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PlakaDurumu", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PlakaDurumu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SeferTarihi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeferTarihi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Plaka", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plaka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SurucuAdSoyad", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuAdSoyad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SurucuTelefon", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuTelefon", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SurucuTC", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuTC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MusteriAdi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MusteriAdi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HizmetTipi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HizmetTipi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProjeAdi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProjeAdi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AracTipi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AracTipi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SiparisTarihi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SiparisTarihi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SiparisNo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SiparisNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@YuklemeTarihi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeTarihi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoktaSayisi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoktaSayisi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@YuklemeNoktasi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeNoktasi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@YuklemeIl", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeIl", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@YuklemeIlce", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeIlce", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@YuklemeIlcesi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeIlcesi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tonaj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tonaj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TeslimNoktasi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimNoktasi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TeslimIl", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimIl", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TeslimIlce", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimIlce", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PozisyonNo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PozisyonNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TahminiKm", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TahminiKm", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TahminiVarisSaatTarih", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TahminiVarisSaatTarih", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[TblSiparisListesi] SET [Plaka] = @Plaka, [MusteriAdi] = @MusteriAdi" +
-                ", [HizmetTipi] = @HizmetTipi, [ProjeAdi] = @ProjeAdi, [AracTipi] = @AracTipi, [S" +
-                "iparisTarihi] = @SiparisTarihi, [SiparisNo] = @SiparisNo, [YuklemeTarihi] = @Yuk" +
-                "lemeTarihi, [NoktaSayisi] = @NoktaSayisi, [YuklemeNoktasi] = @YuklemeNoktasi, [Y" +
-                "uklemeIl] = @YuklemeIl, [YuklemeIlce] = @YuklemeIlce, [TeslimNoktasi] = @TeslimN" +
-                "oktasi, [TeslimIl] = @TeslimIl, [TeslimIlce] = @TeslimIlce, [PozisyonNo] = @Pozi" +
-                "syonNo, [TahminiKm] = @TahminiKm, [TahminiVarisSaatTarih] = @TahminiVarisSaatTar" +
-                "ih WHERE (([ID] = @Original_ID) AND ((@IsNull_Plaka = 1 AND [Plaka] IS NULL) OR " +
-                "([Plaka] = @Original_Plaka)) AND ((@IsNull_MusteriAdi = 1 AND [MusteriAdi] IS NU" +
-                "LL) OR ([MusteriAdi] = @Original_MusteriAdi)) AND ((@IsNull_HizmetTipi = 1 AND [" +
-                "HizmetTipi] IS NULL) OR ([HizmetTipi] = @Original_HizmetTipi)) AND ((@IsNull_Pro" +
-                "jeAdi = 1 AND [ProjeAdi] IS NULL) OR ([ProjeAdi] = @Original_ProjeAdi)) AND ((@I" +
-                "sNull_AracTipi = 1 AND [AracTipi] IS NULL) OR ([AracTipi] = @Original_AracTipi))" +
-                " AND ((@IsNull_SiparisTarihi = 1 AND [SiparisTarihi] IS NULL) OR ([SiparisTarihi" +
-                "] = @Original_SiparisTarihi)) AND ((@IsNull_SiparisNo = 1 AND [SiparisNo] IS NUL" +
-                "L) OR ([SiparisNo] = @Original_SiparisNo)) AND ((@IsNull_YuklemeTarihi = 1 AND [" +
-                "YuklemeTarihi] IS NULL) OR ([YuklemeTarihi] = @Original_YuklemeTarihi)) AND ((@I" +
-                "sNull_NoktaSayisi = 1 AND [NoktaSayisi] IS NULL) OR ([NoktaSayisi] = @Original_N" +
-                "oktaSayisi)) AND ((@IsNull_YuklemeNoktasi = 1 AND [YuklemeNoktasi] IS NULL) OR (" +
-                "[YuklemeNoktasi] = @Original_YuklemeNoktasi)) AND ((@IsNull_YuklemeIl = 1 AND [Y" +
-                "uklemeIl] IS NULL) OR ([YuklemeIl] = @Original_YuklemeIl)) AND ((@IsNull_Yukleme" +
-                "Ilce = 1 AND [YuklemeIlce] IS NULL) OR ([YuklemeIlce] = @Original_YuklemeIlce)) " +
-                "AND ((@IsNull_TeslimNoktasi = 1 AND [TeslimNoktasi] IS NULL) OR ([TeslimNoktasi]" +
-                " = @Original_TeslimNoktasi)) AND ((@IsNull_TeslimIl = 1 AND [TeslimIl] IS NULL) " +
-                "OR ([TeslimIl] = @Original_TeslimIl)) AND ((@IsNull_TeslimIlce = 1 AND [TeslimIl" +
-                "ce] IS NULL) OR ([TeslimIlce] = @Original_TeslimIlce)) AND ((@IsNull_PozisyonNo " +
-                "= 1 AND [PozisyonNo] IS NULL) OR ([PozisyonNo] = @Original_PozisyonNo)) AND ((@I" +
-                "sNull_TahminiKm = 1 AND [TahminiKm] IS NULL) OR ([TahminiKm] = @Original_Tahmini" +
-                "Km)) AND ((@IsNull_TahminiVarisSaatTarih = 1 AND [TahminiVarisSaatTarih] IS NULL" +
-                ") OR ([TahminiVarisSaatTarih] = @Original_TahminiVarisSaatTarih)));\r\nSELECT ID, " +
-                "Plaka, MusteriAdi, HizmetTipi, ProjeAdi, AracTipi, SiparisTarihi, SiparisNo, Yuk" +
-                "lemeTarihi, NoktaSayisi, YuklemeNoktasi, YuklemeIl, YuklemeIlce, TeslimNoktasi, " +
-                "TeslimIl, TeslimIlce, PozisyonNo, TahminiKm, TahminiVarisSaatTarih FROM TblSipar" +
-                "isListesi WHERE (ID = @ID)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Plaka", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plaka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MusteriAdi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MusteriAdi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HizmetTipi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HizmetTipi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProjeAdi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProjeAdi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AracTipi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AracTipi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SiparisTarihi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SiparisTarihi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SiparisNo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SiparisNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@YuklemeTarihi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeTarihi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NoktaSayisi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoktaSayisi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@YuklemeNoktasi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeNoktasi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@YuklemeIl", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeIl", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@YuklemeIlce", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeIlce", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TeslimNoktasi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimNoktasi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TeslimIl", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimIl", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TeslimIlce", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimIlce", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PozisyonNo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PozisyonNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TahminiKm", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TahminiKm", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TahminiVarisSaatTarih", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TahminiVarisSaatTarih", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Plaka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plaka", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Plaka", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plaka", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MusteriAdi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MusteriAdi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MusteriAdi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MusteriAdi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HizmetTipi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HizmetTipi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HizmetTipi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HizmetTipi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ProjeAdi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProjeAdi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ProjeAdi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProjeAdi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AracTipi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AracTipi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AracTipi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AracTipi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SiparisTarihi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SiparisTarihi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SiparisTarihi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SiparisTarihi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SiparisNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SiparisNo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SiparisNo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SiparisNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_YuklemeTarihi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeTarihi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_YuklemeTarihi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeTarihi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NoktaSayisi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoktaSayisi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NoktaSayisi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NoktaSayisi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_YuklemeNoktasi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeNoktasi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_YuklemeNoktasi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeNoktasi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_YuklemeIl", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeIl", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_YuklemeIl", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeIl", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_YuklemeIlce", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeIlce", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_YuklemeIlce", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeIlce", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TeslimNoktasi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimNoktasi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TeslimNoktasi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimNoktasi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TeslimIl", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimIl", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TeslimIl", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimIl", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TeslimIlce", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimIlce", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TeslimIlce", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimIlce", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PozisyonNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PozisyonNo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PozisyonNo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PozisyonNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TahminiKm", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TahminiKm", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TahminiKm", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TahminiKm", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TahminiVarisSaatTarih", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TahminiVarisSaatTarih", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TahminiVarisSaatTarih", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TahminiVarisSaatTarih", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TeslimIli", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimIli", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TeslimIlcesi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimIlcesi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NavlunTutar", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NavlunTutar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Aciklama", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Aciklama", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SonNokta", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SonNokta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RezervasyonTarihi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RezervasyonTarihi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FiloTakipSistemi.Properties.Settings.Default.FiloTakipConnectionString;
+            this._connection.ConnectionString = global::FiloTakipSistemi.Properties.Settings.Default.FiloTakipConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1724,7 +3773,10 @@ SELECT ID, Plaka, MusteriAdi, HizmetTipi, ProjeAdi, AracTipi, SiparisTarihi, Sip
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT ID, Plaka, MusteriAdi, HizmetTipi, ProjeAdi, AracTipi, SiparisTarihi, SiparisNo, YuklemeTarihi, NoktaSayisi, YuklemeNoktasi, YuklemeIl, YuklemeIlce, TeslimNoktasi, TeslimIl, TeslimIlce, PozisyonNo, TahminiKm, TahminiVarisSaatTarih FROM dbo.TblSiparisListesi";
+            this._commandCollection[0].CommandText = "SELECT PlakaDurumu, SeferTarihi, Plaka, SurucuAdSoyad, SurucuTelefon, SurucuTC, M" +
+                "usteriAdi, YuklemeNoktasi, YuklemeIl, YuklemeIlcesi, Tonaj, TeslimNoktasi, Tesli" +
+                "mIli, TeslimIlcesi, NavlunTutar, Aciklama, SonNokta, RezervasyonTarihi FROM dbo." +
+                "TblRezerve";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1732,7 +3784,7 @@ SELECT ID, Plaka, MusteriAdi, HizmetTipi, ProjeAdi, AracTipi, SiparisTarihi, Sip
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FiloTakipDataSet18.TblSiparisListesiDataTable dataTable) {
+        public virtual int Fill(FiloTakipDataSet18.TblRezerveDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1745,9 +3797,9 @@ SELECT ID, Plaka, MusteriAdi, HizmetTipi, ProjeAdi, AracTipi, SiparisTarihi, Sip
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FiloTakipDataSet18.TblSiparisListesiDataTable GetData() {
+        public virtual FiloTakipDataSet18.TblRezerveDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FiloTakipDataSet18.TblSiparisListesiDataTable dataTable = new FiloTakipDataSet18.TblSiparisListesiDataTable();
+            FiloTakipDataSet18.TblRezerveDataTable dataTable = new FiloTakipDataSet18.TblRezerveDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1755,7 +3807,7 @@ SELECT ID, Plaka, MusteriAdi, HizmetTipi, ProjeAdi, AracTipi, SiparisTarihi, Sip
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FiloTakipDataSet18.TblSiparisListesiDataTable dataTable) {
+        public virtual int Update(FiloTakipDataSet18.TblRezerveDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -1763,7 +3815,1553 @@ SELECT ID, Plaka, MusteriAdi, HizmetTipi, ProjeAdi, AracTipi, SiparisTarihi, Sip
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(FiloTakipDataSet18 dataSet) {
-            return this.Adapter.Update(dataSet, "TblSiparisListesi");
+            return this.Adapter.Update(dataSet, "TblRezerve");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(
+                    string PlakaDurumu, 
+                    global::System.Nullable<global::System.DateTime> SeferTarihi, 
+                    string Plaka, 
+                    string SurucuAdSoyad, 
+                    string SurucuTelefon, 
+                    string SurucuTC, 
+                    string MusteriAdi, 
+                    string YuklemeNoktasi, 
+                    string YuklemeIl, 
+                    string YuklemeIlcesi, 
+                    string Tonaj, 
+                    string TeslimNoktasi, 
+                    string TeslimIli, 
+                    string TeslimIlcesi, 
+                    string NavlunTutar, 
+                    string Aciklama, 
+                    string SonNokta, 
+                    global::System.Nullable<global::System.DateTime> RezervasyonTarihi) {
+            if ((PlakaDurumu == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(PlakaDurumu));
+            }
+            if ((SeferTarihi.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(SeferTarihi.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Plaka == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Plaka));
+            }
+            if ((SurucuAdSoyad == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(SurucuAdSoyad));
+            }
+            if ((SurucuTelefon == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(SurucuTelefon));
+            }
+            if ((SurucuTC == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(SurucuTC));
+            }
+            if ((MusteriAdi == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(MusteriAdi));
+            }
+            if ((YuklemeNoktasi == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(YuklemeNoktasi));
+            }
+            if ((YuklemeIl == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(YuklemeIl));
+            }
+            if ((YuklemeIlcesi == null)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(YuklemeIlcesi));
+            }
+            if ((Tonaj == null)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Tonaj));
+            }
+            if ((TeslimNoktasi == null)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(TeslimNoktasi));
+            }
+            if ((TeslimIli == null)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(TeslimIli));
+            }
+            if ((TeslimIlcesi == null)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(TeslimIlcesi));
+            }
+            if ((NavlunTutar == null)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(NavlunTutar));
+            }
+            if ((Aciklama == null)) {
+                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(Aciklama));
+            }
+            if ((SonNokta == null)) {
+                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(SonNokta));
+            }
+            if ((RezervasyonTarihi.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((System.DateTime)(RezervasyonTarihi.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class TblPlakaAtandiTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public TblPlakaAtandiTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "TblPlakaAtandi";
+            tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("PlakaDurumu", "PlakaDurumu");
+            tableMapping.ColumnMappings.Add("SeferTarihi", "SeferTarihi");
+            tableMapping.ColumnMappings.Add("Plaka", "Plaka");
+            tableMapping.ColumnMappings.Add("SurucuAdSoyad", "SurucuAdSoyad");
+            tableMapping.ColumnMappings.Add("SurucuTelefon", "SurucuTelefon");
+            tableMapping.ColumnMappings.Add("SurucuTC", "SurucuTC");
+            tableMapping.ColumnMappings.Add("MusteriAdi", "MusteriAdi");
+            tableMapping.ColumnMappings.Add("YuklemeNoktasi", "YuklemeNoktasi");
+            tableMapping.ColumnMappings.Add("YuklemeIl", "YuklemeIl");
+            tableMapping.ColumnMappings.Add("YuklemeIlcesi", "YuklemeIlcesi");
+            tableMapping.ColumnMappings.Add("Tonaj", "Tonaj");
+            tableMapping.ColumnMappings.Add("TeslimNoktasi", "TeslimNoktasi");
+            tableMapping.ColumnMappings.Add("TeslimIli", "TeslimIli");
+            tableMapping.ColumnMappings.Add("TeslimIlcesi", "TeslimIlcesi");
+            tableMapping.ColumnMappings.Add("NavlunTutar", "NavlunTutar");
+            tableMapping.ColumnMappings.Add("Aciklama", "Aciklama");
+            tableMapping.ColumnMappings.Add("SonNokta", "SonNokta");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [TblPlakaAtandi] WHERE (([ID] = @Original_ID) AND ((@IsNull_PlakaDuru" +
+                "mu = 1 AND [PlakaDurumu] IS NULL) OR ([PlakaDurumu] = @Original_PlakaDurumu)) AN" +
+                "D ((@IsNull_SeferTarihi = 1 AND [SeferTarihi] IS NULL) OR ([SeferTarihi] = @Orig" +
+                "inal_SeferTarihi)) AND ((@IsNull_Plaka = 1 AND [Plaka] IS NULL) OR ([Plaka] = @O" +
+                "riginal_Plaka)) AND ((@IsNull_SurucuAdSoyad = 1 AND [SurucuAdSoyad] IS NULL) OR " +
+                "([SurucuAdSoyad] = @Original_SurucuAdSoyad)) AND ((@IsNull_SurucuTelefon = 1 AND" +
+                " [SurucuTelefon] IS NULL) OR ([SurucuTelefon] = @Original_SurucuTelefon)) AND ((" +
+                "@IsNull_SurucuTC = 1 AND [SurucuTC] IS NULL) OR ([SurucuTC] = @Original_SurucuTC" +
+                ")) AND ((@IsNull_MusteriAdi = 1 AND [MusteriAdi] IS NULL) OR ([MusteriAdi] = @Or" +
+                "iginal_MusteriAdi)) AND ((@IsNull_YuklemeNoktasi = 1 AND [YuklemeNoktasi] IS NUL" +
+                "L) OR ([YuklemeNoktasi] = @Original_YuklemeNoktasi)) AND ((@IsNull_YuklemeIl = 1" +
+                " AND [YuklemeIl] IS NULL) OR ([YuklemeIl] = @Original_YuklemeIl)) AND ((@IsNull_" +
+                "YuklemeIlcesi = 1 AND [YuklemeIlcesi] IS NULL) OR ([YuklemeIlcesi] = @Original_Y" +
+                "uklemeIlcesi)) AND ((@IsNull_Tonaj = 1 AND [Tonaj] IS NULL) OR ([Tonaj] = @Origi" +
+                "nal_Tonaj)) AND ((@IsNull_TeslimNoktasi = 1 AND [TeslimNoktasi] IS NULL) OR ([Te" +
+                "slimNoktasi] = @Original_TeslimNoktasi)) AND ((@IsNull_TeslimIli = 1 AND [Teslim" +
+                "Ili] IS NULL) OR ([TeslimIli] = @Original_TeslimIli)) AND ((@IsNull_TeslimIlcesi" +
+                " = 1 AND [TeslimIlcesi] IS NULL) OR ([TeslimIlcesi] = @Original_TeslimIlcesi)) A" +
+                "ND ((@IsNull_NavlunTutar = 1 AND [NavlunTutar] IS NULL) OR ([NavlunTutar] = @Ori" +
+                "ginal_NavlunTutar)) AND ((@IsNull_SonNokta = 1 AND [SonNokta] IS NULL) OR ([SonN" +
+                "okta] = @Original_SonNokta)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PlakaDurumu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PlakaDurumu", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PlakaDurumu", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PlakaDurumu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SeferTarihi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeferTarihi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SeferTarihi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeferTarihi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Plaka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plaka", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Plaka", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plaka", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SurucuAdSoyad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuAdSoyad", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SurucuAdSoyad", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuAdSoyad", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SurucuTelefon", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuTelefon", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SurucuTelefon", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuTelefon", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SurucuTC", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuTC", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SurucuTC", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuTC", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MusteriAdi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MusteriAdi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MusteriAdi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MusteriAdi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_YuklemeNoktasi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeNoktasi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_YuklemeNoktasi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeNoktasi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_YuklemeIl", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeIl", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_YuklemeIl", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeIl", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_YuklemeIlcesi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeIlcesi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_YuklemeIlcesi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeIlcesi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Tonaj", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tonaj", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tonaj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tonaj", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TeslimNoktasi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimNoktasi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TeslimNoktasi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimNoktasi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TeslimIli", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimIli", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TeslimIli", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimIli", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TeslimIlcesi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimIlcesi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TeslimIlcesi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimIlcesi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NavlunTutar", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NavlunTutar", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NavlunTutar", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NavlunTutar", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SonNokta", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SonNokta", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SonNokta", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SonNokta", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [TblPlakaAtandi] ([PlakaDurumu], [SeferTarihi], [Plaka], [SurucuAdSoyad], [SurucuTelefon], [SurucuTC], [MusteriAdi], [YuklemeNoktasi], [YuklemeIl], [YuklemeIlcesi], [Tonaj], [TeslimNoktasi], [TeslimIli], [TeslimIlcesi], [NavlunTutar], [Aciklama], [SonNokta]) VALUES (@PlakaDurumu, @SeferTarihi, @Plaka, @SurucuAdSoyad, @SurucuTelefon, @SurucuTC, @MusteriAdi, @YuklemeNoktasi, @YuklemeIl, @YuklemeIlcesi, @Tonaj, @TeslimNoktasi, @TeslimIli, @TeslimIlcesi, @NavlunTutar, @Aciklama, @SonNokta);
+SELECT ID, PlakaDurumu, SeferTarihi, Plaka, SurucuAdSoyad, SurucuTelefon, SurucuTC, MusteriAdi, YuklemeNoktasi, YuklemeIl, YuklemeIlcesi, Tonaj, TeslimNoktasi, TeslimIli, TeslimIlcesi, NavlunTutar, Aciklama, SonNokta FROM TblPlakaAtandi WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PlakaDurumu", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PlakaDurumu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SeferTarihi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeferTarihi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Plaka", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plaka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SurucuAdSoyad", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuAdSoyad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SurucuTelefon", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuTelefon", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SurucuTC", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuTC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MusteriAdi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MusteriAdi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@YuklemeNoktasi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeNoktasi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@YuklemeIl", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeIl", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@YuklemeIlcesi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeIlcesi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tonaj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tonaj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TeslimNoktasi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimNoktasi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TeslimIli", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimIli", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TeslimIlcesi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimIlcesi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NavlunTutar", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NavlunTutar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Aciklama", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Aciklama", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SonNokta", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SonNokta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE [TblPlakaAtandi] SET [PlakaDurumu] = @PlakaDurumu, [SeferTarihi] = @SeferT" +
+                "arihi, [Plaka] = @Plaka, [SurucuAdSoyad] = @SurucuAdSoyad, [SurucuTelefon] = @Su" +
+                "rucuTelefon, [SurucuTC] = @SurucuTC, [MusteriAdi] = @MusteriAdi, [YuklemeNoktasi" +
+                "] = @YuklemeNoktasi, [YuklemeIl] = @YuklemeIl, [YuklemeIlcesi] = @YuklemeIlcesi," +
+                " [Tonaj] = @Tonaj, [TeslimNoktasi] = @TeslimNoktasi, [TeslimIli] = @TeslimIli, [" +
+                "TeslimIlcesi] = @TeslimIlcesi, [NavlunTutar] = @NavlunTutar, [Aciklama] = @Acikl" +
+                "ama, [SonNokta] = @SonNokta WHERE (([ID] = @Original_ID) AND ((@IsNull_PlakaDuru" +
+                "mu = 1 AND [PlakaDurumu] IS NULL) OR ([PlakaDurumu] = @Original_PlakaDurumu)) AN" +
+                "D ((@IsNull_SeferTarihi = 1 AND [SeferTarihi] IS NULL) OR ([SeferTarihi] = @Orig" +
+                "inal_SeferTarihi)) AND ((@IsNull_Plaka = 1 AND [Plaka] IS NULL) OR ([Plaka] = @O" +
+                "riginal_Plaka)) AND ((@IsNull_SurucuAdSoyad = 1 AND [SurucuAdSoyad] IS NULL) OR " +
+                "([SurucuAdSoyad] = @Original_SurucuAdSoyad)) AND ((@IsNull_SurucuTelefon = 1 AND" +
+                " [SurucuTelefon] IS NULL) OR ([SurucuTelefon] = @Original_SurucuTelefon)) AND ((" +
+                "@IsNull_SurucuTC = 1 AND [SurucuTC] IS NULL) OR ([SurucuTC] = @Original_SurucuTC" +
+                ")) AND ((@IsNull_MusteriAdi = 1 AND [MusteriAdi] IS NULL) OR ([MusteriAdi] = @Or" +
+                "iginal_MusteriAdi)) AND ((@IsNull_YuklemeNoktasi = 1 AND [YuklemeNoktasi] IS NUL" +
+                "L) OR ([YuklemeNoktasi] = @Original_YuklemeNoktasi)) AND ((@IsNull_YuklemeIl = 1" +
+                " AND [YuklemeIl] IS NULL) OR ([YuklemeIl] = @Original_YuklemeIl)) AND ((@IsNull_" +
+                "YuklemeIlcesi = 1 AND [YuklemeIlcesi] IS NULL) OR ([YuklemeIlcesi] = @Original_Y" +
+                "uklemeIlcesi)) AND ((@IsNull_Tonaj = 1 AND [Tonaj] IS NULL) OR ([Tonaj] = @Origi" +
+                "nal_Tonaj)) AND ((@IsNull_TeslimNoktasi = 1 AND [TeslimNoktasi] IS NULL) OR ([Te" +
+                "slimNoktasi] = @Original_TeslimNoktasi)) AND ((@IsNull_TeslimIli = 1 AND [Teslim" +
+                "Ili] IS NULL) OR ([TeslimIli] = @Original_TeslimIli)) AND ((@IsNull_TeslimIlcesi" +
+                " = 1 AND [TeslimIlcesi] IS NULL) OR ([TeslimIlcesi] = @Original_TeslimIlcesi)) A" +
+                "ND ((@IsNull_NavlunTutar = 1 AND [NavlunTutar] IS NULL) OR ([NavlunTutar] = @Ori" +
+                "ginal_NavlunTutar)) AND ((@IsNull_SonNokta = 1 AND [SonNokta] IS NULL) OR ([SonN" +
+                "okta] = @Original_SonNokta)));\r\nSELECT ID, PlakaDurumu, SeferTarihi, Plaka, Suru" +
+                "cuAdSoyad, SurucuTelefon, SurucuTC, MusteriAdi, YuklemeNoktasi, YuklemeIl, Yukle" +
+                "meIlcesi, Tonaj, TeslimNoktasi, TeslimIli, TeslimIlcesi, NavlunTutar, Aciklama, " +
+                "SonNokta FROM TblPlakaAtandi WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PlakaDurumu", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PlakaDurumu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SeferTarihi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeferTarihi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Plaka", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plaka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SurucuAdSoyad", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuAdSoyad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SurucuTelefon", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuTelefon", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SurucuTC", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuTC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MusteriAdi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MusteriAdi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@YuklemeNoktasi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeNoktasi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@YuklemeIl", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeIl", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@YuklemeIlcesi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeIlcesi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tonaj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tonaj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TeslimNoktasi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimNoktasi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TeslimIli", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimIli", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TeslimIlcesi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimIlcesi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NavlunTutar", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NavlunTutar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Aciklama", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Aciklama", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SonNokta", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SonNokta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PlakaDurumu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PlakaDurumu", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PlakaDurumu", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PlakaDurumu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SeferTarihi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeferTarihi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SeferTarihi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeferTarihi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Plaka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plaka", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Plaka", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plaka", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SurucuAdSoyad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuAdSoyad", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SurucuAdSoyad", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuAdSoyad", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SurucuTelefon", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuTelefon", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SurucuTelefon", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuTelefon", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SurucuTC", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuTC", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SurucuTC", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuTC", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MusteriAdi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MusteriAdi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MusteriAdi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MusteriAdi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_YuklemeNoktasi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeNoktasi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_YuklemeNoktasi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeNoktasi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_YuklemeIl", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeIl", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_YuklemeIl", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeIl", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_YuklemeIlcesi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeIlcesi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_YuklemeIlcesi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeIlcesi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Tonaj", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tonaj", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tonaj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tonaj", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TeslimNoktasi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimNoktasi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TeslimNoktasi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimNoktasi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TeslimIli", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimIli", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TeslimIli", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimIli", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TeslimIlcesi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimIlcesi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TeslimIlcesi", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimIlcesi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NavlunTutar", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NavlunTutar", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NavlunTutar", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NavlunTutar", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SonNokta", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SonNokta", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SonNokta", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SonNokta", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::FiloTakipSistemi.Properties.Settings.Default.FiloTakipConnectionString1;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT * FROM TblPlakaAtandi\r\n";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(FiloTakipDataSet18.TblPlakaAtandiDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual FiloTakipDataSet18.TblPlakaAtandiDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            FiloTakipDataSet18.TblPlakaAtandiDataTable dataTable = new FiloTakipDataSet18.TblPlakaAtandiDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(FiloTakipDataSet18.TblPlakaAtandiDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(FiloTakipDataSet18 dataSet) {
+            return this.Adapter.Update(dataSet, "TblPlakaAtandi");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(
+                    int Original_ID, 
+                    string Original_PlakaDurumu, 
+                    global::System.Nullable<global::System.DateTime> Original_SeferTarihi, 
+                    string Original_Plaka, 
+                    string Original_SurucuAdSoyad, 
+                    string Original_SurucuTelefon, 
+                    string Original_SurucuTC, 
+                    string Original_MusteriAdi, 
+                    string Original_YuklemeNoktasi, 
+                    string Original_YuklemeIl, 
+                    string Original_YuklemeIlcesi, 
+                    string Original_Tonaj, 
+                    string Original_TeslimNoktasi, 
+                    string Original_TeslimIli, 
+                    string Original_TeslimIlcesi, 
+                    string Original_NavlunTutar, 
+                    string Original_SonNokta) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
+            if ((Original_PlakaDurumu == null)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_PlakaDurumu));
+            }
+            if ((Original_SeferTarihi.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_SeferTarihi.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Plaka == null)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Plaka));
+            }
+            if ((Original_SurucuAdSoyad == null)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_SurucuAdSoyad));
+            }
+            if ((Original_SurucuTelefon == null)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_SurucuTelefon));
+            }
+            if ((Original_SurucuTC == null)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_SurucuTC));
+            }
+            if ((Original_MusteriAdi == null)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_MusteriAdi));
+            }
+            if ((Original_YuklemeNoktasi == null)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_YuklemeNoktasi));
+            }
+            if ((Original_YuklemeIl == null)) {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_YuklemeIl));
+            }
+            if ((Original_YuklemeIlcesi == null)) {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_YuklemeIlcesi));
+            }
+            if ((Original_Tonaj == null)) {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_Tonaj));
+            }
+            if ((Original_TeslimNoktasi == null)) {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_TeslimNoktasi));
+            }
+            if ((Original_TeslimIli == null)) {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_TeslimIli));
+            }
+            if ((Original_TeslimIlcesi == null)) {
+                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[28].Value = ((string)(Original_TeslimIlcesi));
+            }
+            if ((Original_NavlunTutar == null)) {
+                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[30].Value = ((string)(Original_NavlunTutar));
+            }
+            if ((Original_SonNokta == null)) {
+                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[32].Value = ((string)(Original_SonNokta));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(
+                    string PlakaDurumu, 
+                    global::System.Nullable<global::System.DateTime> SeferTarihi, 
+                    string Plaka, 
+                    string SurucuAdSoyad, 
+                    string SurucuTelefon, 
+                    string SurucuTC, 
+                    string MusteriAdi, 
+                    string YuklemeNoktasi, 
+                    string YuklemeIl, 
+                    string YuklemeIlcesi, 
+                    string Tonaj, 
+                    string TeslimNoktasi, 
+                    string TeslimIli, 
+                    string TeslimIlcesi, 
+                    string NavlunTutar, 
+                    string Aciklama, 
+                    string SonNokta) {
+            if ((PlakaDurumu == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(PlakaDurumu));
+            }
+            if ((SeferTarihi.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(SeferTarihi.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Plaka == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Plaka));
+            }
+            if ((SurucuAdSoyad == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(SurucuAdSoyad));
+            }
+            if ((SurucuTelefon == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(SurucuTelefon));
+            }
+            if ((SurucuTC == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(SurucuTC));
+            }
+            if ((MusteriAdi == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(MusteriAdi));
+            }
+            if ((YuklemeNoktasi == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(YuklemeNoktasi));
+            }
+            if ((YuklemeIl == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(YuklemeIl));
+            }
+            if ((YuklemeIlcesi == null)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(YuklemeIlcesi));
+            }
+            if ((Tonaj == null)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Tonaj));
+            }
+            if ((TeslimNoktasi == null)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(TeslimNoktasi));
+            }
+            if ((TeslimIli == null)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(TeslimIli));
+            }
+            if ((TeslimIlcesi == null)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(TeslimIlcesi));
+            }
+            if ((NavlunTutar == null)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(NavlunTutar));
+            }
+            if ((Aciklama == null)) {
+                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(Aciklama));
+            }
+            if ((SonNokta == null)) {
+                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(SonNokta));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    string PlakaDurumu, 
+                    global::System.Nullable<global::System.DateTime> SeferTarihi, 
+                    string Plaka, 
+                    string SurucuAdSoyad, 
+                    string SurucuTelefon, 
+                    string SurucuTC, 
+                    string MusteriAdi, 
+                    string YuklemeNoktasi, 
+                    string YuklemeIl, 
+                    string YuklemeIlcesi, 
+                    string Tonaj, 
+                    string TeslimNoktasi, 
+                    string TeslimIli, 
+                    string TeslimIlcesi, 
+                    string NavlunTutar, 
+                    string Aciklama, 
+                    string SonNokta, 
+                    int Original_ID, 
+                    string Original_PlakaDurumu, 
+                    global::System.Nullable<global::System.DateTime> Original_SeferTarihi, 
+                    string Original_Plaka, 
+                    string Original_SurucuAdSoyad, 
+                    string Original_SurucuTelefon, 
+                    string Original_SurucuTC, 
+                    string Original_MusteriAdi, 
+                    string Original_YuklemeNoktasi, 
+                    string Original_YuklemeIl, 
+                    string Original_YuklemeIlcesi, 
+                    string Original_Tonaj, 
+                    string Original_TeslimNoktasi, 
+                    string Original_TeslimIli, 
+                    string Original_TeslimIlcesi, 
+                    string Original_NavlunTutar, 
+                    string Original_SonNokta, 
+                    int ID) {
+            if ((PlakaDurumu == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(PlakaDurumu));
+            }
+            if ((SeferTarihi.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(SeferTarihi.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Plaka == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Plaka));
+            }
+            if ((SurucuAdSoyad == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(SurucuAdSoyad));
+            }
+            if ((SurucuTelefon == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(SurucuTelefon));
+            }
+            if ((SurucuTC == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(SurucuTC));
+            }
+            if ((MusteriAdi == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(MusteriAdi));
+            }
+            if ((YuklemeNoktasi == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(YuklemeNoktasi));
+            }
+            if ((YuklemeIl == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(YuklemeIl));
+            }
+            if ((YuklemeIlcesi == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(YuklemeIlcesi));
+            }
+            if ((Tonaj == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Tonaj));
+            }
+            if ((TeslimNoktasi == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(TeslimNoktasi));
+            }
+            if ((TeslimIli == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(TeslimIli));
+            }
+            if ((TeslimIlcesi == null)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(TeslimIlcesi));
+            }
+            if ((NavlunTutar == null)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(NavlunTutar));
+            }
+            if ((Aciklama == null)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Aciklama));
+            }
+            if ((SonNokta == null)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(SonNokta));
+            }
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_ID));
+            if ((Original_PlakaDurumu == null)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_PlakaDurumu));
+            }
+            if ((Original_SeferTarihi.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((System.DateTime)(Original_SeferTarihi.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Plaka == null)) {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_Plaka));
+            }
+            if ((Original_SurucuAdSoyad == null)) {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_SurucuAdSoyad));
+            }
+            if ((Original_SurucuTelefon == null)) {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_SurucuTelefon));
+            }
+            if ((Original_SurucuTC == null)) {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_SurucuTC));
+            }
+            if ((Original_MusteriAdi == null)) {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_MusteriAdi));
+            }
+            if ((Original_YuklemeNoktasi == null)) {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_YuklemeNoktasi));
+            }
+            if ((Original_YuklemeIl == null)) {
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_YuklemeIl));
+            }
+            if ((Original_YuklemeIlcesi == null)) {
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(Original_YuklemeIlcesi));
+            }
+            if ((Original_Tonaj == null)) {
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_Tonaj));
+            }
+            if ((Original_TeslimNoktasi == null)) {
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_TeslimNoktasi));
+            }
+            if ((Original_TeslimIli == null)) {
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(Original_TeslimIli));
+            }
+            if ((Original_TeslimIlcesi == null)) {
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((string)(Original_TeslimIlcesi));
+            }
+            if ((Original_NavlunTutar == null)) {
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((string)(Original_NavlunTutar));
+            }
+            if ((Original_SonNokta == null)) {
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((string)(Original_SonNokta));
+            }
+            this.Adapter.UpdateCommand.Parameters[50].Value = ((int)(ID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    string PlakaDurumu, 
+                    global::System.Nullable<global::System.DateTime> SeferTarihi, 
+                    string Plaka, 
+                    string SurucuAdSoyad, 
+                    string SurucuTelefon, 
+                    string SurucuTC, 
+                    string MusteriAdi, 
+                    string YuklemeNoktasi, 
+                    string YuklemeIl, 
+                    string YuklemeIlcesi, 
+                    string Tonaj, 
+                    string TeslimNoktasi, 
+                    string TeslimIli, 
+                    string TeslimIlcesi, 
+                    string NavlunTutar, 
+                    string Aciklama, 
+                    string SonNokta, 
+                    int Original_ID, 
+                    string Original_PlakaDurumu, 
+                    global::System.Nullable<global::System.DateTime> Original_SeferTarihi, 
+                    string Original_Plaka, 
+                    string Original_SurucuAdSoyad, 
+                    string Original_SurucuTelefon, 
+                    string Original_SurucuTC, 
+                    string Original_MusteriAdi, 
+                    string Original_YuklemeNoktasi, 
+                    string Original_YuklemeIl, 
+                    string Original_YuklemeIlcesi, 
+                    string Original_Tonaj, 
+                    string Original_TeslimNoktasi, 
+                    string Original_TeslimIli, 
+                    string Original_TeslimIlcesi, 
+                    string Original_NavlunTutar, 
+                    string Original_SonNokta) {
+            return this.Update(PlakaDurumu, SeferTarihi, Plaka, SurucuAdSoyad, SurucuTelefon, SurucuTC, MusteriAdi, YuklemeNoktasi, YuklemeIl, YuklemeIlcesi, Tonaj, TeslimNoktasi, TeslimIli, TeslimIlcesi, NavlunTutar, Aciklama, SonNokta, Original_ID, Original_PlakaDurumu, Original_SeferTarihi, Original_Plaka, Original_SurucuAdSoyad, Original_SurucuTelefon, Original_SurucuTC, Original_MusteriAdi, Original_YuklemeNoktasi, Original_YuklemeIl, Original_YuklemeIlcesi, Original_Tonaj, Original_TeslimNoktasi, Original_TeslimIli, Original_TeslimIlcesi, Original_NavlunTutar, Original_SonNokta, Original_ID);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class TblPlakaDurumlarıTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public TblPlakaDurumlarıTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "TblPlakaDurumları";
+            tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("Plaka", "Plaka");
+            tableMapping.ColumnMappings.Add("SurucuAdı", "SurucuAdı");
+            tableMapping.ColumnMappings.Add("SurucuTelefon", "SurucuTelefon");
+            tableMapping.ColumnMappings.Add("SurucuTC", "SurucuTC");
+            tableMapping.ColumnMappings.Add("SeferTarihi", "SeferTarihi");
+            tableMapping.ColumnMappings.Add("YuklemeNoktası", "YuklemeNoktası");
+            tableMapping.ColumnMappings.Add("TeslimNoktası", "TeslimNoktası");
+            tableMapping.ColumnMappings.Add("SonIl", "SonIl");
+            tableMapping.ColumnMappings.Add("SonIlce", "SonIlce");
+            tableMapping.ColumnMappings.Add("SonNokta", "SonNokta");
+            tableMapping.ColumnMappings.Add("TahminiVarisZamani", "TahminiVarisZamani");
+            tableMapping.ColumnMappings.Add("YuklemeYeriArasındaKm", "YuklemeYeriArasındaKm");
+            tableMapping.ColumnMappings.Add("Durum", "Durum");
+            tableMapping.ColumnMappings.Add("BaslangıcTarihi", "BaslangıcTarihi");
+            tableMapping.ColumnMappings.Add("BitisTarihi", "BitisTarihi");
+            tableMapping.ColumnMappings.Add("Aciklama", "Aciklama");
+            tableMapping.ColumnMappings.Add("Sebep", "Sebep");
+            tableMapping.ColumnMappings.Add("Tarih", "Tarih");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [TblPlakaDurumları] WHERE (([ID] = @Original_ID) AND ((@IsNull_Plaka " +
+                "= 1 AND [Plaka] IS NULL) OR ([Plaka] = @Original_Plaka)) AND ((@IsNull_SurucuAdı" +
+                " = 1 AND [SurucuAdı] IS NULL) OR ([SurucuAdı] = @Original_SurucuAdı)) AND ((@IsN" +
+                "ull_SurucuTelefon = 1 AND [SurucuTelefon] IS NULL) OR ([SurucuTelefon] = @Origin" +
+                "al_SurucuTelefon)) AND ((@IsNull_SurucuTC = 1 AND [SurucuTC] IS NULL) OR ([Suruc" +
+                "uTC] = @Original_SurucuTC)) AND ((@IsNull_SeferTarihi = 1 AND [SeferTarihi] IS N" +
+                "ULL) OR ([SeferTarihi] = @Original_SeferTarihi)) AND ((@IsNull_YuklemeNoktası = " +
+                "1 AND [YuklemeNoktası] IS NULL) OR ([YuklemeNoktası] = @Original_YuklemeNoktası)" +
+                ") AND ((@IsNull_TeslimNoktası = 1 AND [TeslimNoktası] IS NULL) OR ([TeslimNoktas" +
+                "ı] = @Original_TeslimNoktası)) AND ((@IsNull_SonIl = 1 AND [SonIl] IS NULL) OR (" +
+                "[SonIl] = @Original_SonIl)) AND ((@IsNull_SonIlce = 1 AND [SonIlce] IS NULL) OR " +
+                "([SonIlce] = @Original_SonIlce)) AND ((@IsNull_SonNokta = 1 AND [SonNokta] IS NU" +
+                "LL) OR ([SonNokta] = @Original_SonNokta)) AND ((@IsNull_TahminiVarisZamani = 1 A" +
+                "ND [TahminiVarisZamani] IS NULL) OR ([TahminiVarisZamani] = @Original_TahminiVar" +
+                "isZamani)) AND ((@IsNull_YuklemeYeriArasındaKm = 1 AND [YuklemeYeriArasındaKm] I" +
+                "S NULL) OR ([YuklemeYeriArasındaKm] = @Original_YuklemeYeriArasındaKm)) AND ((@I" +
+                "sNull_Durum = 1 AND [Durum] IS NULL) OR ([Durum] = @Original_Durum)) AND ((@IsNu" +
+                "ll_BaslangıcTarihi = 1 AND [BaslangıcTarihi] IS NULL) OR ([BaslangıcTarihi] = @O" +
+                "riginal_BaslangıcTarihi)) AND ((@IsNull_BitisTarihi = 1 AND [BitisTarihi] IS NUL" +
+                "L) OR ([BitisTarihi] = @Original_BitisTarihi)) AND ((@IsNull_Sebep = 1 AND [Sebe" +
+                "p] IS NULL) OR ([Sebep] = @Original_Sebep)) AND ((@IsNull_Tarih = 1 AND [Tarih] " +
+                "IS NULL) OR ([Tarih] = @Original_Tarih)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Plaka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plaka", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Plaka", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plaka", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SurucuAdı", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuAdı", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SurucuAdı", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuAdı", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SurucuTelefon", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuTelefon", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SurucuTelefon", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuTelefon", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SurucuTC", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuTC", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SurucuTC", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuTC", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SeferTarihi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeferTarihi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SeferTarihi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeferTarihi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_YuklemeNoktası", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeNoktası", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_YuklemeNoktası", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeNoktası", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TeslimNoktası", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimNoktası", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TeslimNoktası", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimNoktası", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SonIl", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SonIl", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SonIl", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SonIl", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SonIlce", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SonIlce", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SonIlce", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SonIlce", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SonNokta", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SonNokta", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SonNokta", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SonNokta", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TahminiVarisZamani", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TahminiVarisZamani", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TahminiVarisZamani", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TahminiVarisZamani", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_YuklemeYeriArasındaKm", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeYeriArasındaKm", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_YuklemeYeriArasındaKm", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeYeriArasındaKm", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Durum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Durum", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Durum", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Durum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BaslangıcTarihi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BaslangıcTarihi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BaslangıcTarihi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BaslangıcTarihi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BitisTarihi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BitisTarihi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BitisTarihi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BitisTarihi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Sebep", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sebep", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sebep", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sebep", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Tarih", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tarih", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tarih", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tarih", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [TblPlakaDurumları] ([Plaka], [SurucuAdı], [SurucuTelefon], [SurucuTC], [SeferTarihi], [YuklemeNoktası], [TeslimNoktası], [SonIl], [SonIlce], [SonNokta], [TahminiVarisZamani], [YuklemeYeriArasındaKm], [Durum], [BaslangıcTarihi], [BitisTarihi], [Aciklama], [Sebep], [Tarih]) VALUES (@Plaka, @SurucuAdı, @SurucuTelefon, @SurucuTC, @SeferTarihi, @YuklemeNoktası, @TeslimNoktası, @SonIl, @SonIlce, @SonNokta, @TahminiVarisZamani, @YuklemeYeriArasındaKm, @Durum, @BaslangıcTarihi, @BitisTarihi, @Aciklama, @Sebep, @Tarih);
+SELECT ID, Plaka, SurucuAdı, SurucuTelefon, SurucuTC, SeferTarihi, YuklemeNoktası, TeslimNoktası, SonIl, SonIlce, SonNokta, TahminiVarisZamani, YuklemeYeriArasındaKm, Durum, BaslangıcTarihi, BitisTarihi, Aciklama, Sebep, Tarih FROM TblPlakaDurumları WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Plaka", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plaka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SurucuAdı", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuAdı", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SurucuTelefon", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuTelefon", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SurucuTC", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuTC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SeferTarihi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeferTarihi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@YuklemeNoktası", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeNoktası", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TeslimNoktası", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimNoktası", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SonIl", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SonIl", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SonIlce", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SonIlce", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SonNokta", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SonNokta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TahminiVarisZamani", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TahminiVarisZamani", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@YuklemeYeriArasındaKm", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeYeriArasındaKm", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Durum", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Durum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BaslangıcTarihi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BaslangıcTarihi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BitisTarihi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BitisTarihi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Aciklama", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Aciklama", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sebep", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sebep", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tarih", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tarih", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE [TblPlakaDurumları] SET [Plaka] = @Plaka, [SurucuAdı] = @SurucuAdı, [Suruc" +
+                "uTelefon] = @SurucuTelefon, [SurucuTC] = @SurucuTC, [SeferTarihi] = @SeferTarihi" +
+                ", [YuklemeNoktası] = @YuklemeNoktası, [TeslimNoktası] = @TeslimNoktası, [SonIl] " +
+                "= @SonIl, [SonIlce] = @SonIlce, [SonNokta] = @SonNokta, [TahminiVarisZamani] = @" +
+                "TahminiVarisZamani, [YuklemeYeriArasındaKm] = @YuklemeYeriArasındaKm, [Durum] = " +
+                "@Durum, [BaslangıcTarihi] = @BaslangıcTarihi, [BitisTarihi] = @BitisTarihi, [Aci" +
+                "klama] = @Aciklama, [Sebep] = @Sebep, [Tarih] = @Tarih WHERE (([ID] = @Original_" +
+                "ID) AND ((@IsNull_Plaka = 1 AND [Plaka] IS NULL) OR ([Plaka] = @Original_Plaka))" +
+                " AND ((@IsNull_SurucuAdı = 1 AND [SurucuAdı] IS NULL) OR ([SurucuAdı] = @Origina" +
+                "l_SurucuAdı)) AND ((@IsNull_SurucuTelefon = 1 AND [SurucuTelefon] IS NULL) OR ([" +
+                "SurucuTelefon] = @Original_SurucuTelefon)) AND ((@IsNull_SurucuTC = 1 AND [Suruc" +
+                "uTC] IS NULL) OR ([SurucuTC] = @Original_SurucuTC)) AND ((@IsNull_SeferTarihi = " +
+                "1 AND [SeferTarihi] IS NULL) OR ([SeferTarihi] = @Original_SeferTarihi)) AND ((@" +
+                "IsNull_YuklemeNoktası = 1 AND [YuklemeNoktası] IS NULL) OR ([YuklemeNoktası] = @" +
+                "Original_YuklemeNoktası)) AND ((@IsNull_TeslimNoktası = 1 AND [TeslimNoktası] IS" +
+                " NULL) OR ([TeslimNoktası] = @Original_TeslimNoktası)) AND ((@IsNull_SonIl = 1 A" +
+                "ND [SonIl] IS NULL) OR ([SonIl] = @Original_SonIl)) AND ((@IsNull_SonIlce = 1 AN" +
+                "D [SonIlce] IS NULL) OR ([SonIlce] = @Original_SonIlce)) AND ((@IsNull_SonNokta " +
+                "= 1 AND [SonNokta] IS NULL) OR ([SonNokta] = @Original_SonNokta)) AND ((@IsNull_" +
+                "TahminiVarisZamani = 1 AND [TahminiVarisZamani] IS NULL) OR ([TahminiVarisZamani" +
+                "] = @Original_TahminiVarisZamani)) AND ((@IsNull_YuklemeYeriArasındaKm = 1 AND [" +
+                "YuklemeYeriArasındaKm] IS NULL) OR ([YuklemeYeriArasındaKm] = @Original_YuklemeY" +
+                "eriArasındaKm)) AND ((@IsNull_Durum = 1 AND [Durum] IS NULL) OR ([Durum] = @Orig" +
+                "inal_Durum)) AND ((@IsNull_BaslangıcTarihi = 1 AND [BaslangıcTarihi] IS NULL) OR" +
+                " ([BaslangıcTarihi] = @Original_BaslangıcTarihi)) AND ((@IsNull_BitisTarihi = 1 " +
+                "AND [BitisTarihi] IS NULL) OR ([BitisTarihi] = @Original_BitisTarihi)) AND ((@Is" +
+                "Null_Sebep = 1 AND [Sebep] IS NULL) OR ([Sebep] = @Original_Sebep)) AND ((@IsNul" +
+                "l_Tarih = 1 AND [Tarih] IS NULL) OR ([Tarih] = @Original_Tarih)));\r\nSELECT ID, P" +
+                "laka, SurucuAdı, SurucuTelefon, SurucuTC, SeferTarihi, YuklemeNoktası, TeslimNok" +
+                "tası, SonIl, SonIlce, SonNokta, TahminiVarisZamani, YuklemeYeriArasındaKm, Durum" +
+                ", BaslangıcTarihi, BitisTarihi, Aciklama, Sebep, Tarih FROM TblPlakaDurumları WH" +
+                "ERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Plaka", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plaka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SurucuAdı", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuAdı", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SurucuTelefon", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuTelefon", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SurucuTC", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuTC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SeferTarihi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeferTarihi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@YuklemeNoktası", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeNoktası", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TeslimNoktası", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimNoktası", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SonIl", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SonIl", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SonIlce", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SonIlce", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SonNokta", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SonNokta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TahminiVarisZamani", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TahminiVarisZamani", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@YuklemeYeriArasındaKm", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeYeriArasındaKm", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Durum", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Durum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BaslangıcTarihi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BaslangıcTarihi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BitisTarihi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BitisTarihi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Aciklama", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Aciklama", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sebep", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sebep", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tarih", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tarih", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Plaka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plaka", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Plaka", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plaka", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SurucuAdı", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuAdı", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SurucuAdı", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuAdı", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SurucuTelefon", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuTelefon", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SurucuTelefon", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuTelefon", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SurucuTC", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuTC", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SurucuTC", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurucuTC", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SeferTarihi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeferTarihi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SeferTarihi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SeferTarihi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_YuklemeNoktası", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeNoktası", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_YuklemeNoktası", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeNoktası", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TeslimNoktası", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimNoktası", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TeslimNoktası", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeslimNoktası", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SonIl", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SonIl", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SonIl", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SonIl", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SonIlce", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SonIlce", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SonIlce", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SonIlce", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SonNokta", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SonNokta", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SonNokta", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SonNokta", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TahminiVarisZamani", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TahminiVarisZamani", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TahminiVarisZamani", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TahminiVarisZamani", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_YuklemeYeriArasındaKm", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeYeriArasındaKm", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_YuklemeYeriArasındaKm", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YuklemeYeriArasındaKm", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Durum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Durum", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Durum", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Durum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BaslangıcTarihi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BaslangıcTarihi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BaslangıcTarihi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BaslangıcTarihi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BitisTarihi", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BitisTarihi", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BitisTarihi", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BitisTarihi", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Sebep", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sebep", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sebep", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sebep", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Tarih", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tarih", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tarih", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tarih", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::FiloTakipSistemi.Properties.Settings.Default.FiloTakipConnectionString1;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "Select * from TblPlakaDurumları";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(FiloTakipDataSet18.TblPlakaDurumlarıDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual FiloTakipDataSet18.TblPlakaDurumlarıDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            FiloTakipDataSet18.TblPlakaDurumlarıDataTable dataTable = new FiloTakipDataSet18.TblPlakaDurumlarıDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(FiloTakipDataSet18.TblPlakaDurumlarıDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(FiloTakipDataSet18 dataSet) {
+            return this.Adapter.Update(dataSet, "TblPlakaDurumları");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1788,23 +5386,22 @@ SELECT ID, Plaka, MusteriAdi, HizmetTipi, ProjeAdi, AracTipi, SiparisTarihi, Sip
         public virtual int Delete(
                     int Original_ID, 
                     string Original_Plaka, 
-                    string Original_MusteriAdi, 
-                    string Original_HizmetTipi, 
-                    string Original_ProjeAdi, 
-                    string Original_AracTipi, 
-                    global::System.Nullable<global::System.DateTime> Original_SiparisTarihi, 
-                    string Original_SiparisNo, 
-                    global::System.Nullable<global::System.DateTime> Original_YuklemeTarihi, 
-                    string Original_NoktaSayisi, 
-                    string Original_YuklemeNoktasi, 
-                    string Original_YuklemeIl, 
-                    string Original_YuklemeIlce, 
-                    string Original_TeslimNoktasi, 
-                    string Original_TeslimIl, 
-                    string Original_TeslimIlce, 
-                    string Original_PozisyonNo, 
-                    string Original_TahminiKm, 
-                    string Original_TahminiVarisSaatTarih) {
+                    string Original_SurucuAdı, 
+                    string Original_SurucuTelefon, 
+                    string Original_SurucuTC, 
+                    global::System.Nullable<global::System.DateTime> Original_SeferTarihi, 
+                    string Original_YuklemeNoktası, 
+                    string Original_TeslimNoktası, 
+                    string Original_SonIl, 
+                    string Original_SonIlce, 
+                    string Original_SonNokta, 
+                    global::System.Nullable<global::System.DateTime> Original_TahminiVarisZamani, 
+                    string Original_YuklemeYeriArasındaKm, 
+                    string Original_Durum, 
+                    global::System.Nullable<global::System.DateTime> Original_BaslangıcTarihi, 
+                    global::System.Nullable<global::System.DateTime> Original_BitisTarihi, 
+                    string Original_Sebep, 
+                    global::System.Nullable<global::System.DateTime> Original_Tarih) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             if ((Original_Plaka == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -1814,141 +5411,133 @@ SELECT ID, Plaka, MusteriAdi, HizmetTipi, ProjeAdi, AracTipi, SiparisTarihi, Sip
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Plaka));
             }
-            if ((Original_MusteriAdi == null)) {
+            if ((Original_SurucuAdı == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_MusteriAdi));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_SurucuAdı));
             }
-            if ((Original_HizmetTipi == null)) {
+            if ((Original_SurucuTelefon == null)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_HizmetTipi));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_SurucuTelefon));
             }
-            if ((Original_ProjeAdi == null)) {
+            if ((Original_SurucuTC == null)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_ProjeAdi));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_SurucuTC));
             }
-            if ((Original_AracTipi == null)) {
+            if ((Original_SeferTarihi.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((System.DateTime)(Original_SeferTarihi.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_AracTipi));
-            }
-            if ((Original_SiparisTarihi.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((System.DateTime)(Original_SiparisTarihi.Value));
-            }
-            else {
+            if ((Original_YuklemeNoktası == null)) {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((Original_SiparisNo == null)) {
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_YuklemeNoktası));
+            }
+            if ((Original_TeslimNoktası == null)) {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_SiparisNo));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_TeslimNoktası));
             }
-            if ((Original_YuklemeTarihi.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((System.DateTime)(Original_YuklemeTarihi.Value));
-            }
-            else {
+            if ((Original_SonIl == null)) {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            if ((Original_NoktaSayisi == null)) {
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_SonIl));
+            }
+            if ((Original_SonIlce == null)) {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_NoktaSayisi));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_SonIlce));
             }
-            if ((Original_YuklemeNoktasi == null)) {
+            if ((Original_SonNokta == null)) {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_YuklemeNoktasi));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_SonNokta));
             }
-            if ((Original_YuklemeIl == null)) {
+            if ((Original_TahminiVarisZamani.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((System.DateTime)(Original_TahminiVarisZamani.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_YuklemeIl));
-            }
-            if ((Original_YuklemeIlce == null)) {
+            if ((Original_YuklemeYeriArasındaKm == null)) {
                 this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_YuklemeIlce));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_YuklemeYeriArasındaKm));
             }
-            if ((Original_TeslimNoktasi == null)) {
+            if ((Original_Durum == null)) {
                 this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_TeslimNoktasi));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_Durum));
             }
-            if ((Original_TeslimIl == null)) {
+            if ((Original_BaslangıcTarihi.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[28].Value = ((System.DateTime)(Original_BaslangıcTarihi.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[28].Value = ((string)(Original_TeslimIl));
+            if ((Original_BitisTarihi.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[30].Value = ((System.DateTime)(Original_BitisTarihi.Value));
             }
-            if ((Original_TeslimIlce == null)) {
+            else {
                 this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[30].Value = ((string)(Original_TeslimIlce));
-            }
-            if ((Original_PozisyonNo == null)) {
+            if ((Original_Sebep == null)) {
                 this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[32].Value = ((string)(Original_PozisyonNo));
+                this.Adapter.DeleteCommand.Parameters[32].Value = ((string)(Original_Sebep));
             }
-            if ((Original_TahminiKm == null)) {
+            if ((Original_Tarih.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[34].Value = ((System.DateTime)(Original_Tarih.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[34].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[34].Value = ((string)(Original_TahminiKm));
-            }
-            if ((Original_TahminiVarisSaatTarih == null)) {
-                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[36].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[36].Value = ((string)(Original_TahminiVarisSaatTarih));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1972,130 +5561,130 @@ SELECT ID, Plaka, MusteriAdi, HizmetTipi, ProjeAdi, AracTipi, SiparisTarihi, Sip
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
         public virtual int Insert(
                     string Plaka, 
-                    string MusteriAdi, 
-                    string HizmetTipi, 
-                    string ProjeAdi, 
-                    string AracTipi, 
-                    global::System.Nullable<global::System.DateTime> SiparisTarihi, 
-                    string SiparisNo, 
-                    global::System.Nullable<global::System.DateTime> YuklemeTarihi, 
-                    string NoktaSayisi, 
-                    string YuklemeNoktasi, 
-                    string YuklemeIl, 
-                    string YuklemeIlce, 
-                    string TeslimNoktasi, 
-                    string TeslimIl, 
-                    string TeslimIlce, 
-                    string PozisyonNo, 
-                    string TahminiKm, 
-                    string TahminiVarisSaatTarih) {
+                    string SurucuAdı, 
+                    string SurucuTelefon, 
+                    string SurucuTC, 
+                    global::System.Nullable<global::System.DateTime> SeferTarihi, 
+                    string YuklemeNoktası, 
+                    string TeslimNoktası, 
+                    string SonIl, 
+                    string SonIlce, 
+                    string SonNokta, 
+                    global::System.Nullable<global::System.DateTime> TahminiVarisZamani, 
+                    string YuklemeYeriArasındaKm, 
+                    string Durum, 
+                    global::System.Nullable<global::System.DateTime> BaslangıcTarihi, 
+                    global::System.Nullable<global::System.DateTime> BitisTarihi, 
+                    string Aciklama, 
+                    string Sebep, 
+                    global::System.Nullable<global::System.DateTime> Tarih) {
             if ((Plaka == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Plaka));
             }
-            if ((MusteriAdi == null)) {
+            if ((SurucuAdı == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(MusteriAdi));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(SurucuAdı));
             }
-            if ((HizmetTipi == null)) {
+            if ((SurucuTelefon == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(HizmetTipi));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(SurucuTelefon));
             }
-            if ((ProjeAdi == null)) {
+            if ((SurucuTC == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(ProjeAdi));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(SurucuTC));
             }
-            if ((AracTipi == null)) {
+            if ((SeferTarihi.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(SeferTarihi.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(AracTipi));
-            }
-            if ((SiparisTarihi.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(SiparisTarihi.Value));
-            }
-            else {
+            if ((YuklemeNoktası == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((SiparisNo == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(YuklemeNoktası));
+            }
+            if ((TeslimNoktası == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(SiparisNo));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(TeslimNoktası));
             }
-            if ((YuklemeTarihi.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(YuklemeTarihi.Value));
-            }
-            else {
+            if ((SonIl == null)) {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((NoktaSayisi == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(SonIl));
+            }
+            if ((SonIlce == null)) {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(NoktaSayisi));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(SonIlce));
             }
-            if ((YuklemeNoktasi == null)) {
+            if ((SonNokta == null)) {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(YuklemeNoktasi));
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(SonNokta));
             }
-            if ((YuklemeIl == null)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            if ((TahminiVarisZamani.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((System.DateTime)(TahminiVarisZamani.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(YuklemeIl));
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((YuklemeIlce == null)) {
+            if ((YuklemeYeriArasındaKm == null)) {
                 this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(YuklemeIlce));
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(YuklemeYeriArasındaKm));
             }
-            if ((TeslimNoktasi == null)) {
+            if ((Durum == null)) {
                 this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(TeslimNoktasi));
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(Durum));
             }
-            if ((TeslimIl == null)) {
+            if ((BaslangıcTarihi.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((System.DateTime)(BaslangıcTarihi.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(TeslimIl));
+            if ((BitisTarihi.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((System.DateTime)(BitisTarihi.Value));
             }
-            if ((TeslimIlce == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(TeslimIlce));
-            }
-            if ((PozisyonNo == null)) {
+            if ((Aciklama == null)) {
                 this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(PozisyonNo));
+                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(Aciklama));
             }
-            if ((TahminiKm == null)) {
+            if ((Sebep == null)) {
                 this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(TahminiKm));
+                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(Sebep));
             }
-            if ((TahminiVarisSaatTarih == null)) {
-                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+            if ((Tarih.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((System.DateTime)(Tarih.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(TahminiVarisSaatTarih));
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2119,42 +5708,41 @@ SELECT ID, Plaka, MusteriAdi, HizmetTipi, ProjeAdi, AracTipi, SiparisTarihi, Sip
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
                     string Plaka, 
-                    string MusteriAdi, 
-                    string HizmetTipi, 
-                    string ProjeAdi, 
-                    string AracTipi, 
-                    global::System.Nullable<global::System.DateTime> SiparisTarihi, 
-                    string SiparisNo, 
-                    global::System.Nullable<global::System.DateTime> YuklemeTarihi, 
-                    string NoktaSayisi, 
-                    string YuklemeNoktasi, 
-                    string YuklemeIl, 
-                    string YuklemeIlce, 
-                    string TeslimNoktasi, 
-                    string TeslimIl, 
-                    string TeslimIlce, 
-                    string PozisyonNo, 
-                    string TahminiKm, 
-                    string TahminiVarisSaatTarih, 
+                    string SurucuAdı, 
+                    string SurucuTelefon, 
+                    string SurucuTC, 
+                    global::System.Nullable<global::System.DateTime> SeferTarihi, 
+                    string YuklemeNoktası, 
+                    string TeslimNoktası, 
+                    string SonIl, 
+                    string SonIlce, 
+                    string SonNokta, 
+                    global::System.Nullable<global::System.DateTime> TahminiVarisZamani, 
+                    string YuklemeYeriArasındaKm, 
+                    string Durum, 
+                    global::System.Nullable<global::System.DateTime> BaslangıcTarihi, 
+                    global::System.Nullable<global::System.DateTime> BitisTarihi, 
+                    string Aciklama, 
+                    string Sebep, 
+                    global::System.Nullable<global::System.DateTime> Tarih, 
                     int Original_ID, 
                     string Original_Plaka, 
-                    string Original_MusteriAdi, 
-                    string Original_HizmetTipi, 
-                    string Original_ProjeAdi, 
-                    string Original_AracTipi, 
-                    global::System.Nullable<global::System.DateTime> Original_SiparisTarihi, 
-                    string Original_SiparisNo, 
-                    global::System.Nullable<global::System.DateTime> Original_YuklemeTarihi, 
-                    string Original_NoktaSayisi, 
-                    string Original_YuklemeNoktasi, 
-                    string Original_YuklemeIl, 
-                    string Original_YuklemeIlce, 
-                    string Original_TeslimNoktasi, 
-                    string Original_TeslimIl, 
-                    string Original_TeslimIlce, 
-                    string Original_PozisyonNo, 
-                    string Original_TahminiKm, 
-                    string Original_TahminiVarisSaatTarih, 
+                    string Original_SurucuAdı, 
+                    string Original_SurucuTelefon, 
+                    string Original_SurucuTC, 
+                    global::System.Nullable<global::System.DateTime> Original_SeferTarihi, 
+                    string Original_YuklemeNoktası, 
+                    string Original_TeslimNoktası, 
+                    string Original_SonIl, 
+                    string Original_SonIlce, 
+                    string Original_SonNokta, 
+                    global::System.Nullable<global::System.DateTime> Original_TahminiVarisZamani, 
+                    string Original_YuklemeYeriArasındaKm, 
+                    string Original_Durum, 
+                    global::System.Nullable<global::System.DateTime> Original_BaslangıcTarihi, 
+                    global::System.Nullable<global::System.DateTime> Original_BitisTarihi, 
+                    string Original_Sebep, 
+                    global::System.Nullable<global::System.DateTime> Original_Tarih, 
                     int ID) {
             if ((Plaka == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -2162,107 +5750,107 @@ SELECT ID, Plaka, MusteriAdi, HizmetTipi, ProjeAdi, AracTipi, SiparisTarihi, Sip
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Plaka));
             }
-            if ((MusteriAdi == null)) {
+            if ((SurucuAdı == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(MusteriAdi));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(SurucuAdı));
             }
-            if ((HizmetTipi == null)) {
+            if ((SurucuTelefon == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(HizmetTipi));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(SurucuTelefon));
             }
-            if ((ProjeAdi == null)) {
+            if ((SurucuTC == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(ProjeAdi));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(SurucuTC));
             }
-            if ((AracTipi == null)) {
+            if ((SeferTarihi.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(SeferTarihi.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(AracTipi));
-            }
-            if ((SiparisTarihi.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(SiparisTarihi.Value));
-            }
-            else {
+            if ((YuklemeNoktası == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((SiparisNo == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(YuklemeNoktası));
+            }
+            if ((TeslimNoktası == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(SiparisNo));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(TeslimNoktası));
             }
-            if ((YuklemeTarihi.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(YuklemeTarihi.Value));
-            }
-            else {
+            if ((SonIl == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((NoktaSayisi == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(SonIl));
+            }
+            if ((SonIlce == null)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(NoktaSayisi));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(SonIlce));
             }
-            if ((YuklemeNoktasi == null)) {
+            if ((SonNokta == null)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(YuklemeNoktasi));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(SonNokta));
             }
-            if ((YuklemeIl == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            if ((TahminiVarisZamani.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(TahminiVarisZamani.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(YuklemeIl));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((YuklemeIlce == null)) {
+            if ((YuklemeYeriArasındaKm == null)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(YuklemeIlce));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(YuklemeYeriArasındaKm));
             }
-            if ((TeslimNoktasi == null)) {
+            if ((Durum == null)) {
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(TeslimNoktasi));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Durum));
             }
-            if ((TeslimIl == null)) {
+            if ((BaslangıcTarihi.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(BaslangıcTarihi.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(TeslimIl));
+            if ((BitisTarihi.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(BitisTarihi.Value));
             }
-            if ((TeslimIlce == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(TeslimIlce));
-            }
-            if ((PozisyonNo == null)) {
+            if ((Aciklama == null)) {
                 this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(PozisyonNo));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Aciklama));
             }
-            if ((TahminiKm == null)) {
+            if ((Sebep == null)) {
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(TahminiKm));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Sebep));
             }
-            if ((TahminiVarisSaatTarih == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            if ((Tarih.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(Tarih.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(TahminiVarisSaatTarih));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_ID));
             if ((Original_Plaka == null)) {
@@ -2273,143 +5861,135 @@ SELECT ID, Plaka, MusteriAdi, HizmetTipi, ProjeAdi, AracTipi, SiparisTarihi, Sip
                 this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Plaka));
             }
-            if ((Original_MusteriAdi == null)) {
+            if ((Original_SurucuAdı == null)) {
                 this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_MusteriAdi));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_SurucuAdı));
             }
-            if ((Original_HizmetTipi == null)) {
+            if ((Original_SurucuTelefon == null)) {
                 this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_HizmetTipi));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_SurucuTelefon));
             }
-            if ((Original_ProjeAdi == null)) {
+            if ((Original_SurucuTC == null)) {
                 this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_ProjeAdi));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_SurucuTC));
             }
-            if ((Original_AracTipi == null)) {
+            if ((Original_SeferTarihi.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((System.DateTime)(Original_SeferTarihi.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_AracTipi));
-            }
-            if ((Original_SiparisTarihi.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((System.DateTime)(Original_SiparisTarihi.Value));
-            }
-            else {
+            if ((Original_YuklemeNoktası == null)) {
                 this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
-            if ((Original_SiparisNo == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_YuklemeNoktası));
+            }
+            if ((Original_TeslimNoktası == null)) {
                 this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_SiparisNo));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_TeslimNoktası));
             }
-            if ((Original_YuklemeTarihi.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((System.DateTime)(Original_YuklemeTarihi.Value));
-            }
-            else {
+            if ((Original_SonIl == null)) {
                 this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
-            if ((Original_NoktaSayisi == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_SonIl));
+            }
+            if ((Original_SonIlce == null)) {
                 this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_NoktaSayisi));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_SonIlce));
             }
-            if ((Original_YuklemeNoktasi == null)) {
+            if ((Original_SonNokta == null)) {
                 this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_YuklemeNoktasi));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_SonNokta));
             }
-            if ((Original_YuklemeIl == null)) {
+            if ((Original_TahminiVarisZamani.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((System.DateTime)(Original_TahminiVarisZamani.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_YuklemeIl));
-            }
-            if ((Original_YuklemeIlce == null)) {
+            if ((Original_YuklemeYeriArasındaKm == null)) {
                 this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_YuklemeIlce));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_YuklemeYeriArasındaKm));
             }
-            if ((Original_TeslimNoktasi == null)) {
+            if ((Original_Durum == null)) {
                 this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_TeslimNoktasi));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_Durum));
             }
-            if ((Original_TeslimIl == null)) {
+            if ((Original_BaslangıcTarihi.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((System.DateTime)(Original_BaslangıcTarihi.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(Original_TeslimIl));
+            if ((Original_BitisTarihi.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((System.DateTime)(Original_BitisTarihi.Value));
             }
-            if ((Original_TeslimIlce == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((string)(Original_TeslimIlce));
-            }
-            if ((Original_PozisyonNo == null)) {
+            if ((Original_Sebep == null)) {
                 this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(Original_PozisyonNo));
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(Original_Sebep));
             }
-            if ((Original_TahminiKm == null)) {
+            if ((Original_Tarih.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((System.DateTime)(Original_Tarih.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(Original_TahminiKm));
-            }
-            if ((Original_TahminiVarisSaatTarih == null)) {
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[54].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((string)(Original_TahminiVarisSaatTarih));
-            }
-            this.Adapter.UpdateCommand.Parameters[55].Value = ((int)(ID));
+            this.Adapter.UpdateCommand.Parameters[53].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2432,43 +6012,42 @@ SELECT ID, Plaka, MusteriAdi, HizmetTipi, ProjeAdi, AracTipi, SiparisTarihi, Sip
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
                     string Plaka, 
-                    string MusteriAdi, 
-                    string HizmetTipi, 
-                    string ProjeAdi, 
-                    string AracTipi, 
-                    global::System.Nullable<global::System.DateTime> SiparisTarihi, 
-                    string SiparisNo, 
-                    global::System.Nullable<global::System.DateTime> YuklemeTarihi, 
-                    string NoktaSayisi, 
-                    string YuklemeNoktasi, 
-                    string YuklemeIl, 
-                    string YuklemeIlce, 
-                    string TeslimNoktasi, 
-                    string TeslimIl, 
-                    string TeslimIlce, 
-                    string PozisyonNo, 
-                    string TahminiKm, 
-                    string TahminiVarisSaatTarih, 
+                    string SurucuAdı, 
+                    string SurucuTelefon, 
+                    string SurucuTC, 
+                    global::System.Nullable<global::System.DateTime> SeferTarihi, 
+                    string YuklemeNoktası, 
+                    string TeslimNoktası, 
+                    string SonIl, 
+                    string SonIlce, 
+                    string SonNokta, 
+                    global::System.Nullable<global::System.DateTime> TahminiVarisZamani, 
+                    string YuklemeYeriArasındaKm, 
+                    string Durum, 
+                    global::System.Nullable<global::System.DateTime> BaslangıcTarihi, 
+                    global::System.Nullable<global::System.DateTime> BitisTarihi, 
+                    string Aciklama, 
+                    string Sebep, 
+                    global::System.Nullable<global::System.DateTime> Tarih, 
                     int Original_ID, 
                     string Original_Plaka, 
-                    string Original_MusteriAdi, 
-                    string Original_HizmetTipi, 
-                    string Original_ProjeAdi, 
-                    string Original_AracTipi, 
-                    global::System.Nullable<global::System.DateTime> Original_SiparisTarihi, 
-                    string Original_SiparisNo, 
-                    global::System.Nullable<global::System.DateTime> Original_YuklemeTarihi, 
-                    string Original_NoktaSayisi, 
-                    string Original_YuklemeNoktasi, 
-                    string Original_YuklemeIl, 
-                    string Original_YuklemeIlce, 
-                    string Original_TeslimNoktasi, 
-                    string Original_TeslimIl, 
-                    string Original_TeslimIlce, 
-                    string Original_PozisyonNo, 
-                    string Original_TahminiKm, 
-                    string Original_TahminiVarisSaatTarih) {
-            return this.Update(Plaka, MusteriAdi, HizmetTipi, ProjeAdi, AracTipi, SiparisTarihi, SiparisNo, YuklemeTarihi, NoktaSayisi, YuklemeNoktasi, YuklemeIl, YuklemeIlce, TeslimNoktasi, TeslimIl, TeslimIlce, PozisyonNo, TahminiKm, TahminiVarisSaatTarih, Original_ID, Original_Plaka, Original_MusteriAdi, Original_HizmetTipi, Original_ProjeAdi, Original_AracTipi, Original_SiparisTarihi, Original_SiparisNo, Original_YuklemeTarihi, Original_NoktaSayisi, Original_YuklemeNoktasi, Original_YuklemeIl, Original_YuklemeIlce, Original_TeslimNoktasi, Original_TeslimIl, Original_TeslimIlce, Original_PozisyonNo, Original_TahminiKm, Original_TahminiVarisSaatTarih, Original_ID);
+                    string Original_SurucuAdı, 
+                    string Original_SurucuTelefon, 
+                    string Original_SurucuTC, 
+                    global::System.Nullable<global::System.DateTime> Original_SeferTarihi, 
+                    string Original_YuklemeNoktası, 
+                    string Original_TeslimNoktası, 
+                    string Original_SonIl, 
+                    string Original_SonIlce, 
+                    string Original_SonNokta, 
+                    global::System.Nullable<global::System.DateTime> Original_TahminiVarisZamani, 
+                    string Original_YuklemeYeriArasındaKm, 
+                    string Original_Durum, 
+                    global::System.Nullable<global::System.DateTime> Original_BaslangıcTarihi, 
+                    global::System.Nullable<global::System.DateTime> Original_BitisTarihi, 
+                    string Original_Sebep, 
+                    global::System.Nullable<global::System.DateTime> Original_Tarih) {
+            return this.Update(Plaka, SurucuAdı, SurucuTelefon, SurucuTC, SeferTarihi, YuklemeNoktası, TeslimNoktası, SonIl, SonIlce, SonNokta, TahminiVarisZamani, YuklemeYeriArasındaKm, Durum, BaslangıcTarihi, BitisTarihi, Aciklama, Sebep, Tarih, Original_ID, Original_Plaka, Original_SurucuAdı, Original_SurucuTelefon, Original_SurucuTC, Original_SeferTarihi, Original_YuklemeNoktası, Original_TeslimNoktası, Original_SonIl, Original_SonIlce, Original_SonNokta, Original_TahminiVarisZamani, Original_YuklemeYeriArasındaKm, Original_Durum, Original_BaslangıcTarihi, Original_BitisTarihi, Original_Sebep, Original_Tarih, Original_ID);
         }
     }
     
@@ -2484,7 +6063,11 @@ SELECT ID, Plaka, MusteriAdi, HizmetTipi, ProjeAdi, AracTipi, SiparisTarihi, Sip
         
         private UpdateOrderOption _updateOrder;
         
-        private TblSiparisListesiTableAdapter _tblSiparisListesiTableAdapter;
+        private TblRezerveTableAdapter _tblRezerveTableAdapter;
+        
+        private TblPlakaAtandiTableAdapter _tblPlakaAtandiTableAdapter;
+        
+        private TblPlakaDurumlarıTableAdapter _tblPlakaDurumlarıTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -2506,12 +6089,40 @@ SELECT ID, Plaka, MusteriAdi, HizmetTipi, ProjeAdi, AracTipi, SiparisTarihi, Sip
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public TblSiparisListesiTableAdapter TblSiparisListesiTableAdapter {
+        public TblRezerveTableAdapter TblRezerveTableAdapter {
             get {
-                return this._tblSiparisListesiTableAdapter;
+                return this._tblRezerveTableAdapter;
             }
             set {
-                this._tblSiparisListesiTableAdapter = value;
+                this._tblRezerveTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public TblPlakaAtandiTableAdapter TblPlakaAtandiTableAdapter {
+            get {
+                return this._tblPlakaAtandiTableAdapter;
+            }
+            set {
+                this._tblPlakaAtandiTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public TblPlakaDurumlarıTableAdapter TblPlakaDurumlarıTableAdapter {
+            get {
+                return this._tblPlakaDurumlarıTableAdapter;
+            }
+            set {
+                this._tblPlakaDurumlarıTableAdapter = value;
             }
         }
         
@@ -2534,9 +6145,17 @@ SELECT ID, Plaka, MusteriAdi, HizmetTipi, ProjeAdi, AracTipi, SiparisTarihi, Sip
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._tblSiparisListesiTableAdapter != null) 
-                            && (this._tblSiparisListesiTableAdapter.Connection != null))) {
-                    return this._tblSiparisListesiTableAdapter.Connection;
+                if (((this._tblRezerveTableAdapter != null) 
+                            && (this._tblRezerveTableAdapter.Connection != null))) {
+                    return this._tblRezerveTableAdapter.Connection;
+                }
+                if (((this._tblPlakaAtandiTableAdapter != null) 
+                            && (this._tblPlakaAtandiTableAdapter.Connection != null))) {
+                    return this._tblPlakaAtandiTableAdapter.Connection;
+                }
+                if (((this._tblPlakaDurumlarıTableAdapter != null) 
+                            && (this._tblPlakaDurumlarıTableAdapter.Connection != null))) {
+                    return this._tblPlakaDurumlarıTableAdapter.Connection;
                 }
                 return null;
             }
@@ -2551,7 +6170,13 @@ SELECT ID, Plaka, MusteriAdi, HizmetTipi, ProjeAdi, AracTipi, SiparisTarihi, Sip
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._tblSiparisListesiTableAdapter != null)) {
+                if ((this._tblRezerveTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._tblPlakaAtandiTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._tblPlakaDurumlarıTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -2565,12 +6190,30 @@ SELECT ID, Plaka, MusteriAdi, HizmetTipi, ProjeAdi, AracTipi, SiparisTarihi, Sip
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateUpdatedRows(FiloTakipDataSet18 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._tblSiparisListesiTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.TblSiparisListesi.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._tblRezerveTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TblRezerve.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._tblSiparisListesiTableAdapter.Update(updatedRows));
+                    result = (result + this._tblRezerveTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._tblPlakaAtandiTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TblPlakaAtandi.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tblPlakaAtandiTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._tblPlakaDurumlarıTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TblPlakaDurumları.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tblPlakaDurumlarıTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -2584,11 +6227,27 @@ SELECT ID, Plaka, MusteriAdi, HizmetTipi, ProjeAdi, AracTipi, SiparisTarihi, Sip
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateInsertedRows(FiloTakipDataSet18 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._tblSiparisListesiTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.TblSiparisListesi.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._tblRezerveTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TblRezerve.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._tblSiparisListesiTableAdapter.Update(addedRows));
+                    result = (result + this._tblRezerveTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._tblPlakaAtandiTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TblPlakaAtandi.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tblPlakaAtandiTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._tblPlakaDurumlarıTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TblPlakaDurumları.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tblPlakaDurumlarıTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -2602,11 +6261,27 @@ SELECT ID, Plaka, MusteriAdi, HizmetTipi, ProjeAdi, AracTipi, SiparisTarihi, Sip
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateDeletedRows(FiloTakipDataSet18 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._tblSiparisListesiTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.TblSiparisListesi.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._tblPlakaDurumlarıTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.TblPlakaDurumları.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._tblSiparisListesiTableAdapter.Update(deletedRows));
+                    result = (result + this._tblPlakaDurumlarıTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._tblPlakaAtandiTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.TblPlakaAtandi.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tblPlakaAtandiTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._tblRezerveTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.TblRezerve.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tblRezerveTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -2649,8 +6324,18 @@ SELECT ID, Plaka, MusteriAdi, HizmetTipi, ProjeAdi, AracTipi, SiparisTarihi, Sip
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._tblSiparisListesiTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._tblSiparisListesiTableAdapter.Connection) == false))) {
+            if (((this._tblRezerveTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tblRezerveTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("TableAdapterManager tarafından yönetilen tüm TableAdapter\'lar aynı bağlantı dizes" +
+                        "ini kullanmalıdır.");
+            }
+            if (((this._tblPlakaAtandiTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tblPlakaAtandiTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("TableAdapterManager tarafından yönetilen tüm TableAdapter\'lar aynı bağlantı dizes" +
+                        "ini kullanmalıdır.");
+            }
+            if (((this._tblPlakaDurumlarıTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tblPlakaDurumlarıTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("TableAdapterManager tarafından yönetilen tüm TableAdapter\'lar aynı bağlantı dizes" +
                         "ini kullanmalıdır.");
             }
@@ -2686,13 +6371,31 @@ SELECT ID, Plaka, MusteriAdi, HizmetTipi, ProjeAdi, AracTipi, SiparisTarihi, Sip
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._tblSiparisListesiTableAdapter != null)) {
-                    revertConnections.Add(this._tblSiparisListesiTableAdapter, this._tblSiparisListesiTableAdapter.Connection);
-                    this._tblSiparisListesiTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._tblSiparisListesiTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._tblSiparisListesiTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._tblSiparisListesiTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._tblSiparisListesiTableAdapter.Adapter);
+                if ((this._tblRezerveTableAdapter != null)) {
+                    revertConnections.Add(this._tblRezerveTableAdapter, this._tblRezerveTableAdapter.Connection);
+                    this._tblRezerveTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._tblRezerveTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._tblRezerveTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tblRezerveTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tblRezerveTableAdapter.Adapter);
+                    }
+                }
+                if ((this._tblPlakaAtandiTableAdapter != null)) {
+                    revertConnections.Add(this._tblPlakaAtandiTableAdapter, this._tblPlakaAtandiTableAdapter.Connection);
+                    this._tblPlakaAtandiTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._tblPlakaAtandiTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._tblPlakaAtandiTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tblPlakaAtandiTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tblPlakaAtandiTableAdapter.Adapter);
+                    }
+                }
+                if ((this._tblPlakaDurumlarıTableAdapter != null)) {
+                    revertConnections.Add(this._tblPlakaDurumlarıTableAdapter, this._tblPlakaDurumlarıTableAdapter.Connection);
+                    this._tblPlakaDurumlarıTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._tblPlakaDurumlarıTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._tblPlakaDurumlarıTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tblPlakaDurumlarıTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tblPlakaDurumlarıTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -2753,9 +6456,17 @@ SELECT ID, Plaka, MusteriAdi, HizmetTipi, ProjeAdi, AracTipi, SiparisTarihi, Sip
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._tblSiparisListesiTableAdapter != null)) {
-                    this._tblSiparisListesiTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tblSiparisListesiTableAdapter]));
-                    this._tblSiparisListesiTableAdapter.Transaction = null;
+                if ((this._tblRezerveTableAdapter != null)) {
+                    this._tblRezerveTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tblRezerveTableAdapter]));
+                    this._tblRezerveTableAdapter.Transaction = null;
+                }
+                if ((this._tblPlakaAtandiTableAdapter != null)) {
+                    this._tblPlakaAtandiTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tblPlakaAtandiTableAdapter]));
+                    this._tblPlakaAtandiTableAdapter.Transaction = null;
+                }
+                if ((this._tblPlakaDurumlarıTableAdapter != null)) {
+                    this._tblPlakaDurumlarıTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tblPlakaDurumlarıTableAdapter]));
+                    this._tblPlakaDurumlarıTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

@@ -26,7 +26,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationRevision>9</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -89,11 +89,14 @@
     <Reference Include="DevExpress.XtraGrid.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DocumentFormat.OpenXml, Version=3.1.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
-      <HintPath>..\packages\DocumentFormat.OpenXml.3.1.1\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    <Reference Include="DevExpress.XtraScheduler.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v24.1.Core.Desktop, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DocumentFormat.OpenXml, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.3.2.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
     </Reference>
-    <Reference Include="DocumentFormat.OpenXml.Framework, Version=3.1.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
-      <HintPath>..\packages\DocumentFormat.OpenXml.Framework.3.1.1\lib\net46\DocumentFormat.OpenXml.Framework.dll</HintPath>
+    <Reference Include="DocumentFormat.OpenXml.Framework, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.Framework.3.2.0\lib\net46\DocumentFormat.OpenXml.Framework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
@@ -101,8 +104,8 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="EPPlus, Version=7.5.1.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPPlus.7.5.1\lib\net462\EPPlus.dll</HintPath>
+    <Reference Include="EPPlus, Version=7.5.2.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.7.5.2\lib\net462\EPPlus.dll</HintPath>
     </Reference>
     <Reference Include="EPPlus.Interfaces, Version=7.5.0.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
       <HintPath>..\packages\EPPlus.Interfaces.7.5.0\lib\net462\EPPlus.Interfaces.dll</HintPath>
@@ -128,6 +131,9 @@
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="RBush, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -177,49 +183,61 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entity2\Model1.Context.cs">
+    <Compile Include="Entity7\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity2\Model1.cs">
+    <Compile Include="Entity7\Model1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity2\Model1.Designer.cs">
+    <Compile Include="Entity7\Model1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Entity2\TblAraclar.cs">
+    <Compile Include="Entity7\TblAraclar.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity2\TblAracStatu.cs">
+    <Compile Include="Entity7\TblAracStatu.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity2\TblBolgeler.cs">
+    <Compile Include="Entity7\TblBolgeler.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity2\TblDta.cs">
+    <Compile Include="Entity7\TblDetay.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity2\TblGiris.cs">
+    <Compile Include="Entity7\TblGiris.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity2\TblMesafe.cs">
+    <Compile Include="Entity7\TblMesafe.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity2\TblPlakaAtandi.cs">
+    <Compile Include="Entity7\TblPlakaAtandi.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity2\TblPlakaDurumları.cs">
+    <Compile Include="Entity7\TblPlakaDurumları.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity2\TblSebepler.cs">
+    <Compile Include="Entity7\TblRezerve.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity2\TblSiparisListesi.cs">
+    <Compile Include="Entity7\TblSebepler.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity7\TblSebeplerListesi.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity7\TblSiparisListesi.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity7\TblSiparisListesiYedek.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity7\TblTamamlananSeferler.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="FiloTakipDataSet.Designer.cs">
@@ -322,10 +340,60 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FiloTakipDataSet26.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FiloTakipDataSet27.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FiloTakipDataSet27.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FiloTakipDataSet28.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FiloTakipDataSet28.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FiloTakipDataSet29.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FiloTakipDataSet29.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FiloTakipDataSet3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FiloTakipDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FiloTakipDataSet30.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FiloTakipDataSet30.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FiloTakipDataSet31.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FiloTakipDataSet31.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FiloTakipDataSet32.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FiloTakipDataSet32.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FiloTakipDataSet33.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FiloTakipDataSet33.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FiloTakipDataSet34.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FiloTakipDataSet34.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FiloTakipDataSet35.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FiloTakipDataSet35.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FiloTakipDataSet36.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FiloTakipDataSet36.xsd</DependentUpon>
     </Compile>
     <Compile Include="FiloTakipDataSet4.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -393,6 +461,12 @@
     <Compile Include="FrmGiris.Designer.cs">
       <DependentUpon>FrmGiris.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMobiliz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMobiliz.Designer.cs">
+      <DependentUpon>FrmMobiliz.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPlakaAtandi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -411,11 +485,23 @@
     <Compile Include="FrmRapor.Designer.cs">
       <DependentUpon>FrmRapor.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRowDetails.cs">
+    <Compile Include="FrmRezervePlakalar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRowDetails.Designer.cs">
-      <DependentUpon>FrmRowDetails.cs</DependentUpon>
+    <Compile Include="FrmRezervePlakalar.Designer.cs">
+      <DependentUpon>FrmRezervePlakalar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSatırDüzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSatırDüzenle.Designer.cs">
+      <DependentUpon>FrmSatırDüzenle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSiparisDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSiparisDetay.Designer.cs">
+      <DependentUpon>FrmSiparisDetay.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmVeriEklemeEkranı.cs">
       <SubType>Form</SubType>
@@ -449,6 +535,9 @@
     <EmbeddedResource Include="FrmGiris.resx">
       <DependentUpon>FrmGiris.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmMobiliz.resx">
+      <DependentUpon>FrmMobiliz.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPlakaAtandi.resx">
       <DependentUpon>FrmPlakaAtandi.cs</DependentUpon>
     </EmbeddedResource>
@@ -458,8 +547,14 @@
     <EmbeddedResource Include="FrmRapor.resx">
       <DependentUpon>FrmRapor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRowDetails.resx">
-      <DependentUpon>FrmRowDetails.cs</DependentUpon>
+    <EmbeddedResource Include="FrmRezervePlakalar.resx">
+      <DependentUpon>FrmRezervePlakalar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSatırDüzenle.resx">
+      <DependentUpon>FrmSatırDüzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSiparisDetay.resx">
+      <DependentUpon>FrmSiparisDetay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVeriEklemeEkranı.resx">
       <DependentUpon>FrmVeriEklemeEkranı.cs</DependentUpon>
@@ -478,11 +573,11 @@
     <EmbeddedResource Include="FrmVeriGöster.resx">
       <DependentUpon>FrmVeriGöster.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="Entity2\Model1.edmx">
+    <EntityDeploy Include="Entity7\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Entity2\Model1.edmx.diagram">
+    <None Include="Entity7\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="FiloTakipDataSet.xsc">
@@ -705,6 +800,39 @@
     <None Include="FiloTakipDataSet26.xss">
       <DependentUpon>FiloTakipDataSet26.xsd</DependentUpon>
     </None>
+    <None Include="FiloTakipDataSet27.xsc">
+      <DependentUpon>FiloTakipDataSet27.xsd</DependentUpon>
+    </None>
+    <None Include="FiloTakipDataSet27.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FiloTakipDataSet27.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FiloTakipDataSet27.xss">
+      <DependentUpon>FiloTakipDataSet27.xsd</DependentUpon>
+    </None>
+    <None Include="FiloTakipDataSet28.xsc">
+      <DependentUpon>FiloTakipDataSet28.xsd</DependentUpon>
+    </None>
+    <None Include="FiloTakipDataSet28.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FiloTakipDataSet28.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FiloTakipDataSet28.xss">
+      <DependentUpon>FiloTakipDataSet28.xsd</DependentUpon>
+    </None>
+    <None Include="FiloTakipDataSet29.xsc">
+      <DependentUpon>FiloTakipDataSet29.xsd</DependentUpon>
+    </None>
+    <None Include="FiloTakipDataSet29.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FiloTakipDataSet29.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FiloTakipDataSet29.xss">
+      <DependentUpon>FiloTakipDataSet29.xsd</DependentUpon>
+    </None>
     <None Include="FiloTakipDataSet3.xsc">
       <DependentUpon>FiloTakipDataSet3.xsd</DependentUpon>
     </None>
@@ -715,6 +843,83 @@
     </None>
     <None Include="FiloTakipDataSet3.xss">
       <DependentUpon>FiloTakipDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="FiloTakipDataSet30.xsc">
+      <DependentUpon>FiloTakipDataSet30.xsd</DependentUpon>
+    </None>
+    <None Include="FiloTakipDataSet30.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FiloTakipDataSet30.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FiloTakipDataSet30.xss">
+      <DependentUpon>FiloTakipDataSet30.xsd</DependentUpon>
+    </None>
+    <None Include="FiloTakipDataSet31.xsc">
+      <DependentUpon>FiloTakipDataSet31.xsd</DependentUpon>
+    </None>
+    <None Include="FiloTakipDataSet31.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FiloTakipDataSet31.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FiloTakipDataSet31.xss">
+      <DependentUpon>FiloTakipDataSet31.xsd</DependentUpon>
+    </None>
+    <None Include="FiloTakipDataSet32.xsc">
+      <DependentUpon>FiloTakipDataSet32.xsd</DependentUpon>
+    </None>
+    <None Include="FiloTakipDataSet32.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FiloTakipDataSet32.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FiloTakipDataSet32.xss">
+      <DependentUpon>FiloTakipDataSet32.xsd</DependentUpon>
+    </None>
+    <None Include="FiloTakipDataSet33.xsc">
+      <DependentUpon>FiloTakipDataSet33.xsd</DependentUpon>
+    </None>
+    <None Include="FiloTakipDataSet33.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FiloTakipDataSet33.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FiloTakipDataSet33.xss">
+      <DependentUpon>FiloTakipDataSet33.xsd</DependentUpon>
+    </None>
+    <None Include="FiloTakipDataSet34.xsc">
+      <DependentUpon>FiloTakipDataSet34.xsd</DependentUpon>
+    </None>
+    <None Include="FiloTakipDataSet34.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FiloTakipDataSet34.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FiloTakipDataSet34.xss">
+      <DependentUpon>FiloTakipDataSet34.xsd</DependentUpon>
+    </None>
+    <None Include="FiloTakipDataSet35.xsc">
+      <DependentUpon>FiloTakipDataSet35.xsd</DependentUpon>
+    </None>
+    <None Include="FiloTakipDataSet35.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FiloTakipDataSet35.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FiloTakipDataSet35.xss">
+      <DependentUpon>FiloTakipDataSet35.xsd</DependentUpon>
+    </None>
+    <None Include="FiloTakipDataSet36.xsc">
+      <DependentUpon>FiloTakipDataSet36.xsd</DependentUpon>
+    </None>
+    <None Include="FiloTakipDataSet36.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FiloTakipDataSet36.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FiloTakipDataSet36.xss">
+      <DependentUpon>FiloTakipDataSet36.xsd</DependentUpon>
     </None>
     <None Include="FiloTakipDataSet4.xsc">
       <DependentUpon>FiloTakipDataSet4.xsd</DependentUpon>
@@ -802,12 +1007,12 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Entity2\Model1.Context.tt">
+    <Content Include="Entity7\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Entity2\Model1.tt">
+    <Content Include="Entity7\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>

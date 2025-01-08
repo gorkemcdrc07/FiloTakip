@@ -49,6 +49,37 @@
     <Property Name="İl" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
     <Property Name="Bolge" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
   </EntityType>
+  <EntityType Name="TblDta">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReferansNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TMSOrderID" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Firma" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Proje" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="HizmetTipi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IstenilenAracTipi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SiparisNumarasi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SiparisTarihi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="YuklemeTarihi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TeslimTarihi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="NoktaSayisi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="YuklemeNoktasi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="YuklemeIli" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="YuklemeIlcesi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SiparisDurumu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TeslimNoktasi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TeslimIli" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TeslimIlcesi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MusteriSiparisNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MusteriReferansNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Aciklama" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SiparisAcan" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SiparisAcilisZamani" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="PozisyonNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ToplamKg" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
   <EntityType Name="TblGiris">
     <Key>
       <PropertyRef Name="ID" />
@@ -127,42 +158,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Plaka" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="MusteriAdi" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="HizmetTipi" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="ProjeAdi" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="AracTipi" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="SiparisTarihi" Type="DateTime" Precision="3" />
-    <Property Name="SiparisNo" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="YuklemeTarihi" Type="DateTime" Precision="3" />
-    <Property Name="NoktaSayisi" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="YuklemeNoktasi" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="YuklemeIl" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="YuklemeIlce" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="TeslimNoktasi" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="TeslimIl" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="TeslimIlce" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="PozisyonNo" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="TahminiKm" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="TahminiVarisSaatTarih" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityContainer Name="FiloTakipEntities7" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="TblAraclar" EntityType="Self.TblAraclar" />
-    <EntitySet Name="TblAracStatu" EntityType="Self.TblAracStatu" />
-    <EntitySet Name="TblBolgeler" EntityType="Self.TblBolgeler" />
-    <EntitySet Name="TblGiris" EntityType="Self.TblGiris" />
-    <EntitySet Name="TblMesafe" EntityType="Self.TblMesafe" />
-    <EntitySet Name="TblPlakaAtandi" EntityType="Self.TblPlakaAtandi" />
-    <EntitySet Name="TblPlakaDurumları" EntityType="Self.TblPlakaDurumları" />
-    <EntitySet Name="TblSebepler" EntityType="Self.TblSebepler" />
-    <EntitySet Name="TblSiparisListesi" EntityType="Self.TblSiparisListesi" />
-    <EntitySet Name="TblDta" EntityType="FiloTakipModel.TblDta" />
-  </EntityContainer>
-  <EntityType Name="TblDta">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Plaka" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="ReferansNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="TMSOrderID" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="Firma" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
@@ -170,9 +166,9 @@
     <Property Name="HizmetTipi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="IstenilenAracTipi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="SiparisNumarasi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="SiparisTarihi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="YuklemeTarihi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="TeslimTarihi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SiparisTarihi" Type="DateTime" Precision="0" />
+    <Property Name="YuklemeTarihi" Type="DateTime" Precision="0" />
+    <Property Name="TeslimTarihi" Type="DateTime" Precision="0" />
     <Property Name="NoktaSayisi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="YuklemeNoktasi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="YuklemeIli" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
@@ -185,8 +181,22 @@
     <Property Name="MusteriReferansNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="Aciklama" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="SiparisAcan" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="SiparisAcilisZamani" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SiparisAcilisZamani" Type="DateTime" Precision="0" />
     <Property Name="PozisyonNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="ToplamKg" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TahminiVaris" Type="DateTime" Precision="3" />
+    <Property Name="TahminiKm" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
   </EntityType>
+  <EntityContainer Name="FiloTakipEntities8" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TblAraclar" EntityType="Self.TblAraclar" />
+    <EntitySet Name="TblAracStatu" EntityType="Self.TblAracStatu" />
+    <EntitySet Name="TblBolgeler" EntityType="Self.TblBolgeler" />
+    <EntitySet Name="TblDta" EntityType="Self.TblDta" />
+    <EntitySet Name="TblGiris" EntityType="Self.TblGiris" />
+    <EntitySet Name="TblMesafe" EntityType="Self.TblMesafe" />
+    <EntitySet Name="TblPlakaAtandi" EntityType="Self.TblPlakaAtandi" />
+    <EntitySet Name="TblPlakaDurumları" EntityType="Self.TblPlakaDurumları" />
+    <EntitySet Name="TblSebepler" EntityType="Self.TblSebepler" />
+    <EntitySet Name="TblSiparisListesi" EntityType="Self.TblSiparisListesi" />
+  </EntityContainer>
 </Schema>
